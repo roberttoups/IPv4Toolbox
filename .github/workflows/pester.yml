@@ -12,7 +12,7 @@ jobs:
           Set-PSRepository psgallery -InstallationPolicy 'trusted'
           Install-Module -Name Pester -Confirm:$false -Force
           Install-Module -Name PSScriptAnalyzer -Confirm:$false -Force
-          $Path = Get-ChildItem -Path 'IPv4Toolbox' -Recurse -Directory -Filter 'Tests' | Select-Object -First 1 -ExpandProperty FullName | Resolve-Path -Relative
+          $Path = Get-ChildItem -Path 'IPv4Toolbox' -Recurse -Directory -Filter 'Tests' | Select-Object -First 1 -ExpandProperty 'FullName' | Resolve-Path -Relative
           Write-Host $Path
-          Invoke-Pester -Path $Path
+          Invoke-Pester -Path $Path -Output 'Detailed'
         shell: pwsh
