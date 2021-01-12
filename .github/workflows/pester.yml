@@ -1,0 +1,16 @@
+name: Pester
+on:
+  push:
+    branches: [ main ]
+jobs:
+  test-pwsh:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run Pester tests
+      run: |
+        Set-PSRepository psgallery -InstallationPolicy trusted
+        Install-Module -Name Pester -RequiredVersion 5.0.4 -Confirm:$false -Force
+        $Path = Get-ChildItem -Path 'IPv4Toolbox' -Recurse -Directory | Select-Object -First 1 -ExpandProperty FullName | Resolve-Path -Relative
+        Invoke-Pester -Path $Path
+      shell: pwsh
