@@ -1,3 +1,4 @@
+![Pester](https://github.com/roberttoups/IPv4Toolbox/workflows/Pester/badge.svg)
 # IPv4Toolbox
 
 ## Description
