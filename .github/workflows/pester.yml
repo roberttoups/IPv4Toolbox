@@ -1,16 +1,44 @@
 name: Pester
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 jobs:
-  test-pwsh:
+  test-windows:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Run Pester tests
-      run: |
-        Set-PSRepository psgallery -InstallationPolicy trusted
-        Install-Module -Name Pester -RequiredVersion 5.0.4 -Confirm:$false -Force
-        $Path = Get-ChildItem -Path 'IPv4Toolbox' -Recurse -Directory | Select-Object -First 1 -ExpandProperty FullName | Resolve-Path -Relative
-        Invoke-Pester -Path $Path
-      shell: pwsh
+      - uses: actions/checkout@v2
+      - name: Run Pester tests
+        run: |
+          Set-PSRepository psgallery -InstallationPolicy 'trusted'
+          Install-Module -Name Pester -Confirm:$false -Force
+          Install-Module -Name PSScriptAnalyzer -Confirm:$false -Force
+          $Path = Get-ChildItem -Path 'IPv4Toolbox' -Recurse -Directory -Filter 'Tests' | Select-Object -First 1 -ExpandProperty 'FullName' | Resolve-Path -Relative
+          Write-Host $Path
+          Invoke-Pester -Path $Path -Output 'Detailed'
+        shell: pwsh
+  test-ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Pester tests
+        run: |
+          Set-PSRepository psgallery -InstallationPolicy 'trusted'
+          Install-Module -Name Pester -Confirm:$false -Force
+          Install-Module -Name PSScriptAnalyzer -Confirm:$false -Force
+          $Path = Get-ChildItem -Path 'IPv4Toolbox' -Recurse -Directory -Filter 'Tests' | Select-Object -First 1 -ExpandProperty 'FullName' | Resolve-Path -Relative
+          Write-Host $Path
+          Invoke-Pester -Path $Path -Output 'Detailed'
+        shell: pwsh
+  test-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Pester tests
+        run: |
+          Set-PSRepository psgallery -InstallationPolicy 'trusted'
+          Install-Module -Name Pester -Confirm:$false -Force
+          Install-Module -Name PSScriptAnalyzer -Confirm:$false -Force
+          $Path = Get-ChildItem -Path 'IPv4Toolbox' -Recurse -Directory -Filter 'Tests' | Select-Object -First 1 -ExpandProperty 'FullName' | Resolve-Path -Relative
+          Write-Host $Path
+          Invoke-Pester -Path $Path -Output 'Detailed'
+        shell: pwsh

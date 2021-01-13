@@ -39,18 +39,23 @@ InModuleScope $ModuleName {
 
     Context 'Object returned by Get-SubnetInformation has the correct properties' {
       $TestObject = Get-SubnetInformation -IPv4Address $IPv4Address -Prefix $Prefix
-      $TestCase = @(
-        $TestObject |
-          Get-Member -MemberType 'NoteProperty' |
-          Select-Object -ExpandProperty 'Name' |
-          Sort-Object -Unique
-      )
       foreach ($Property in $PropertyList) {
+        $TestCase = @{
+          Properties = @(
+            $TestObject |
+              Get-Member -MemberType 'NoteProperty' |
+              Select-Object -ExpandProperty 'Name' |
+              Sort-Object -Unique
+          )
+          Property   = $Property
+        }
+
         It "Return should have a property of $Property" -TestCases $TestCase {
           param(
-            $Properties
+            $Properties,
+            $Property
           )
-          [bool]($Properties -contains $Property) |
+          $Properties -contains $Property |
             Should -Be $true
         }
       }
