@@ -63,16 +63,16 @@ foreach ($Command in $CommandList) {
     Context "Test parameter help for $CommandName" {
 
       $Common = @(
-        'Debug',
-        'ErrorAction',
-        'ErrorVariable',
-        'InformationAction',
-        'InformationVariable',
-        'OutBuffer',
-        'OutVariable',
-        'PipelineVariable',
-        'Verbose',
-        'WarningAction',
+        'Debug'
+        'ErrorAction'
+        'ErrorVariable'
+        'InformationAction'
+        'InformationVariable'
+        'OutBuffer'
+        'OutVariable'
+        'PipelineVariable'
+        'Verbose'
+        'WarningAction'
         'WarningVariable'
       )
 
@@ -121,4 +121,3 @@ foreach ($Command in $CommandList) {
     }
   }
 }
-# }
