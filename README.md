@@ -1,6 +1,6 @@
 ![Pester](https://github.com/roberttoups/IPv4Toolbox/workflows/Pester/badge.svg)
 
-# IPv4Toolbox PowerShell Module
+# ![IPv4Toolbox](icons/Color-small.png) IPv4Toolbox PowerShell Module
 
 ## Description
 
