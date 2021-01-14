@@ -8,7 +8,7 @@ schema: 2.0.0
 # Split-Subnet
 
 ## SYNOPSIS
-Converts sixty-four bit integer into an IPv4 address
+Breaks up a larger CIDR into small CIDRs.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Split-Subnet [-Subnet] <String> [-Prefix] <Int32> [-TargetPrefix] <Int32> [<Comm
 ```
 
 ## DESCRIPTION
-Converts sixty-four bit integer into an IPv4 address
+Breaks up a larger CIDR into small CIDRs.
 
 ## EXAMPLES
 
@@ -50,26 +50,11 @@ AWSTotalHosts       : 124
 
 ## PARAMETERS
 
-### -Subnet
-The Subnet Id to split
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: IPAddress, IPv4Address
-
-Required: True
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Prefix
 The network prefix of the source CIDR
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 
@@ -80,11 +65,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Subnet
+The Subnet Id to split
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: IPAddress, IPv4Address
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -TargetPrefix
 The network prefix to split the subnet into
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: (All)
 Aliases:
 

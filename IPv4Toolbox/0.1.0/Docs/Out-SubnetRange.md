@@ -49,11 +49,26 @@ Out-SubnetRange -Subnet 192.168.1.0 -Prefix 28
 
 ## PARAMETERS
 
+### -Prefix
+The Prefix of the IPv4 Address range
+
+```yaml
+Type: System.Int32
+Parameter Sets: Prefix
+Aliases:
+
+Required: False
+Position: Named
+Default value: 24
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Subnet
 The subnet id of the IPv4 Address range
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: IPv4Address
 
@@ -68,28 +83,13 @@ Accept wildcard characters: False
 The Subnet Mask of the IPv4 Address range
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: SubnetMask
 Aliases: Mask
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Prefix
-The Prefix of the IPv4 Address range
-
-```yaml
-Type: Int32
-Parameter Sets: Prefix
-Aliases:
-
-Required: False
-Position: Named
-Default value: 24
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
