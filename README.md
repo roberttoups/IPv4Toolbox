@@ -1,4 +1,6 @@
-![Pester](https://github.com/roberttoups/IPv4Toolbox/workflows/Pester/badge.svg)
+
+
+![Pester](https://github.com/roberttoups/IPv4Toolbox/workflows/Pester/badge.svg)![License](https://img.shields.io/github/license/roberttoups/IPv4Toolbox)![Windows](https://img.shields.io/badge/OS-Windows-success)![Linux](https://img.shields.io/badge/OS-linux-success)![macOS](https://img.shields.io/badge/OS-macOS-success)
 
 # ![IPv4Toolbox](icons/Color-small.png) IPv4Toolbox PowerShell Module
 
@@ -8,19 +10,33 @@ Module to simplify the calculations associated to IPv4 addressing.
 
 ## Functions
 
-[ConvertTo-InverseAddress](IPv4Toolbox/0.1.0/Docs/ConvertTo-InverseAddress.md)
+### [ConvertTo-InverseAddress](IPv4Toolbox/0.1.0/Docs/ConvertTo-InverseAddress.md)
 
-[Get-SubnetInformation](IPv4Toolbox/0.1.0/Docs/Get-SubnetInformation.md)
+Converts an IPv4 Address or Subnet into Windows PTR Zone compatible domain name.
 
-[Invoke-IPv4GeoLookup](IPv4Toolbox/0.1.0/Docs/Invoke-IPv4GeoLookup.md)
+### [Get-SubnetInformation](IPv4Toolbox/0.1.0/Docs/Get-SubnetInformation.md)
 
-[Invoke-IPv4ListSort](IPv4Toolbox/0.1.0/Docs/Invoke-IPv4ListSort.md)
+Returns the information regarding a subnet that an IPv4 Address exists.
 
-[Out-SubnetRange](IPv4Toolbox/0.1.0/Docs/Out-SubnetRange.md)
+### [Invoke-IPv4GeoLookup](IPv4Toolbox/0.1.0/Docs/Invoke-IPv4GeoLookup.md)
 
-[Split-Subnet](IPv4Toolbox/0.1.0/Docs/Split-Subnet.md)
+Returns GeoIP Information from ip-api.com.
 
-[Test-IPv4AddressWithinRange](IPv4Toolbox/0.1.0/Docs/Test-IPv4AddressWithinRange.md)
+### [Invoke-IPv4ListSort](IPv4Toolbox/0.1.0/Docs/Invoke-IPv4ListSort.md)
+
+Sorts an array of IPv4 Addresses include CIDR address ranges.
+
+### [Out-SubnetRange](IPv4Toolbox/0.1.0/Docs/Out-SubnetRange.md)
+
+Outputs a list of IPv4 Addresses from a CIDR address range.
+
+### [Split-Subnet](IPv4Toolbox/0.1.0/Docs/Split-Subnet.md)
+
+Breaks up a larger CIDR into small CIDRs.
+
+### [Test-IPv4AddressWithinRange](IPv4Toolbox/0.1.0/Docs/Test-IPv4AddressWithinRange.md)
+
+
 
 ## License
 
