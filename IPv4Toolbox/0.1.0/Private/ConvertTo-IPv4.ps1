@@ -32,10 +32,13 @@ function ConvertTo-IPv4 {
     [Int64]
     $Integer
   )
-  [Int32]$FirstOctet = ([System.Math]::Truncate($Integer / 16777216))
-  [Int32]$SecondOctet = ([System.Math]::Truncate(($Integer % 16777216) / 65536))
-  [Int32]$ThirdOctet = ([System.Math]::Truncate(($Integer % 65536) / 256))
-  [Int32]$FourthOctet = ([System.Math]::Truncate($Integer % 256))
-  $IPv4Address = "$($FirstOctet).$($SecondOctet).$($ThirdOctet).$($FourthOctet)"
-  return $IPv4Address
+  begin {}
+  process {
+    [Int32]$FirstOctet = ([System.Math]::Truncate($Integer / 16777216))
+    [Int32]$SecondOctet = ([System.Math]::Truncate(($Integer % 16777216) / 65536))
+    [Int32]$ThirdOctet = ([System.Math]::Truncate(($Integer % 65536) / 256))
+    [Int32]$FourthOctet = ([System.Math]::Truncate($Integer % 256))
+    "$($FirstOctet).$($SecondOctet).$($ThirdOctet).$($FourthOctet)"
+  }
+  end {}
 }

@@ -1,7 +1,6 @@
 $script:ModuleName = 'IPv4Toolbox'
 
-$ModuleBasePath = Split-Path -Path $PSScriptRoot -Parent # Split-Path -Parent $MyInvocation.MyCommand.Path
-# Write-Host $ModuleBasePath -ForegroundColor 'Cyan'
+$ModuleBasePath = Split-Path -Path $PSScriptRoot -Parent
 
 $ExceptionsPath = Join-Path -Path $PSScriptRoot -ChildPath 'Help.Exceptions.txt'
 # Get the list of functions we are not going to run tests against
