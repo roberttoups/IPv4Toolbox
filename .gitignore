@@ -7,4 +7,4 @@
 !icons/
 !icons/*.png
 !IPv4Toolbox/
-!IPv4Toolbox/**
+!IPv4Toolbox/*
