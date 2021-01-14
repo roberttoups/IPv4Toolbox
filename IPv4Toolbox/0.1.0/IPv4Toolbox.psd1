@@ -24,7 +24,7 @@
   Author            = 'Robert M. Toups, Jr.'
 
   # Company or vendor of this module
-  CompanyName       = 'Robert M. Toups, Jr.'
+  CompanyName       = 'Toups Design Bureau'
 
   # Copyright statement for this module
   Copyright         = '(c) Robert M. Toups, Jr.. All rights reserved.'
@@ -33,7 +33,7 @@
   Description       = 'Module to assist in the manipulation of IPv4 Addresses and Subnets.'
 
   # Minimum version of the PowerShell engine required by this module
-  # PowerShellVersion = ''
+  PowerShellVersion = '3.0.0'
 
   # Name of the PowerShell host required by this module
   # PowerShellHostName = ''
@@ -95,16 +95,16 @@
     PSData = @{
 
       # Tags applied to this module. These help with module discovery in online galleries.
-      # Tags = @('Network','IPv4','IP Address','Windows','Linux','macOS')
+      Tags       = @('Network', 'IPv4', 'IP Address', 'Windows', 'Linux', 'macOS')
 
       # A URL to the license for this module.
-      # LicenseUri = 'https://github.com/roberttoups/IPv4Toolbox/blob/master/LICENSE'
+      LicenseUri = 'https://github.com/roberttoups/IPv4Toolbox/blob/master/LICENSE'
 
       # A URL to the main website for this project.
-      # ProjectUri = 'https://github.com/roberttoups/IPv4Toolbox'
+      ProjectUri = 'https://github.com/roberttoups/IPv4Toolbox'
 
       # A URL to an icon representing this module.
-      # IconUri = 'https://raw.githubusercontent.com/roberttoups/IPv4Toolbox/master/icons/Color-PSGallery.png'
+      IconUri    = 'https://raw.githubusercontent.com/roberttoups/IPv4Toolbox/master/icons/Color-PSGallery.png'
 
       # ReleaseNotes of this module
       # ReleaseNotes = ''
