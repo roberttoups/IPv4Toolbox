@@ -1,11 +1,11 @@
 <#
 .SYNOPSIS
 
-  Converts sixty-four bit integer into an IPv4 address
+  Breaks up a larger CIDR into small CIDRs.
 
 .DESCRIPTION
 
-  Converts sixty-four bit integer into an IPv4 address
+  Breaks up a larger CIDR into small CIDRs.
 
 .PARAMETER Subnet
 
