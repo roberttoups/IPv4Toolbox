@@ -21,7 +21,7 @@
 
 .EXAMPLE
 
-  Split-Subnet -Subnet 10.2.2.0 -Prefix 24 -TargetPrefix 25
+  PS> Split-Subnet -Subnet 10.2.2.0 -Prefix 24 -TargetPrefix 25
 
   SubnetId            : 10.2.2.0
   BroadcastAddress    : 10.2.2.127
