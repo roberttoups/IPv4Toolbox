@@ -61,7 +61,7 @@ TotalClassCSubnets    : 256
 The IPv4 Address
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: IPAddress
 
@@ -72,32 +72,32 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -SubnetMask
-'255.0.0.0', '255.128.0.0', '255.192.0.0', '255.224.0.0', '255.240.0.0', '255.248.0.0', '255.252.0.0', '255.254.0.0', '255.255.0.0', '255.255.128.0', '255.255.192.0', '255.255.224.0', '255.255.240.0', '255.255.248.0', '255.255.252.0', '255.255.254.0', '255.255.255.0', '255.255.255.128', '255.255.255.192', '255.255.255.224', '255.255.255.240', '255.255.255.248', '255.255.255.252', '255.255.255.254', '255.255.255.255'
-
-```yaml
-Type: String
-Parameter Sets: SubnetMask
-Aliases: Mask
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Prefix
 The network prefix
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: Prefix
 Aliases:
 
 Required: False
 Position: Named
 Default value: 24
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SubnetMask
+'255.0.0.0', '255.128.0.0', '255.192.0.0', '255.224.0.0', '255.240.0.0', '255.248.0.0', '255.252.0.0', '255.254.0.0', '255.255.0.0', '255.255.128.0', '255.255.192.0', '255.255.224.0', '255.255.240.0', '255.255.248.0', '255.255.252.0', '255.255.254.0', '255.255.255.0', '255.255.255.128', '255.255.255.192', '255.255.255.224', '255.255.255.240', '255.255.255.248', '255.255.255.252', '255.255.255.254', '255.255.255.255'
+
+```yaml
+Type: System.String
+Parameter Sets: SubnetMask
+Aliases: Mask
+
+Required: True
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Test-IPv4AddressWithinRange
 
 ## SYNOPSIS
-Evaluates if an IPv4 Address is equal or within an IPv4 Address range
+Evaluates if an IPv4 Address is equal or within an IPv4 Address range.
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Test-IPv4AddressWithinRange [-FirstIPv4Address] <String> [-LastIPv4Address] <Str
 ```
 
 ## DESCRIPTION
-Evaluates if an IPv4 Address is equal or within an IPv4 Address range
+Evaluates if an IPv4 Address is equal or within an IPv4 Address range.
 
 ## EXAMPLES
 
@@ -42,7 +42,7 @@ True
 The first IPv4 Address
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: StartingIpAddress
 
@@ -57,7 +57,7 @@ Accept wildcard characters: False
 The last IPv4 Address
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: EndingIpAddress
 
@@ -72,7 +72,7 @@ Accept wildcard characters: False
 The IPv4 Address to test
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: TestingIpAddress
 

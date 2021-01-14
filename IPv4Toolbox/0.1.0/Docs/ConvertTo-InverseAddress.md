@@ -50,7 +50,7 @@ ConvertTo-InverseAddress -Subnet '10.2.2.0' -Prefix 22
 IPv4 Address to convert to an inverse address
 
 ```yaml
-Type: String[]
+Type: System.String[]
 Parameter Sets: IPv4Address
 Aliases:
 
@@ -61,32 +61,32 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Subnet
-The subnet id to convert to an inverse address
-
-```yaml
-Type: String
-Parameter Sets: Subnet
-Aliases:
-
-Required: True
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Prefix
 The subnet prefix for the subnet to convert to an inverse address
 
 ```yaml
-Type: Int32
+Type: System.Int32
 Parameter Sets: Subnet
 Aliases:
 
 Required: True
 Position: 2
 Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Subnet
+The subnet id to convert to an inverse address
+
+```yaml
+Type: System.String
+Parameter Sets: Subnet
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

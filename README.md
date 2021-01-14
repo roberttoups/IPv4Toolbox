@@ -36,7 +36,7 @@ Breaks up a larger CIDR into small CIDRs.
 
 ### [Test-IPv4AddressWithinRange](IPv4Toolbox/0.1.0/Docs/Test-IPv4AddressWithinRange.md)
 
-
+Evaluates if an IPv4 Address is equal or within an IPv4 Address range.
 
 ## License
 

@@ -48,7 +48,7 @@ mapReference : https://www.google.com/maps?q=-27.4766,153.0166
 The non-RFC 1918 IPv4 Address to obtain the GeoIP information.
 
 ```yaml
-Type: String
+Type: System.String
 Parameter Sets: (All)
 Aliases: IPAddress
 
