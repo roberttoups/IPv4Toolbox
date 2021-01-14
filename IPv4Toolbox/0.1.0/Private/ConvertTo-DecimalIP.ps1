@@ -26,7 +26,9 @@ function ConvertTo-DecimalIP {
   [CmdletBinding()]
   [OutputType([UInt32])]
   Param (
-    [Parameter(Mandatory = $true)]
+    [Parameter(
+      Mandatory = $true
+    )]
     [System.Net.IPAddress]
     $IPAddressObject
   )
@@ -35,7 +37,6 @@ function ConvertTo-DecimalIP {
 
   }
   process {
-
     $Position = 3
     $DecimalIp = 0
     $IPAddressObject.GetAddressBytes() |
