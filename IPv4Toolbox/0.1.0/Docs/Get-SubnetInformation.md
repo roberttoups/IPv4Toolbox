@@ -28,7 +28,7 @@ Returns the information regarding a subnet that an IPv4 Address exists and retur
 ## EXAMPLES
 
 ### EXAMPLE 1
-```
+```powershell
 Get-SubnetInformation -IPv4Address 192.168.1.120 -Mask 255.255.254.0
 ```
 
@@ -42,7 +42,7 @@ TotalHosts            : 510
 TotalClassCSubnets    : 2
 
 ### EXAMPLE 2
-```
+```powershell
 Get-SubnetInformation -Ipv4Address 192.168.1.120 -Prefix 16
 ```
 

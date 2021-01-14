@@ -22,7 +22,7 @@ Returns GeoIP Information from ip-api.com.
 ## EXAMPLES
 
 ### EXAMPLE 1
-```
+```powershell
 Invoke-IPv4GeoLookup -IPv4Address 1.1.1.1
 ```
 

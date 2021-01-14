@@ -28,14 +28,14 @@ Converts an IPv4 Address or Subnet into Windows PTR Zone compatible domain name.
 ## EXAMPLES
 
 ### EXAMPLE 1
-```
+```powershell
 ConvertTo-InverseAddress -IPv4Address '192.168.1.1'
 ```
 
 1.1.168.192.in-addr.arpa
 
 ### EXAMPLE 2
-```
+```powershell
 ConvertTo-InverseAddress -Subnet '10.2.2.0' -Prefix 22
 ```
 

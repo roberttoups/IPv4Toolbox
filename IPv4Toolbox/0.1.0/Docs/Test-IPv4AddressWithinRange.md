@@ -23,14 +23,14 @@ Evaluates if an IPv4 Address is equal or within an IPv4 Address range.
 ## EXAMPLES
 
 ### EXAMPLE 1
-```
+```powershell
 Test-IPv4AddressWithinRange -FirstIPv4Address '192.168.1.1' -LastIPv4Address '192.168.5.21' -TestIPv4Address '192.168.6.1'
 ```
 
 False
 
 ### EXAMPLE 2
-```
+```powershell
 Test-IPv4AddressWithinRange -FirstIPv4Address '192.168.1.1' -LastIPv4Address '192.168.1.50' -TestIPv4Address '192.168.1.20'
 ```
 
