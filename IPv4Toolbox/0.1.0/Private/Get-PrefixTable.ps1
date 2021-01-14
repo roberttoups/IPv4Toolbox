@@ -47,17 +47,14 @@
 function Get-PrefixTable {
   [CmdletBinding()]
   [OutputType([HashTable])]
-  Param ()
-
-  begin {
-    $HashTable = @{}
-  }
+  param()
+  begin {}
   process {
+    $HashTable = @{}
     for($Prefix = 8; $Prefix -le 32; $Prefix++) {
       $HashTable.Add(([System.Net.IPAddress]::Parse((ConvertTo-IPv4 -Integer ([System.Convert]::ToInt64(("1" * $Prefix + "0" * (32 - $Prefix)), 2))))).IPAddressToString, $Prefix)
     }
+    $HashTable
   }
-  end {
-    return $HashTable
-  }
+  end {}
 }
