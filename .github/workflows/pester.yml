@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run Pester tests
         run: |
-          Set-PSRepository psgallery -InstallationPolicy 'trusted'
+          Set-PSRepository -Name PSGallery -InstallationPolicy 'Trusted'
           Install-Module -Name Pester -Confirm:$false -Force
           Install-Module -Name PSScriptAnalyzer -Confirm:$false -Force
           $Path = Get-ChildItem -Path 'IPv4Toolbox' -Recurse -Directory -Filter 'Tests' | Select-Object -First 1 -ExpandProperty 'FullName' | Resolve-Path -Relative
@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run Pester tests
         run: |
-          Set-PSRepository psgallery -InstallationPolicy 'trusted'
+          Set-PSRepository -Name PSGallery -InstallationPolicy 'Trusted'
           Install-Module -Name Pester -Confirm:$false -Force
           Install-Module -Name PSScriptAnalyzer -Confirm:$false -Force
           $Path = Get-ChildItem -Path 'IPv4Toolbox' -Recurse -Directory -Filter 'Tests' | Select-Object -First 1 -ExpandProperty 'FullName' | Resolve-Path -Relative
@@ -35,7 +35,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run Pester tests
         run: |
-          Set-PSRepository psgallery -InstallationPolicy 'trusted'
+          Set-PSRepository -Name PSGallery -InstallationPolicy 'Trusted'
           Install-Module -Name Pester -Confirm:$false -Force
           Install-Module -Name PSScriptAnalyzer -Confirm:$false -Force
           $Path = Get-ChildItem -Path 'IPv4Toolbox' -Recurse -Directory -Filter 'Tests' | Select-Object -First 1 -ExpandProperty 'FullName' | Resolve-Path -Relative
