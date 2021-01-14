@@ -1,5 +1,4 @@
 $ModuleName = 'IPv4Toolbox'
-
 $ModuleBasePath = Split-Path -Path $PSScriptRoot -Parent
 $Version = Split-Path -Path $ModuleBasePath -Leaf
 $ModulePath = Join-Path -Path $ModuleBasePath -ChildPath "$ModuleName.psd1"
@@ -7,7 +6,7 @@ if((Test-Path -Path $ModulePath) -eq $false) {
   throw "Unable to locate $ModulePath"
 }
 $ManifestTest = Test-ModuleManifest -Path $ModulePath
-$TestItems = [PSCustomObject]@{
+$TestObject = [PSCustomObject]@{
   Name        = 'IPv4Toolbox'
   Guid        = 'b1a4c4a0-f480-4831-a6e0-141487f746b4'
   Author      = 'Robert M. Toups, Jr.'
@@ -19,20 +18,20 @@ $TestItems = [PSCustomObject]@{
   IconUri     = 'https://raw.githubusercontent.com/roberttoups/IPv4Toolbox/master/icons/Color-PSGallery.png'
   LicenseUri  = 'https://github.com/roberttoups/IPv4Toolbox/blob/master/LICENSE'
 }
-$TestSchema = $TestItems |
+$TestSchema = $TestObject |
   Get-Member -MemberType 'NoteProperty' |
   Select-Object -ExpandProperty 'Name'
 $TestTags = @('Network', 'IPv4', 'IP Address', 'Windows', 'Linux', 'macOS')
 $CurrentTags = $ManifestTest.Tags |
   Sort-Object -Unique
-Describe "Test Manifest for $ModuleName" -Tag 'Manifest' {
+Describe "Manifest Test for $ModuleName" -Tag 'Manifest' {
   foreach($Item in $TestSchema) {
     $TestCase = @{
       CurrentItem = $ManifestTest.$Item
-      TestItem    = $TestItems.$Item
+      TestItem    = $TestObject.$Item
     }
     # $TestItem = $ManifestTest.$Item
-    It "The Manifest $Item should be $($TestItems.$Item)" -TestCases $TestCase {
+    It "The Manifest $Item should be $($TestObject.$Item)" -TestCases $TestCase {
       param(
         $CurrentItem,
         $TestItem
