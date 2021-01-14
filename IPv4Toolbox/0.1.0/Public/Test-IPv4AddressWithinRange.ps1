@@ -1,11 +1,11 @@
 <#
 .SYNOPSIS
 
-  Evaluates if an IPv4 Address is equal or within an IPv4 Address range
+  Evaluates if an IPv4 Address is equal or within an IPv4 Address range.
 
 .DESCRIPTION
 
-  Evaluates if an IPv4 Address is equal or within an IPv4 Address range
+  Evaluates if an IPv4 Address is equal or within an IPv4 Address range.
 
 .PARAMETER FirstIPv4Address
 
