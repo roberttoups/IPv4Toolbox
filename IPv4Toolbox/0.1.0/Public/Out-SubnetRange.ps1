@@ -22,7 +22,7 @@
 .EXAMPLE
 
   Out-SubnetRange -Subnet 192.168.1.0 -Prefix 28
-  
+
   192.168.1.1
   192.168.1.2
   192.168.1.3
