@@ -24,9 +24,7 @@ Sorts an array of IPv4 Addresses.
 ### EXAMPLE 1
 ```powershell
 Invoke-IPv4ListSort -IPv4AddressList @('192.168.0.1','10.12.2.2','1.1.1.1','8.8.8.8')
-```
 
-```powershell
 1.1.1.1
 8.8.8.8
 10.12.2.2
@@ -36,9 +34,7 @@ Invoke-IPv4ListSort -IPv4AddressList @('192.168.0.1','10.12.2.2','1.1.1.1','8.8.
 ### EXAMPLE 2
 ```powershell
 Invoke-IPv4ListSort -IPv4AddressList @('192.168.0.1','10.12.2.2','1.1.1.1','8.8.8.8') -Descending
-```
 
-```powershell
 192.168.0.1
 10.12.2.2
 8.8.8.8
@@ -48,9 +44,7 @@ Invoke-IPv4ListSort -IPv4AddressList @('192.168.0.1','10.12.2.2','1.1.1.1','8.8.
 ### EXAMPLE 3
 ```powershell
 Invoke-IPv4ListSort -IPv4AddressList @('1.1.1.1','192.168.1.0/28','10.12.13.14','8.8.8.8','4.2.2.1','192.168.23.2/29')
-```
 
-```powershell
 1.1.1.1
 4.2.2.1
 8.8.8.8

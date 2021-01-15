@@ -30,9 +30,7 @@ Returns the information regarding a subnet that an IPv4 Address exists and retur
 ### EXAMPLE 1
 ```powershell
 Get-SubnetInformation -IPv4Address 192.168.1.120 -Mask 255.255.254.0
-```
 
-```powershell
 SubnetId              : 192.168.0.0
 BroadcastAddress      : 192.168.1.255
 SubnetMask            : 255.255.254.0
@@ -46,9 +44,7 @@ TotalClassCSubnets    : 2
 ### EXAMPLE 2
 ```powershell
 Get-SubnetInformation -Ipv4Address 192.168.1.120 -Prefix 16
-```
 
-```powershell
 SubnetId              : 192.168.0.0
 BroadcastAddress      : 192.168.255.255
 SubnetMask            : 255.255.0.0
@@ -92,7 +88,7 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetMask
-'255.0.0.0', '255.128.0.0', '255.192.0.0', '255.224.0.0', '255.240.0.0', '255.248.0.0', '255.252.0.0', '255.254.0.0', '255.255.0.0', '255.255.128.0', '255.255.192.0', '255.255.224.0', '255.255.240.0', '255.255.248.0', '255.255.252.0', '255.255.254.0', '255.255.255.0', '255.255.255.128', '255.255.255.192', '255.255.255.224', '255.255.255.240', '255.255.255.248', '255.255.255.252', '255.255.255.254', '255.255.255.255'
+{{ Fill SubnetMask Description }}
 
 ```yaml
 Type: System.String
