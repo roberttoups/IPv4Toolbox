@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<helpItems schema="maml"
-  xmlns="http://msh">
-  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10"
-    xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"
-    xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10"
-    xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
       <command:name>ConvertTo-InverseAddress</command:name>
       <command:verb>ConvertTo</command:verb>
@@ -144,10 +140,7 @@
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
-  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10"
-    xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"
-    xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10"
-    xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
       <command:name>Get-SubnetInformation</command:name>
       <command:verb>Get</command:verb>
@@ -204,7 +197,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Mask">
           <maml:name>SubnetMask</maml:name>
           <maml:description>
-            <maml:para>{{ Fill SubnetMask Description }}</maml:para>
+            <maml:para>The subnet mask of the network</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -243,7 +236,7 @@
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Mask">
         <maml:name>SubnetMask</maml:name>
         <maml:description>
-          <maml:para>{{ Fill SubnetMask Description }}</maml:para>
+          <maml:para>The subnet mask of the network</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
@@ -272,7 +265,7 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
-        <dev:code>Get-SubnetInformation -IPv4Address 192.168.1.120 -Mask 255.255.254.0
+        <dev:code>Get-SubnetInformation -IPv4Address 192.168.1.120 -SubnetMask 255.255.254.0
 
 SubnetId              : 192.168.0.0
 BroadcastAddress      : 192.168.1.255
@@ -310,10 +303,7 @@ TotalClassCSubnets    : 256</dev:code>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
-  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10"
-    xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"
-    xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10"
-    xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
       <command:name>Invoke-IPv4GeoLookup</command:name>
       <command:verb>Invoke</command:verb>
@@ -395,10 +385,7 @@ mapReference : https://www.google.com/maps?q=-27.4766,153.0166</dev:code>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
-  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10"
-    xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"
-    xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10"
-    xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
       <command:name>Invoke-IPv4ListSort</command:name>
       <command:verb>Invoke</command:verb>
@@ -536,10 +523,7 @@ mapReference : https://www.google.com/maps?q=-27.4766,153.0166</dev:code>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
-  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10"
-    xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"
-    xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10"
-    xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
       <command:name>Out-SubnetRange</command:name>
       <command:verb>Out</command:verb>
@@ -683,10 +667,7 @@ mapReference : https://www.google.com/maps?q=-27.4766,153.0166</dev:code>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
-  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10"
-    xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"
-    xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10"
-    xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
       <command:name>Split-Subnet</command:name>
       <command:verb>Split</command:verb>
@@ -822,10 +803,7 @@ AWSTotalHosts       : 124</dev:code>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
-  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10"
-    xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"
-    xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10"
-    xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
       <command:name>Test-IPv4AddressWithinRange</command:name>
       <command:verb>Test</command:verb>

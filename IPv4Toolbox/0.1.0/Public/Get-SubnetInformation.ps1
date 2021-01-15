@@ -21,7 +21,7 @@
 
 .EXAMPLE
 
-  Get-SubnetInformation -IPv4Address 192.168.1.120 -Mask 255.255.254.0
+  Get-SubnetInformation -IPv4Address 192.168.1.120 -SubnetMask 255.255.254.0
 
   SubnetId              : 192.168.0.0
   BroadcastAddress      : 192.168.1.255
