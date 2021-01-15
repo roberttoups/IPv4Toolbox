@@ -11,7 +11,7 @@
 
   The IPv4 Address
 
-.PARAMETER Mask
+.PARAMETER SubnetMask
 
   The subnet mask of the network
 
