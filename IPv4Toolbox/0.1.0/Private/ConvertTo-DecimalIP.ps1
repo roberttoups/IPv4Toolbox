@@ -33,9 +33,8 @@ function ConvertTo-DecimalIP {
     $IPAddressObject
   )
 
-  begin {
+  begin {}
 
-  }
   process {
     $Position = 3
     $DecimalIp = 0
@@ -44,7 +43,5 @@ function ConvertTo-DecimalIP {
     [UInt32]$DecimalIp
   }
 
-  end {
-
-  }
+  end {}
 }

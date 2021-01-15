@@ -24,9 +24,7 @@ Returns GeoIP Information from ip-api.com.
 ### EXAMPLE 1
 ```powershell
 Invoke-IPv4GeoLookup -IPv4Address 1.1.1.1
-```
 
-```powershell
 status       : success
 country      : Australia
 countryCode  : AU

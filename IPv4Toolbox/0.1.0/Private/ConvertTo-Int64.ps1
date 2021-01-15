@@ -36,6 +36,12 @@ function ConvertTo-Int64 {
     [String]
     $IPv4Address
   )
-  $Octets = $IPv4Address.Split('.')
-  return [Int64]([Int64]$Octets[0] * 16777216 + [Int64]$Octets[1] * 65536 + [Int64]$Octets[2] * 256 + [Int64]$Octets[3])
+  begin {}
+
+  process {
+    $Octets = $IPv4Address.Split('.')
+    [Int64]([Int64]$Octets[0] * 16777216 + [Int64]$Octets[1] * 65536 + [Int64]$Octets[2] * 256 + [Int64]$Octets[3])
+  }
+
+  end {}
 }

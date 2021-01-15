@@ -1,34 +1,45 @@
----
-Module Name: IPv4Toolbox
-Module Guid: b1a4c4a0-f480-4831-a6e0-141487f746b4
-Download Help Link: {{ Update Download Link }}
-Help Version: {{ Please enter version of help manually (X.X.X.X) format }}
-Locale: en-US
----
 
-# IPv4Toolbox Module
+
+![Pester](https://github.com/roberttoups/IPv4Toolbox/workflows/Pester/badge.svg)![License](https://img.shields.io/github/license/roberttoups/IPv4Toolbox)![Windows](https://img.shields.io/badge/OS-Windows-success)![Linux](https://img.shields.io/badge/OS-linux-success)![macOS](https://img.shields.io/badge/OS-macOS-success)
+
+# ![IPv4Toolbox](icons/Color-small.png) IPv4Toolbox PowerShell Module
+
 ## Description
-{{ Fill in the Description }}
 
-## IPv4Toolbox Cmdlets
-### [ConvertTo-InverseAddress](ConvertTo-InverseAddress.md)
-{{ Fill in the Description }}
+Module to simplify the calculations associated to IPv4 addressing.
 
-### [Get-SubnetInformation](Get-SubnetInformation.md)
-{{ Fill in the Description }}
+## Functions
 
-### [Invoke-IPv4GeoLookup](Invoke-IPv4GeoLookup.md)
-{{ Fill in the Description }}
+### [ConvertTo-InverseAddress](IPv4Toolbox/0.1.0/Docs/ConvertTo-InverseAddress.md)
 
-### [Invoke-IPv4ListSort](Invoke-IPv4ListSort.md)
-{{ Fill in the Description }}
+Converts an IPv4 Address or Subnet into Windows PTR Zone compatible domain name.
 
-### [Out-SubnetRange](Out-SubnetRange.md)
-{{ Fill in the Description }}
+### [Get-SubnetInformation](IPv4Toolbox/0.1.0/Docs/Get-SubnetInformation.md)
 
-### [Split-Subnet](Split-Subnet.md)
-{{ Fill in the Description }}
+Returns the information regarding a subnet that an IPv4 Address exists.
 
-### [Test-IPv4AddressWithinRange](Test-IPv4AddressWithinRange.md)
-{{ Fill in the Description }}
+### [Invoke-IPv4GeoLookup](IPv4Toolbox/0.1.0/Docs/Invoke-IPv4GeoLookup.md)
 
+Returns GeoIP Information from ip-api.com.
+
+### [Invoke-IPv4ListSort](IPv4Toolbox/0.1.0/Docs/Invoke-IPv4ListSort.md)
+
+Sorts an array of IPv4 Addresses include CIDR address ranges.
+
+### [Out-SubnetRange](IPv4Toolbox/0.1.0/Docs/Out-SubnetRange.md)
+
+Outputs a list of IPv4 Addresses from a CIDR address range.
+
+### [Split-Subnet](IPv4Toolbox/0.1.0/Docs/Split-Subnet.md)
+
+Breaks up a larger CIDR into small CIDRs.
+
+### [Test-IPv4AddressWithinRange](IPv4Toolbox/0.1.0/Docs/Test-IPv4AddressWithinRange.md)
+
+Evaluates if an IPv4 Address is equal or within an IPv4 Address range.
+
+## License
+
+IPv4Toolbox is provided under the [Apache license](LICENSE.md).
+
+Authored by Robert M. Toups, Jr.

@@ -30,9 +30,7 @@ Outputs a list of IPv4 Addresses from a CIDR address range.
 ### EXAMPLE 1
 ```powershell
 Out-SubnetRange -Subnet 192.168.1.0 -Prefix 28
-```
 
-```powershell
 192.168.1.1
 192.168.1.2
 192.168.1.3
