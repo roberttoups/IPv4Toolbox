@@ -1,7 +1,7 @@
 ---
 external help file: IPv4Toolbox-help.xml
 Module Name: IPv4Toolbox
-online version:
+online version: http://www.github.com/roberttoups/IPv4Toolbox
 schema: 2.0.0
 ---
 
@@ -24,32 +24,33 @@ Sorts an array of IPv4 Addresses.
 ### EXAMPLE 1
 ```powershell
 Invoke-IPv4ListSort -IPv4AddressList @('192.168.0.1','10.12.2.2','1.1.1.1','8.8.8.8')
-1.1.1.1
-8.8.8.8
-10.12.2.2
-192.168.0.1
 ```
 
 ```powershell
-    
+1.1.1.1
+8.8.8.8
+10.12.2.2
+192.168.0.1    
 ```
 
 ### EXAMPLE 2
 ```powershell
 Invoke-IPv4ListSort -IPv4AddressList @('192.168.0.1','10.12.2.2','1.1.1.1','8.8.8.8') -Descending
-192.168.0.1
-10.12.2.2
-8.8.8.8
-1.1.1.1
 ```
 
 ```powershell
-         
+192.168.0.1
+10.12.2.2
+8.8.8.8
+1.1.1.1    
 ```
 
 ### EXAMPLE 3
 ```powershell
 Invoke-IPv4ListSort -IPv4AddressList @('1.1.1.1','192.168.1.0/28','10.12.13.14','8.8.8.8','4.2.2.1','192.168.23.2/29')
+```
+
+```powershell
 1.1.1.1
 4.2.2.1
 8.8.8.8
@@ -73,11 +74,7 @@ Invoke-IPv4ListSort -IPv4AddressList @('1.1.1.1','192.168.1.0/28','10.12.13.14',
 192.168.23.3
 192.168.23.4
 192.168.23.5
-192.168.23.6
-```
-
-```powershell
-              
+192.168.23.6    
 ```
 
 ## PARAMETERS
@@ -122,3 +119,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
+[http://www.github.com/roberttoups/IPv4Toolbox](http://www.github.com/roberttoups/IPv4Toolbox)
+

@@ -37,7 +37,7 @@ Test-IPv4AddressWithinRange -FirstIPv4Address '192.168.1.1' -LastIPv4Address '19
 ```
 
 ```powershell
-False     True    
+True    
 ```
 
 ## PARAMETERS
