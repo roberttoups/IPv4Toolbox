@@ -27,9 +27,9 @@
 
  .EXAMPLE
 
- Test-IPv4AddressWithinRange -FirstIPv4Address '192.168.1.1' -LastIPv4Address '192.168.1.50' -TestIPv4Address '192.168.1.20'
+  Test-IPv4AddressWithinRange -FirstIPv4Address '192.168.1.1' -LastIPv4Address '192.168.1.50' -TestIPv4Address '192.168.1.20'
 
- True
+  True
 
 .LINK
 

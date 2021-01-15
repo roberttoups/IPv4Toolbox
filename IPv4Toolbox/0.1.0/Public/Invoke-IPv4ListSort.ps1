@@ -19,6 +19,7 @@
 .EXAMPLE
 
   Invoke-IPv4ListSort -IPv4AddressList @('192.168.0.1','10.12.2.2','1.1.1.1','8.8.8.8')
+
   1.1.1.1
   8.8.8.8
   10.12.2.2
@@ -27,6 +28,7 @@
 .EXAMPLE
 
   Invoke-IPv4ListSort -IPv4AddressList @('192.168.0.1','10.12.2.2','1.1.1.1','8.8.8.8') -Descending
+
   192.168.0.1
   10.12.2.2
   8.8.8.8
@@ -35,6 +37,7 @@
 .EXAMPLE
 
   Invoke-IPv4ListSort -IPv4AddressList @('1.1.1.1','192.168.1.0/28','10.12.13.14','8.8.8.8','4.2.2.1','192.168.23.2/29')
+
   1.1.1.1
   4.2.2.1
   8.8.8.8
@@ -64,6 +67,8 @@
 .NOTES
 
 .LINK
+
+  http://www.github.com/roberttoups/IPv4Toolbox
 
 #>
 function Invoke-IPv4ListSort {
