@@ -49,6 +49,7 @@ function Get-PrefixTable {
   [OutputType([HashTable])]
   param()
   begin {}
+
   process {
     $HashTable = @{}
     for($Prefix = 8; $Prefix -le 32; $Prefix++) {
@@ -56,5 +57,6 @@ function Get-PrefixTable {
     }
     $HashTable
   }
+
   end {}
 }

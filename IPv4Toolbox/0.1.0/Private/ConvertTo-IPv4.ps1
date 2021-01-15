@@ -33,6 +33,7 @@ function ConvertTo-IPv4 {
     $Integer
   )
   begin {}
+
   process {
     [Int32]$FirstOctet = ([System.Math]::Truncate($Integer / 16777216))
     [Int32]$SecondOctet = ([System.Math]::Truncate(($Integer % 16777216) / 65536))
@@ -40,5 +41,6 @@ function ConvertTo-IPv4 {
     [Int32]$FourthOctet = ([System.Math]::Truncate($Integer % 256))
     "$($FirstOctet).$($SecondOctet).$($ThirdOctet).$($FourthOctet)"
   }
+
   end {}
 }
