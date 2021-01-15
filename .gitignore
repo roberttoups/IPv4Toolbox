@@ -6,7 +6,5 @@
 !.vscode/*
 !README.md
 !LICENSE
-!icons/
-!icons/*.png
 !IPv4Toolbox/
 !IPv4Toolbox/**
