@@ -38,7 +38,7 @@ Prefix                : 23
 FirstIPv4Address      : 192.168.0.1
 LastIPv4Address       : 192.168.1.254
 TotalHosts            : 510
-TotalClassCSubnets    : 2    
+TotalClassCSubnets    : 2
 ```
 
 ### EXAMPLE 2
@@ -52,7 +52,7 @@ Prefix                : 16
 FirstIPv4Address      : 192.168.0.1
 LastIPv4Address       : 192.168.255.254
 TotalHosts            : 65534
-TotalClassCSubnets    : 256    
+TotalClassCSubnets    : 256
 ```
 
 ## PARAMETERS

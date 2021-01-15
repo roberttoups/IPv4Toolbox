@@ -45,7 +45,7 @@ FirstIPv4Address    : 10.2.2.129
 LastIPv4Address     : 10.2.2.254
 TotalHosts          : 126
 AWSFirstIPv4Address : 10.2.2.131
-AWSTotalHosts       : 124    
+AWSTotalHosts       : 124
 ```
 
 ## PARAMETERS

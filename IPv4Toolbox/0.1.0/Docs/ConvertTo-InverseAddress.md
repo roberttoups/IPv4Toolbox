@@ -31,7 +31,7 @@ Converts an IPv4 Address or Subnet into Windows PTR Zone compatible domain name.
 ```powershell
 ConvertTo-InverseAddress -IPv4Address '192.168.1.1'
 
-1.1.168.192.in-addr.arpa    
+1.1.168.192.in-addr.arpa
 ```
 
 ### EXAMPLE 2
@@ -41,7 +41,7 @@ ConvertTo-InverseAddress -Subnet '10.2.2.0' -Prefix 22
 0.2.10.in-addr.arpa
 1.2.10.in-addr.arpa
 2.2.10.in-addr.arpa
-3.2.10.in-addr.arpa    
+3.2.10.in-addr.arpa
 ```
 
 ## PARAMETERS

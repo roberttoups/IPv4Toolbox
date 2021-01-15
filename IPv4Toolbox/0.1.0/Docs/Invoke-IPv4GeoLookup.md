@@ -39,7 +39,7 @@ isp          : Cloudflare, Inc
 org          : APNIC and Cloudflare DNS Resolver project
 as           : AS13335 Cloudflare, Inc.
 query        : 1.1.1.1
-mapReference : https://www.google.com/maps?q=-27.4766,153.0166    
+mapReference : https://www.google.com/maps?q=-27.4766,153.0166
 ```
 
 ## PARAMETERS
