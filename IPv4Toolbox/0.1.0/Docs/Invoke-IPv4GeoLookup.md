@@ -26,6 +26,7 @@ Returns GeoIP Information from ip-api.com.
 Invoke-IPv4GeoLookup -IPv4Address 1.1.1.1
 ```
 
+```powershell
 status       : success
 country      : Australia
 countryCode  : AU
@@ -40,7 +41,8 @@ isp          : Cloudflare, Inc
 org          : APNIC and Cloudflare DNS Resolver project
 as           : AS13335 Cloudflare, Inc.
 query        : 1.1.1.1
-mapReference : https://www.google.com/maps?q=-27.4766,153.0166
+mapReference : https://www.google.com/maps?q=-27.4766,153.0166    
+```
 
 ## PARAMETERS
 

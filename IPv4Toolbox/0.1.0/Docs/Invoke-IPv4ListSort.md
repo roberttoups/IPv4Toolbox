@@ -30,6 +30,10 @@ Invoke-IPv4ListSort -IPv4AddressList @('192.168.0.1','10.12.2.2','1.1.1.1','8.8.
 192.168.0.1
 ```
 
+```powershell
+    
+```
+
 ### EXAMPLE 2
 ```powershell
 Invoke-IPv4ListSort -IPv4AddressList @('192.168.0.1','10.12.2.2','1.1.1.1','8.8.8.8') -Descending
@@ -37,6 +41,10 @@ Invoke-IPv4ListSort -IPv4AddressList @('192.168.0.1','10.12.2.2','1.1.1.1','8.8.
 10.12.2.2
 8.8.8.8
 1.1.1.1
+```
+
+```powershell
+         
 ```
 
 ### EXAMPLE 3
@@ -66,6 +74,10 @@ Invoke-IPv4ListSort -IPv4AddressList @('1.1.1.1','192.168.1.0/28','10.12.13.14',
 192.168.23.4
 192.168.23.5
 192.168.23.6
+```
+
+```powershell
+              
 ```
 
 ## PARAMETERS

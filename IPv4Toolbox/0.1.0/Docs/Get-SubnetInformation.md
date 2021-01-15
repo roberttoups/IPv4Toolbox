@@ -32,6 +32,7 @@ Returns the information regarding a subnet that an IPv4 Address exists and retur
 Get-SubnetInformation -IPv4Address 192.168.1.120 -Mask 255.255.254.0
 ```
 
+```powershell
 SubnetId              : 192.168.0.0
 BroadcastAddress      : 192.168.1.255
 SubnetMask            : 255.255.254.0
@@ -39,21 +40,31 @@ Prefix                : 23
 FirstIPv4Address      : 192.168.0.1
 LastIPv4Address       : 192.168.1.254
 TotalHosts            : 510
-TotalClassCSubnets    : 2
+TotalClassCSubnets    : 2    
+```
 
 ### EXAMPLE 2
 ```powershell
 Get-SubnetInformation -Ipv4Address 192.168.1.120 -Prefix 16
 ```
 
+```powershell
 SubnetId              : 192.168.0.0
+BroadcastAddress      : 192.168.1.255
+SubnetMask            : 255.255.254.0
+Prefix                : 23
+FirstIPv4Address      : 192.168.0.1
+LastIPv4Address       : 192.168.1.254
+TotalHosts            : 510
+TotalClassCSubnets    : 2     SubnetId              : 192.168.0.0
 BroadcastAddress      : 192.168.255.255
 SubnetMask            : 255.255.0.0
 Prefix                : 16
 FirstIPv4Address      : 192.168.0.1
 LastIPv4Address       : 192.168.255.254
 TotalHosts            : 65534
-TotalClassCSubnets    : 256
+TotalClassCSubnets    : 256    
+```
 
 ## PARAMETERS
 

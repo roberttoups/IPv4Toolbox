@@ -26,6 +26,7 @@ Breaks up a larger CIDR into small CIDRs.
 Split-Subnet -Subnet 10.2.2.0 -Prefix 24 -TargetPrefix 25
 ```
 
+```powershell
 SubnetId            : 10.2.2.0
 BroadcastAddress    : 10.2.2.127
 SubnetMask          : 255.255.255.128
@@ -46,7 +47,8 @@ FirstIPv4Address    : 10.2.2.129
 LastIPv4Address     : 10.2.2.254
 TotalHosts          : 126
 AWSFirstIPv4Address : 10.2.2.131
-AWSTotalHosts       : 124
+AWSTotalHosts       : 124    
+```
 
 ## PARAMETERS
 
