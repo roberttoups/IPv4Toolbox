@@ -33,7 +33,7 @@
   Description       = 'Module to assist in the manipulation of IPv4 Addresses and Subnets.'
 
   # Minimum version of the PowerShell engine required by this module
-  PowerShellVersion = '3.0.0'
+  PowerShellVersion = '3.0'
 
   # Name of the PowerShell host required by this module
   # PowerShellHostName = ''
