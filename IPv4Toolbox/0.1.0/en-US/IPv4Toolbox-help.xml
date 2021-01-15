@@ -17,9 +17,9 @@
         <maml:name>ConvertTo-InverseAddress</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
           <maml:name>IPv4Address</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>IPv4 Address to convert to an inverse address</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String[]</command:parameterValue>
           <dev:type>
             <maml:name>System.String[]</maml:name>
@@ -32,9 +32,9 @@
         <maml:name>ConvertTo-InverseAddress</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
           <maml:name>Subnet</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The subnet id to convert to an inverse address</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -44,9 +44,9 @@
         </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
           <maml:name>Prefix</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The subnet prefix for the subnet to convert to an inverse address</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Int32</command:parameterValue>
           <dev:type>
             <maml:name>System.Int32</maml:name>
@@ -59,9 +59,9 @@
     <command:parameters>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
         <maml:name>IPv4Address</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>IPv4 Address to convert to an inverse address</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String[]</command:parameterValue>
         <dev:type>
           <maml:name>System.String[]</maml:name>
@@ -71,9 +71,9 @@
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
         <maml:name>Prefix</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The subnet prefix for the subnet to convert to an inverse address</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Int32</command:parameterValue>
         <dev:type>
           <maml:name>System.Int32</maml:name>
@@ -83,9 +83,9 @@
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
         <maml:name>Subnet</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The subnet id to convert to an inverse address</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
           <maml:name>System.String</maml:name>
@@ -113,16 +113,23 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
-        <dev:code>ConvertTo-InverseAddress -IPv4Address '192.168.1.1'</dev:code>
+        <dev:code>ConvertTo-InverseAddress -IPv4Address '192.168.1.1'
+
+1.1.168.192.in-addr.arpa</dev:code>
         <dev:remarks>
-          <maml:para>1.1.168.192.in-addr.arpa</maml:para>
+          <maml:para></maml:para>
         </dev:remarks>
       </command:example>
       <command:example>
         <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
-        <dev:code>ConvertTo-InverseAddress -Subnet '10.2.2.0' -Prefix 22</dev:code>
+        <dev:code>ConvertTo-InverseAddress -Subnet '10.2.2.0' -Prefix 22
+
+1.1.168.192.in-addr.arpa     0.2.10.in-addr.arpa
+1.2.10.in-addr.arpa
+2.2.10.in-addr.arpa
+3.2.10.in-addr.arpa</dev:code>
         <dev:remarks>
-          <maml:para>0.2.10.in-addr.arpa 1.2.10.in-addr.arpa 2.2.10.in-addr.arpa 3.2.10.in-addr.arpa</maml:para>
+          <maml:para></maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -150,9 +157,9 @@
         <maml:name>Get-SubnetInformation</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="IPAddress">
           <maml:name>IPv4Address</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The IPv4 Address</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -162,9 +169,9 @@
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Prefix</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The network prefix</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Int32</command:parameterValue>
           <dev:type>
             <maml:name>System.Int32</maml:name>
@@ -177,9 +184,9 @@
         <maml:name>Get-SubnetInformation</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="IPAddress">
           <maml:name>IPv4Address</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The IPv4 Address</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -189,9 +196,9 @@
         </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Mask">
           <maml:name>SubnetMask</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>'255.0.0.0', '255.128.0.0', '255.192.0.0', '255.224.0.0', '255.240.0.0', '255.248.0.0', '255.252.0.0', '255.254.0.0', '255.255.0.0', '255.255.128.0', '255.255.192.0', '255.255.224.0', '255.255.240.0', '255.255.248.0', '255.255.252.0', '255.255.254.0', '255.255.255.0', '255.255.255.128', '255.255.255.192', '255.255.255.224', '255.255.255.240', '255.255.255.248', '255.255.255.252', '255.255.255.254', '255.255.255.255'</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -204,9 +211,9 @@
     <command:parameters>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="IPAddress">
         <maml:name>IPv4Address</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The IPv4 Address</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
           <maml:name>System.String</maml:name>
@@ -216,9 +223,9 @@
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Prefix</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The network prefix</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Int32</command:parameterValue>
         <dev:type>
           <maml:name>System.Int32</maml:name>
@@ -228,9 +235,9 @@
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Mask">
         <maml:name>SubnetMask</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>'255.0.0.0', '255.128.0.0', '255.192.0.0', '255.224.0.0', '255.240.0.0', '255.248.0.0', '255.252.0.0', '255.254.0.0', '255.255.0.0', '255.255.128.0', '255.255.192.0', '255.255.224.0', '255.255.240.0', '255.255.248.0', '255.255.252.0', '255.255.254.0', '255.255.255.0', '255.255.255.128', '255.255.255.192', '255.255.255.224', '255.255.255.240', '255.255.255.248', '255.255.255.252', '255.255.255.254', '255.255.255.255'</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
           <maml:name>System.String</maml:name>
@@ -258,16 +265,41 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
-        <dev:code>Get-SubnetInformation -IPv4Address 192.168.1.120 -Mask 255.255.254.0</dev:code>
+        <dev:code>Get-SubnetInformation -IPv4Address 192.168.1.120 -Mask 255.255.254.0
+
+SubnetId              : 192.168.0.0
+BroadcastAddress      : 192.168.1.255
+SubnetMask            : 255.255.254.0
+Prefix                : 23
+FirstIPv4Address      : 192.168.0.1
+LastIPv4Address       : 192.168.1.254
+TotalHosts            : 510
+TotalClassCSubnets    : 2</dev:code>
         <dev:remarks>
-          <maml:para>SubnetId              : 192.168.0.0 BroadcastAddress      : 192.168.1.255 SubnetMask            : 255.255.254.0 Prefix                : 23 FirstIPv4Address      : 192.168.0.1 LastIPv4Address       : 192.168.1.254 TotalHosts            : 510 TotalClassCSubnets    : 2</maml:para>
+          <maml:para></maml:para>
         </dev:remarks>
       </command:example>
       <command:example>
         <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
-        <dev:code>Get-SubnetInformation -Ipv4Address 192.168.1.120 -Prefix 16</dev:code>
+        <dev:code>Get-SubnetInformation -Ipv4Address 192.168.1.120 -Prefix 16
+
+SubnetId              : 192.168.0.0
+BroadcastAddress      : 192.168.1.255
+SubnetMask            : 255.255.254.0
+Prefix                : 23
+FirstIPv4Address      : 192.168.0.1
+LastIPv4Address       : 192.168.1.254
+TotalHosts            : 510
+TotalClassCSubnets    : 2     SubnetId              : 192.168.0.0
+BroadcastAddress      : 192.168.255.255
+SubnetMask            : 255.255.0.0
+Prefix                : 16
+FirstIPv4Address      : 192.168.0.1
+LastIPv4Address       : 192.168.255.254
+TotalHosts            : 65534
+TotalClassCSubnets    : 256</dev:code>
         <dev:remarks>
-          <maml:para>SubnetId              : 192.168.0.0 BroadcastAddress      : 192.168.255.255 SubnetMask            : 255.255.0.0 Prefix                : 16 FirstIPv4Address      : 192.168.0.1 LastIPv4Address       : 192.168.255.254 TotalHosts            : 65534 TotalClassCSubnets    : 256</maml:para>
+          <maml:para></maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -295,9 +327,9 @@
         <maml:name>Invoke-IPv4GeoLookup</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="IPAddress">
           <maml:name>IPv4Address</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The non-RFC 1918 IPv4 Address to obtain the GeoIP information.</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -310,9 +342,9 @@
     <command:parameters>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="IPAddress">
         <maml:name>IPv4Address</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The non-RFC 1918 IPv4 Address to obtain the GeoIP information.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
           <maml:name>System.String</maml:name>
@@ -331,9 +363,25 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
-        <dev:code>Invoke-IPv4GeoLookup -IPv4Address 1.1.1.1</dev:code>
+        <dev:code>Invoke-IPv4GeoLookup -IPv4Address 1.1.1.1
+
+status       : success
+country      : Australia
+countryCode  : AU
+region       : QLD
+regionName   : Queensland
+city         : South Brisbane
+zip          : 4101
+lat          : -27.4766
+lon          : 153.0166
+timezone     : Australia/Brisbane
+isp          : Cloudflare, Inc
+org          : APNIC and Cloudflare DNS Resolver project
+as           : AS13335 Cloudflare, Inc.
+query        : 1.1.1.1
+mapReference : https://www.google.com/maps?q=-27.4766,153.0166</dev:code>
         <dev:remarks>
-          <maml:para>status       : success country      : Australia countryCode  : AU region       : QLD regionName   : Queensland city         : South Brisbane zip          : 4101 lat          : -27.4766 lon          : 153.0166 timezone     : Australia/Brisbane isp          : Cloudflare, Inc org          : APNIC and Cloudflare DNS Resolver project as           : AS13335 Cloudflare, Inc. query        : 1.1.1.1 mapReference : https://www.google.com/maps?q=-27.4766,153.0166</maml:para>
+          <maml:para></maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -361,9 +409,9 @@
         <maml:name>Invoke-IPv4ListSort</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
           <maml:name>IPv4AddressList</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The list of IPv4 Addresses</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String[]</command:parameterValue>
           <dev:type>
             <maml:name>System.String[]</maml:name>
@@ -373,9 +421,9 @@
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Descending</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>This switch will sort the IPv4 Addresses in reverse order</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>System.Management.Automation.SwitchParameter</maml:name>
             <maml:uri />
@@ -387,9 +435,9 @@
     <command:parameters>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Descending</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>This switch will sort the IPv4 Addresses in reverse order</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
         <dev:type>
           <maml:name>System.Management.Automation.SwitchParameter</maml:name>
@@ -399,9 +447,9 @@
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
         <maml:name>IPv4AddressList</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The list of IPv4 Addresses</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String[]</command:parameterValue>
         <dev:type>
           <maml:name>System.String[]</maml:name>
@@ -424,7 +472,9 @@
 1.1.1.1
 8.8.8.8
 10.12.2.2
-192.168.0.1</dev:code>
+192.168.0.1
+
+</dev:code>
         <dev:remarks>
           <maml:para></maml:para>
         </dev:remarks>
@@ -435,7 +485,9 @@
 192.168.0.1
 10.12.2.2
 8.8.8.8
-1.1.1.1</dev:code>
+1.1.1.1
+
+</dev:code>
         <dev:remarks>
           <maml:para></maml:para>
         </dev:remarks>
@@ -466,7 +518,9 @@
 192.168.23.3
 192.168.23.4
 192.168.23.5
-192.168.23.6</dev:code>
+192.168.23.6
+
+</dev:code>
         <dev:remarks>
           <maml:para></maml:para>
         </dev:remarks>
@@ -491,9 +545,9 @@
         <maml:name>Out-SubnetRange</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="IPv4Address">
           <maml:name>Subnet</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The subnet id of the IPv4 Address range</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -503,9 +557,9 @@
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Prefix</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The Prefix of the IPv4 Address range</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Int32</command:parameterValue>
           <dev:type>
             <maml:name>System.Int32</maml:name>
@@ -518,9 +572,9 @@
         <maml:name>Out-SubnetRange</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="IPv4Address">
           <maml:name>Subnet</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The subnet id of the IPv4 Address range</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -530,9 +584,9 @@
         </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Mask">
           <maml:name>SubnetMask</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The Subnet Mask of the IPv4 Address range</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -545,9 +599,9 @@
     <command:parameters>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Prefix</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The Prefix of the IPv4 Address range</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Int32</command:parameterValue>
         <dev:type>
           <maml:name>System.Int32</maml:name>
@@ -557,9 +611,9 @@
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="IPv4Address">
         <maml:name>Subnet</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The subnet id of the IPv4 Address range</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
           <maml:name>System.String</maml:name>
@@ -569,9 +623,9 @@
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Mask">
         <maml:name>SubnetMask</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The Subnet Mask of the IPv4 Address range</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
           <maml:name>System.String</maml:name>
@@ -590,9 +644,24 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
-        <dev:code>Out-SubnetRange -Subnet 192.168.1.0 -Prefix 28</dev:code>
+        <dev:code>Out-SubnetRange -Subnet 192.168.1.0 -Prefix 28
+
+192.168.1.1
+192.168.1.2
+192.168.1.3
+192.168.1.4
+192.168.1.5
+192.168.1.6
+192.168.1.7
+192.168.1.8
+192.168.1.9
+192.168.1.10
+192.168.1.11
+192.168.1.12
+192.168.1.13
+192.168.1.14</dev:code>
         <dev:remarks>
-          <maml:para>192.168.1.1 192.168.1.2 192.168.1.3 192.168.1.4 192.168.1.5 192.168.1.6 192.168.1.7 192.168.1.8 192.168.1.9 192.168.1.10 192.168.1.11 192.168.1.12 192.168.1.13 192.168.1.14</maml:para>
+          <maml:para></maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -620,9 +689,9 @@
         <maml:name>Split-Subnet</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="IPAddress, IPv4Address">
           <maml:name>Subnet</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The Subnet Id to split</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -632,9 +701,9 @@
         </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
           <maml:name>Prefix</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The network prefix of the source CIDR</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Int32</command:parameterValue>
           <dev:type>
             <maml:name>System.Int32</maml:name>
@@ -644,9 +713,9 @@
         </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
           <maml:name>TargetPrefix</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The network prefix to split the subnet into</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.Int32</command:parameterValue>
           <dev:type>
             <maml:name>System.Int32</maml:name>
@@ -659,9 +728,9 @@
     <command:parameters>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
         <maml:name>Prefix</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The network prefix of the source CIDR</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Int32</command:parameterValue>
         <dev:type>
           <maml:name>System.Int32</maml:name>
@@ -671,9 +740,9 @@
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="IPAddress, IPv4Address">
         <maml:name>Subnet</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The Subnet Id to split</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
           <maml:name>System.String</maml:name>
@@ -683,9 +752,9 @@
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
         <maml:name>TargetPrefix</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The network prefix to split the subnet into</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.Int32</command:parameterValue>
         <dev:type>
           <maml:name>System.Int32</maml:name>
@@ -704,10 +773,31 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
-        <dev:code>Split-Subnet -Subnet 10.2.2.0 -Prefix 24 -TargetPrefix 25</dev:code>
+        <dev:code>Split-Subnet -Subnet 10.2.2.0 -Prefix 24 -TargetPrefix 25
+
+SubnetId            : 10.2.2.0
+BroadcastAddress    : 10.2.2.127
+SubnetMask          : 255.255.255.128
+Prefix              : 25
+Subnet              : 10.2.2.0/25
+FirstIPv4Address    : 10.2.2.1
+LastIPv4Address     : 10.2.2.126
+TotalHosts          : 126
+AWSFirstIPv4Address : 10.2.2.3
+AWSTotalHosts       : 124
+
+SubnetId            : 10.2.2.128
+BroadcastAddress    : 10.2.2.255
+SubnetMask          : 255.255.255.128
+Prefix              : 25
+Subnet              : 10.2.2.128/25
+FirstIPv4Address    : 10.2.2.129
+LastIPv4Address     : 10.2.2.254
+TotalHosts          : 126
+AWSFirstIPv4Address : 10.2.2.131
+AWSTotalHosts       : 124</dev:code>
         <dev:remarks>
-          <maml:para>SubnetId            : 10.2.2.0 BroadcastAddress    : 10.2.2.127 SubnetMask          : 255.255.255.128 Prefix              : 25 Subnet              : 10.2.2.0/25 FirstIPv4Address    : 10.2.2.1 LastIPv4Address     : 10.2.2.126 TotalHosts          : 126 AWSFirstIPv4Address : 10.2.2.3 AWSTotalHosts       : 124</maml:para>
-          <maml:para>SubnetId            : 10.2.2.128 BroadcastAddress    : 10.2.2.255 SubnetMask          : 255.255.255.128 Prefix              : 25 Subnet              : 10.2.2.128/25 FirstIPv4Address    : 10.2.2.129 LastIPv4Address     : 10.2.2.254 TotalHosts          : 126 AWSFirstIPv4Address : 10.2.2.131 AWSTotalHosts       : 124</maml:para>
+          <maml:para></maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -735,9 +825,9 @@
         <maml:name>Test-IPv4AddressWithinRange</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="StartingIpAddress">
           <maml:name>FirstIPv4Address</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The first IPv4 Address</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -747,9 +837,9 @@
         </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="EndingIpAddress">
           <maml:name>LastIPv4Address</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The last IPv4 Address</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -759,9 +849,9 @@
         </command:parameter>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="TestingIpAddress">
           <maml:name>TestIPv4Address</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>The IPv4 Address to test</maml:para>
-          </maml:Description>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
             <maml:name>System.String</maml:name>
@@ -774,9 +864,9 @@
     <command:parameters>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="StartingIpAddress">
         <maml:name>FirstIPv4Address</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The first IPv4 Address</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
           <maml:name>System.String</maml:name>
@@ -786,9 +876,9 @@
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="EndingIpAddress">
         <maml:name>LastIPv4Address</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The last IPv4 Address</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
           <maml:name>System.String</maml:name>
@@ -798,9 +888,9 @@
       </command:parameter>
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="TestingIpAddress">
         <maml:name>TestIPv4Address</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>The IPv4 Address to test</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
           <maml:name>System.String</maml:name>
@@ -828,16 +918,20 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
-        <dev:code>Test-IPv4AddressWithinRange -FirstIPv4Address '192.168.1.1' -LastIPv4Address '192.168.5.21' -TestIPv4Address '192.168.6.1'</dev:code>
+        <dev:code>Test-IPv4AddressWithinRange -FirstIPv4Address '192.168.1.1' -LastIPv4Address '192.168.5.21' -TestIPv4Address '192.168.6.1'
+
+False</dev:code>
         <dev:remarks>
-          <maml:para>False</maml:para>
+          <maml:para></maml:para>
         </dev:remarks>
       </command:example>
       <command:example>
         <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
-        <dev:code>Test-IPv4AddressWithinRange -FirstIPv4Address '192.168.1.1' -LastIPv4Address '192.168.1.50' -TestIPv4Address '192.168.1.20'</dev:code>
+        <dev:code>Test-IPv4AddressWithinRange -FirstIPv4Address '192.168.1.1' -LastIPv4Address '192.168.1.50' -TestIPv4Address '192.168.1.20'
+
+False     True</dev:code>
         <dev:remarks>
-          <maml:para>True</maml:para>
+          <maml:para></maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
