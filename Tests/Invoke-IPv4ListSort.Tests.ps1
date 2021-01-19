@@ -20,10 +20,9 @@ InModuleScope $ModuleName {
       '10.0.0.4'
       '10.0.0.5'
       '10.0.0.6'
-      '192.168.1.0'
       '182.123.123.1'
+      '192.168.1.0'
     )
-
 
     Context "Testing return by $FunctionName using $($TestList -join ',')" {
       $TestReferenceObject = Invoke-IPv4ListSort -IPv4Address $TestList
@@ -36,8 +35,8 @@ InModuleScope $ModuleName {
           $ReferenceObject,
           $DifferenceObject
         )
-        Compare-Object -ReferenceObject $ReferenceObject -DifferenceObject $DifferenceObject
-        Should -Be $null
+        Compare-Object -ReferenceObject $ReferenceObject -DifferenceObject $DifferenceObject |
+          Should -Be $null
       }
 
     }
