@@ -27,7 +27,7 @@
   CompanyName       = 'Toups Design Bureau'
 
   # Copyright statement for this module
-  Copyright         = '(c) Robert M. Toups, Jr.. All rights reserved.'
+  Copyright         = '(c) 2021 Robert M. Toups, Jr., All rights reserved.'
 
   # Description of the functionality provided by this module
   Description       = 'Module to assist in the manipulation of IPv4 Addresses and Subnets.'
