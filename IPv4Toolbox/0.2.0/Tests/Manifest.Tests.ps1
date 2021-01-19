@@ -15,7 +15,7 @@ $TestObject = [PSCustomObject]@{
   Description = 'Module to assist in the manipulation of IPv4 Addresses and Subnets.'
   Version     = $Version
   ProjectUri  = 'https://github.com/roberttoups/IPv4Toolbox'
-  IconUri     = 'https://raw.githubusercontent.com/roberttoups/IPv4Toolbox/main/IPv4Toolbox/0.1.0/icons/Color-PSGallery.png'
+  IconUri     = 'https://raw.githubusercontent.com/roberttoups/IPv4Toolbox/main/IPv4Toolbox/0.2.0/icons/Color-PSGallery.png'
   LicenseUri  = 'https://github.com/roberttoups/IPv4Toolbox/blob/master/LICENSE'
 }
 $TestSchema = $TestObject |
