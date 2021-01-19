@@ -21,7 +21,7 @@ $TestObject = [PSCustomObject]@{
 $TestSchema = $TestObject |
   Get-Member -MemberType 'NoteProperty' |
   Select-Object -ExpandProperty 'Name'
-$TestTags = @('Network', 'IPv4', 'IP Address', 'Windows', 'Linux', 'macOS', 'ipcalc', 'Subnet Math', 'Split Subnets')
+$TestTags = @('Network', 'IPv4', 'IPAddress', 'Windows', 'Linux', 'macOS', 'ipcalc', 'Subnet', 'Subnets')
 $CurrentTags = $ManifestTest.Tags |
   Sort-Object -Unique
 Describe "Manifest Test for $ModuleName" -Tag 'Manifest' {
