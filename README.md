@@ -1,6 +1,6 @@
 
 
-![Pester](https://github.com/roberttoups/IPv4Toolbox/workflows/Pester/badge.svg)![License](https://img.shields.io/github/license/roberttoups/IPv4Toolbox)![Windows](https://img.shields.io/badge/OS-Windows-success)![Linux](https://img.shields.io/badge/OS-linux-success)![macOS](https://img.shields.io/badge/OS-macOS-success)
+![Pester](https://github.com/roberttoups/IPv4Toolbox/workflows/Pester/badge.svg) ![License](https://img.shields.io/github/license/roberttoups/IPv4Toolbox) ![Windows](https://img.shields.io/badge/OS-Windows-success) ![Linux](https://img.shields.io/badge/OS-Linux-success) ![macOS](https://img.shields.io/badge/OS-macOS-success)
 
 # ![IPv4Toolbox](https://raw.githubusercontent.com/roberttoups/IPv4Toolbox/master/IPv4Toolbox/0.1.0/icons/Color-small.png) IPv4Toolbox PowerShell Module
 
