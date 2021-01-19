@@ -95,7 +95,7 @@
     PSData = @{
 
       # Tags applied to this module. These help with module discovery in online galleries.
-      Tags       = @('Network', 'IPv4', 'IP Address', 'Windows', 'Linux', 'macOS')
+      Tags       = @('Network', 'IPv4', 'IP Address', 'Windows', 'Linux', 'macOS', 'ipcalc', 'Subnet Math', 'Split Subnets')
 
       # A URL to the license for this module.
       LicenseUri = 'https://github.com/roberttoups/IPv4Toolbox/blob/master/LICENSE'
@@ -104,7 +104,7 @@
       ProjectUri = 'https://github.com/roberttoups/IPv4Toolbox'
 
       # A URL to an icon representing this module.
-      IconUri    = 'https://raw.githubusercontent.com/roberttoups/IPv4Toolbox/master/icons/Color-PSGallery.png'
+      IconUri    = 'https://raw.githubusercontent.com/roberttoups/IPv4Toolbox/main/IPv4Toolbox/0.1.0/icons/Color-PSGallery.png'
 
       # ReleaseNotes of this module
       # ReleaseNotes = ''
