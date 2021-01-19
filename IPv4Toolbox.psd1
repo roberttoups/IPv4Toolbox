@@ -112,7 +112,7 @@
       ProjectUri = 'https://github.com/roberttoups/IPv4Toolbox'
 
       # A URL to an icon representing this module.
-      IconUri    = 'https://raw.githubusercontent.com/roberttoups/IPv4Toolbox/main/IPv4Toolbox/0.2.0/icons/Color-PSGallery.png'
+      IconUri    = 'https://raw.githubusercontent.com/roberttoups/IPv4Toolbox/master/icons/Color-PSGallery.png'
 
       # ReleaseNotes of this module
       # ReleaseNotes = ''
