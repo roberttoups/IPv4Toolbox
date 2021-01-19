@@ -1,6 +1,6 @@
 ---
 Module Name: IPv4Toolbox
-Module Guid: b1a4c4a0-f480-4831-a6e0-141487f746b4
+Module Guid: 00000000-0000-0000-0000-000000000000 b1a4c4a0-f480-4831-a6e0-141487f746b4
 Download Help Link: https://github.com/roberttoups/IPv4Toolbox
 Help Version: 0.2.0
 Locale: en-US
@@ -31,3 +31,4 @@ Locale: en-US
 
 ### [Test-IPv4AddressWithinRange](Test-IPv4AddressWithinRange.md)
 {{ Fill in the Description }}
+
