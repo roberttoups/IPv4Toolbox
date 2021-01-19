@@ -95,7 +95,7 @@
     PSData = @{
 
       # Tags applied to this module. These help with module discovery in online galleries.
-      Tags       = @('Network', 'IPv4', 'IP Address', 'Windows', 'Linux', 'macOS')
+      Tags       = @('Network', 'IPv4', 'IP Address', 'Windows', 'Linux', 'macOS', 'ipcalc', 'Subnet Math', 'Split Subnets')
 
       # A URL to the license for this module.
       LicenseUri = 'https://github.com/roberttoups/IPv4Toolbox/blob/master/LICENSE'
