@@ -39,8 +39,8 @@ Subnet              : 192.168.0.0/23
 FirstIPv4Address    : 192.168.0.1
 LastIPv4Address     : 192.168.1.254
 TotalHosts          : 510
-AWSFirstIPv4Address : 192.168.0.3
-AWSTotalHosts       : 508
+AWSFirstIPv4Address : 192.168.0.4
+AWSTotalHosts       : 507
 ```
 
 ### EXAMPLE 2
@@ -55,8 +55,8 @@ Subnet              : 192.168.0.0/16
 FirstIPv4Address    : 192.168.0.1
 LastIPv4Address     : 192.168.255.254
 TotalHosts          : 65534
-AWSFirstIPv4Address : 192.168.0.3
-AWSTotalHosts       : 65532
+AWSFirstIPv4Address : 192.168.0.4
+AWSTotalHosts       : 65531
 ```
 
 ## PARAMETERS
