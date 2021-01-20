@@ -141,7 +141,7 @@ function Get-SubnetInformation {
       $EndingAddress = ConvertTo-Int64 -IPv4Address $BroadcastAddressObject.IPAddressToString
       $LastAddress = ConvertTo-IPv4 -Integer ($EndingAddress - 1)
       $FirstAddress = ConvertTo-IPv4 -Integer ($StartingAddress + 1)
-      $AWSFirstIPv4Address = ConvertTo-IPv4 -Integer ($StartingAddress + 3)
+      $AWSFirstIPv4Address = ConvertTo-IPv4 -Integer ($StartingAddress + 4)
       $Hosts = ((ConvertTo-DecimalIP -IPAddressObject $BroadcastAddressObject) - (ConvertTo-DecimalIP -IPAddressObject $SubnetAddressObject) - 1)
 
       [PsCustomObject] @{

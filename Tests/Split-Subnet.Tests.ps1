@@ -31,8 +31,8 @@ InModuleScope $ModuleName {
       'FirstIPv4Address'    = '192.168.0.1'
       'LastIPv4Address'     = '192.168.0.254'
       'TotalHosts'          = '254'
-      'AWSFirstIPv4Address' = '192.168.0.3'
-      'AWSTotalHosts'       = '252'
+      'AWSFirstIPv4Address' = '192.168.0.4'
+      'AWSTotalHosts'       = '251'
     }
 
     $ReferenceObject += [PSCustomObject]@{
@@ -44,8 +44,8 @@ InModuleScope $ModuleName {
       'FirstIPv4Address'    = '192.168.1.1'
       'LastIPv4Address'     = '192.168.1.254'
       'TotalHosts'          = '254'
-      'AWSFirstIPv4Address' = '192.168.1.3'
-      'AWSTotalHosts'       = '252'
+      'AWSFirstIPv4Address' = '192.168.1.4'
+      'AWSTotalHosts'       = '251'
     }
 
     $ReferenceObject += [PSCustomObject]@{
@@ -57,8 +57,8 @@ InModuleScope $ModuleName {
       'FirstIPv4Address'    = '192.168.2.1'
       'LastIPv4Address'     = '192.168.2.254'
       'TotalHosts'          = '254'
-      'AWSFirstIPv4Address' = '192.168.2.3'
-      'AWSTotalHosts'       = '252'
+      'AWSFirstIPv4Address' = '192.168.2.4'
+      'AWSTotalHosts'       = '251'
     }
 
     $ReferenceObject += [PSCustomObject]@{
@@ -70,8 +70,8 @@ InModuleScope $ModuleName {
       'FirstIPv4Address'    = '192.168.3.1'
       'LastIPv4Address'     = '192.168.3.254'
       'TotalHosts'          = '254'
-      'AWSFirstIPv4Address' = '192.168.3.3'
-      'AWSTotalHosts'       = '252'
+      'AWSFirstIPv4Address' = '192.168.3.4'
+      'AWSTotalHosts'       = '251'
     }
     $IPv4Address = $ReferenceObject[0].SubnetId
     $TargetPrefix = $ReferenceObject[0].Prefix

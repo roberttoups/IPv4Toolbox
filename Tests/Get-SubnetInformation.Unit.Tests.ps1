@@ -29,8 +29,8 @@ InModuleScope $ModuleName {
       FirstIPv4Address    = '192.168.0.1'
       LastIPv4Address     = '192.168.0.254'
       TotalHosts          = 254
-      AWSFirstIPv4Address = '192.168.0.3'
-      AWSTotalHosts       = 252
+      AWSFirstIPv4Address = '192.168.0.4'
+      AWSTotalHosts       = 251
     }
 
     $IPv4Address = $ReferenceObject.SubnetId
