@@ -11,6 +11,7 @@ Module to simplify the calculations associated to IPv4 addressing.
 ```powershell
 Install-Module -Name 'IPv4Toolbox' -Scope 'CurrentUser'
 ```
+### [PowerShell Gallery Package Information](https://www.powershellgallery.com/packages/IPv4Toolbox)
 
 ## Functions
 
