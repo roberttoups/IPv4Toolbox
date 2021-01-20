@@ -31,8 +31,8 @@
   FirstIPv4Address    : 192.168.0.1
   LastIPv4Address     : 192.168.1.254
   TotalHosts          : 510
-  AWSFirstIPv4Address : 192.168.0.3
-  AWSTotalHosts       : 508
+  AWSFirstIPv4Address : 192.168.0.4
+  AWSTotalHosts       : 507
 
 .EXAMPLE
 
@@ -46,8 +46,8 @@
   FirstIPv4Address    : 192.168.0.1
   LastIPv4Address     : 192.168.255.254
   TotalHosts          : 65534
-  AWSFirstIPv4Address : 192.168.0.3
-  AWSTotalHosts       : 65532
+  AWSFirstIPv4Address : 192.168.0.4
+  AWSTotalHosts       : 65531
 
 .LINK
 
