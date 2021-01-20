@@ -8,27 +8,27 @@ Locale: en-US
 
 # IPv4Toolbox Module
 ## Description
-{{ Fill in the Description }}
+Module to assist in the manipulation of IPv4 Addresses and Subnets.
 
 ## IPv4Toolbox Cmdlets
 ### [ConvertTo-InverseAddress](ConvertTo-InverseAddress.md)
-{{ Fill in the Description }}
+Converts an IPv4 Address or Subnet into Windows PTR Zone compatible domain name.
 
 ### [Get-SubnetInformation](Get-SubnetInformation.md)
-{{ Fill in the Description }}
+Returns the information regarding a subnet that an IPv4 Address exists and returns information regarding Subnet ID, Broadcast Address, Subnet Mask, Network Prefix, First IP Address, Last IP Address, Total Hosts, and Total Class C addresses.
 
 ### [Invoke-IPv4GeoLookup](Invoke-IPv4GeoLookup.md)
-{{ Fill in the Description }}
+Returns GeoIP Information from ip-api.com.
 
 ### [Invoke-IPv4ListSort](Invoke-IPv4ListSort.md)
-{{ Fill in the Description }}
+Sorts an array of IPv4 Addresses.
 
 ### [Out-SubnetRange](Out-SubnetRange.md)
-{{ Fill in the Description }}
+Outputs a list of IPv4 Addresses from a CIDR address range.
 
 ### [Split-Subnet](Split-Subnet.md)
-{{ Fill in the Description }}
+Breaks up a larger CIDR into small CIDRs.
 
 ### [Test-IPv4AddressWithinRange](Test-IPv4AddressWithinRange.md)
-{{ Fill in the Description }}
+Evaluates if an IPv4 Address is equal or within an IPv4 Address range.
 

@@ -6,6 +6,12 @@
 
 Module to simplify the calculations associated to IPv4 addressing.
 
+## How to Install from the PowerShell Gallery
+
+```powershell
+Install-Module -Name 'IPv4Toolbox' -Scope 'CurrentUser'
+```
+
 ## Functions
 
 ### [ConvertTo-InverseAddress](Docs/ConvertTo-InverseAddress.md)
