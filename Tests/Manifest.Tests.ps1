@@ -51,4 +51,16 @@ Describe "Manifest Test for $ModuleName" -Tag 'Manifest' {
     Compare-Object -ReferenceObject $TestItem -DifferenceObject $CurrentItem |
       Should -Be $null
   }
+  $TestCase = @{
+    CurrentTags = $CurrentTags
+  }
+  It "The Manifest tags can only be one word each" -TestCases $TestCase {
+    param(
+      $CurrentTags
+    )
+    foreach($CurrentTag in $CurrentTags) {
+      @($CurrentTag.Split[' ']).Count |
+        Should -Be 1
+    }
+  }
 }
