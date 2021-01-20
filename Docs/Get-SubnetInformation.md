@@ -23,7 +23,7 @@ Get-SubnetInformation -IPv4Address <String> -SubnetMask <String> [<CommonParamet
 ```
 
 ## DESCRIPTION
-Returns the information regarding a subnet that an IPv4 Address exists and returns information regarding Subnet ID, Broadcast Address, Subnet Mask, Network Prefix, First IP Address, Last IP Address, Total Hosts, and Total Class C addresses.
+Returns the information regarding a subnet that an IPv4 Address exists and returns information regarding Subnet ID, Broadcast Address, Subnet Mask, Network Prefix, First IP Address, Last IP Address, Total Hosts, and AWS related information.
 
 ## EXAMPLES
 
@@ -31,28 +31,32 @@ Returns the information regarding a subnet that an IPv4 Address exists and retur
 ```powershell
 Get-SubnetInformation -IPv4Address 192.168.1.120 -SubnetMask 255.255.254.0
 
-SubnetId              : 192.168.0.0
-BroadcastAddress      : 192.168.1.255
-SubnetMask            : 255.255.254.0
-Prefix                : 23
-FirstIPv4Address      : 192.168.0.1
-LastIPv4Address       : 192.168.1.254
-TotalHosts            : 510
-TotalClassCSubnets    : 2
+SubnetId            : 192.168.0.0
+BroadcastAddress    : 192.168.1.255
+SubnetMask          : 255.255.254.0
+Prefix              : 23
+Subnet              : 192.168.0.0/23
+FirstIPv4Address    : 192.168.0.1
+LastIPv4Address     : 192.168.1.254
+TotalHosts          : 510
+AWSFirstIPv4Address : 192.168.0.3
+AWSTotalHosts       : 508
 ```
 
 ### EXAMPLE 2
 ```powershell
 Get-SubnetInformation -Ipv4Address 192.168.1.120 -Prefix 16
 
-SubnetId              : 192.168.0.0
-BroadcastAddress      : 192.168.255.255
-SubnetMask            : 255.255.0.0
-Prefix                : 16
-FirstIPv4Address      : 192.168.0.1
-LastIPv4Address       : 192.168.255.254
-TotalHosts            : 65534
-TotalClassCSubnets    : 256
+SubnetId            : 192.168.0.0
+BroadcastAddress    : 192.168.255.255
+SubnetMask          : 255.255.0.0
+Prefix              : 16
+Subnet              : 192.168.0.0/16
+FirstIPv4Address    : 192.168.0.1
+LastIPv4Address     : 192.168.255.254
+TotalHosts          : 65534
+AWSFirstIPv4Address : 192.168.0.3
+AWSTotalHosts       : 65532
 ```
 
 ## PARAMETERS

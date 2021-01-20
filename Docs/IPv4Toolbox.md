@@ -15,7 +15,7 @@ Module to assist in the manipulation of IPv4 Addresses and Subnets.
 Converts an IPv4 Address or Subnet into Windows PTR Zone compatible domain name.
 
 ### [Get-SubnetInformation](Get-SubnetInformation.md)
-Returns the information regarding a subnet that an IPv4 Address exists and returns information regarding Subnet ID, Broadcast Address, Subnet Mask, Network Prefix, First IP Address, Last IP Address, Total Hosts, and Total Class C addresses.
+Returns the information regarding a subnet that an IPv4 Address exists and returns information regarding Subnet ID, Broadcast Address, Subnet Mask, Network Prefix, First IP Address, Last IP Address, Total Hosts, and AWS related information.
 
 ### [Invoke-IPv4GeoLookup](Invoke-IPv4GeoLookup.md)
 Returns GeoIP Information from ip-api.com.
