@@ -43,6 +43,10 @@ Breaks up a larger CIDR into small CIDRs.
 
 Evaluates if an IPv4 Address is equal or within an IPv4 Address range.
 
+### [Test-PrivateIPv4Address](Docs/Test-PrivateIPv4Address.md)
+
+Determines if an IPv4 Address is in a private address space.
+
 ## License
 
 IPv4Toolbox is provided under the [Apache license](LICENSE.md).
