@@ -34,6 +34,7 @@
 #>
 function Test-PrivateIPv4Address {
   [CmdletBinding()]
+  [OutputType([Boolean])]
   param (
     [Parameter(
       Mandatory = $true,
