@@ -51,22 +51,25 @@ function Test-PrivateIPv4Address {
   begin {}
 
   process {
-    $PrivateAddressCollection = @()
-    $PrivateAddressCollection += [PSCustomObject]@{
-      Subnet = '10.0.0.0'
-      Prefix = 8
-    }
-    $PrivateAddressCollection += [PSCustomObject]@{
-      Subnet = '172.16.0.0'
-      Prefix = 12
-    }
-    $PrivateAddressCollection += [PSCustomObject]@{
-      Subnet = '192.168.0.0'
-      Prefix = 16
-    }
-    $PrivateAddressCollection += [PSCustomObject]@{
-      Subnet = '100.64.0.0'
-      Prefix = 10
+    $PrivateAddressCollection = DATA {
+      # RFC 1918
+      @{
+        Subnet = '10.0.0.0'
+        Prefix = 8
+      }
+      @{
+        Subnet = '172.16.0.0'
+        Prefix = 12
+      }
+      @{
+        Subnet = '192.168.0.0'
+        Prefix = 16
+      }
+      # RFC RFC 6598
+      @{
+        Subnet = '100.64.0.0'
+        Prefix = 10
+      }
     }
     $Found = $false
     foreach($PrivateAddress in $PrivateAddressCollection) {
