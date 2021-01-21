@@ -25,7 +25,7 @@
 function ConvertTo-Int64 {
   [CmdletBinding()]
   [OutputType([Int64])]
-  Param (
+  param (
     [Parameter(
       Mandatory = $true
     )]

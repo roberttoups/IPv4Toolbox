@@ -25,7 +25,7 @@
 function ConvertTo-DecimalIP {
   [CmdletBinding()]
   [OutputType([UInt32])]
-  Param (
+  param (
     [Parameter(
       Mandatory = $true
     )]

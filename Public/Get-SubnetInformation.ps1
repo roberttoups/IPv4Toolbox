@@ -59,7 +59,7 @@ function Get-SubnetInformation {
     DefaultParameterSetName = 'Prefix'
   )]
   [OutputType([PSCustomObject])]
-  Param (
+  param (
     [Parameter(
       Mandatory = $true,
       ValueFromPipeline = $true
