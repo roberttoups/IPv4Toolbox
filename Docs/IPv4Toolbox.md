@@ -1,6 +1,6 @@
 ---
 Module Name: IPv4Toolbox
-Module Guid: b1a4c4a0-f480-4831-a6e0-141487f746b4
+Module Guid: b1a4c4a0-f480-4831-a6e0-141487f746b4 b1a4c4a0-f480-4831-a6e0-141487f746b4
 Download Help Link: https://github.com/roberttoups/IPv4Toolbox
 Help Version: 0.2.1
 Locale: en-US
@@ -31,4 +31,7 @@ Breaks up a larger CIDR into small CIDRs.
 
 ### [Test-IPv4AddressWithinRange](Test-IPv4AddressWithinRange.md)
 Evaluates if an IPv4 Address is equal or within an IPv4 Address range.
+
+### [Test-PrivateIPv4Address](Test-PrivateIPv4Address.md)
+Determines if an IPv4 Address is in a private address space.
 
