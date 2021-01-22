@@ -80,8 +80,8 @@ function Test-PrivateIPv4Address {
       }
       $SubnetInformation = Get-SubnetInformation @ArgumentCollection
       $ArgumentCollection = @{
-        FirstIPv4Address = $SubnetInformation.FirstIPv4Address
-        LastIPv4Address  = $SubnetInformation.LastIPv4Address
+        FirstIPv4Address = $SubnetInformation.SubnetId
+        LastIPv4Address  = $SubnetInformation.BroadcastAddress
         TestIPv4Address  = $IPv4Address
       }
       $Result = Test-IPv4AddressWithinRange @ArgumentCollection
