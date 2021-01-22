@@ -33,21 +33,23 @@
   TotalHosts          : 510
   AWSFirstIPv4Address : 192.168.0.4
   AWSTotalHosts       : 507
+  PrivateAddressSpace : True
 
 .EXAMPLE
 
-  Get-SubnetInformation -Ipv4Address 192.168.1.120 -Prefix 16
+  Get-SubnetInformation -IPv4Address 8.8.0.0 -Prefix 21
 
-  SubnetId            : 192.168.0.0
-  BroadcastAddress    : 192.168.255.255
-  SubnetMask          : 255.255.0.0
-  Prefix              : 16
-  Subnet              : 192.168.0.0/16
-  FirstIPv4Address    : 192.168.0.1
-  LastIPv4Address     : 192.168.255.254
-  TotalHosts          : 65534
-  AWSFirstIPv4Address : 192.168.0.4
-  AWSTotalHosts       : 65531
+  SubnetId            : 8.8.0.0
+  BroadcastAddress    : 8.8.7.255
+  SubnetMask          : 255.255.248.0
+  Prefix              : 21
+  Subnet              : 8.8.0.0/21
+  FirstIPv4Address    : 8.8.0.1
+  LastIPv4Address     : 8.8.7.254
+  TotalHosts          : 2046
+  AWSFirstIPv4Address :
+  AWSTotalHosts       :
+  PrivateAddressSpace : False
 
 .LINK
 
@@ -148,9 +150,19 @@ function Get-SubnetInformation {
       $EndingAddress = ConvertTo-Int64 -IPv4Address $BroadcastAddressObject.IPAddressToString
       $LastAddress = ConvertTo-IPv4 -Integer ($EndingAddress - 1)
       $FirstAddress = ConvertTo-IPv4 -Integer ($StartingAddress + 1)
-      $AWSFirstIPv4Address = ConvertTo-IPv4 -Integer ($StartingAddress + 4)
       $Hosts = ((ConvertTo-DecimalIP -IPAddressObject $BroadcastAddressObject) - (ConvertTo-DecimalIP -IPAddressObject $SubnetAddressObject) - 1)
-
+      $PrivateAddressSpace = if($NoPrivateAddressSpace) {
+        $null
+      } else {
+        Test-PrivateIPv4Address -IPv4Address $FirstAddress
+      }
+      if($PrivateAddressSpace) {
+        $AWSFirstIPv4Address = ConvertTo-IPv4 -Integer ($StartingAddress + 4)
+        $AWSTotalHosts = ($Hosts - ((ConvertTo-Int64 -IPv4Address $AWSFirstIPv4Address) - (ConvertTo-Int64 -IPv4Address $FirstAddress)))
+      } else {
+        $AWSFirstIPv4Address = $null
+        $AWSTotalHosts = $null
+      }
       [PsCustomObject] @{
         'SubnetId'            = $SubnetAddressObject.IPAddressToString
         'BroadcastAddress'    = $BroadcastAddressObject.IPAddressToString
@@ -161,12 +173,8 @@ function Get-SubnetInformation {
         'LastIPv4Address'     = $LastAddress
         'TotalHosts'          = $Hosts
         'AWSFirstIPv4Address' = $AWSFirstIPv4Address
-        'AWSTotalHosts'       = ($Hosts - ((ConvertTo-Int64 -IPv4Address $AWSFirstIPv4Address) - (ConvertTo-Int64 -IPv4Address $FirstAddress)))
-        'PrivateAddressSpace' = if($NoPrivateAddressSpace) {
-          $null
-        } else {
-          Test-PrivateIPv4Address -IPv4Address $FirstAddress
-        }
+        'AWSTotalHosts'       = $AWSTotalHosts
+        'PrivateAddressSpace' = $PrivateAddressSpace
       }
     } else {
       Write-Error "-IPv4Address is NULL!"
