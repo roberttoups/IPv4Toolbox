@@ -112,7 +112,14 @@ function Get-SubnetInformation {
     )]
     [ValidateRange(8 , 30)]
     [Int32]
-    $Prefix = 24
+    $Prefix = 24,
+
+    [Parameter(
+      Mandatory = $false,
+      ParameterSetName = 'Prefix'
+    )]
+    [Switch]
+    $NoPrivateAddressSpace
   )
 
   begin {}
@@ -155,6 +162,11 @@ function Get-SubnetInformation {
         'TotalHosts'          = $Hosts
         'AWSFirstIPv4Address' = $AWSFirstIPv4Address
         'AWSTotalHosts'       = ($Hosts - ((ConvertTo-Int64 -IPv4Address $AWSFirstIPv4Address) - (ConvertTo-Int64 -IPv4Address $FirstAddress)))
+        'PrivateAddressSpace' = if($NoPrivateAddressSpace) {
+          $null
+        } else {
+          Test-PrivateIPv4Address -IPv4Address $FirstAddress
+        }
       }
     } else {
       Write-Error "-IPv4Address is NULL!"
