@@ -39,7 +39,7 @@
 function Test-IPv4AddressWithinRange {
   [CmdletBinding()]
   [OutputType([Boolean])]
-  Param (
+  param (
     [Parameter(
       Mandatory = $true
     )]

@@ -25,7 +25,7 @@
 function ConvertTo-IPv4 {
   [CmdletBinding()]
   [OutputType([String])]
-  Param (
+  param (
     [Parameter(
       Mandatory = $true
     )]
