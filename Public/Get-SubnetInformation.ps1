@@ -156,7 +156,7 @@ function Get-SubnetInformation {
       } else {
         Test-PrivateIPv4Address -IPv4Address $FirstAddress
       }
-      if($PrivateAddressSpace) {
+      if($PrivateAddressSpace -and ($Prefix -ge 16 -and $Prefix -le 28)) {
         $AWSFirstIPv4Address = ConvertTo-IPv4 -Integer ($StartingAddress + 4)
         $AWSTotalHosts = ($Hosts - ((ConvertTo-Int64 -IPv4Address $AWSFirstIPv4Address) - (ConvertTo-Int64 -IPv4Address $FirstAddress)))
       } else {
