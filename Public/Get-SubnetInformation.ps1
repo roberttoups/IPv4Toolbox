@@ -19,6 +19,10 @@
 
   The network prefix
 
+.PARAMETER NoPrivateAddressSpace
+
+  This switch omits the reporting of Private Address Space for the subnet and any associated AWS information
+
 .EXAMPLE
 
   Get-SubnetInformation -IPv4Address 192.168.1.120 -SubnetMask 255.255.254.0
@@ -50,6 +54,43 @@
   AWSFirstIPv4Address :
   AWSTotalHosts       :
   PrivateAddressSpace : False
+
+.EXAMPLE
+
+  Get-SubnetInformation -IPv4Address 10.0.0.0 -Prefix 12
+
+  SubnetId            : 10.0.0.0
+  BroadcastAddress    : 10.15.255.255
+  SubnetMask          : 255.240.0.0
+  Prefix              : 12
+  Subnet              : 10.0.0.0/12
+  FirstIPv4Address    : 10.0.0.1
+  LastIPv4Address     : 10.15.255.254
+  TotalHosts          : 1048574
+  AWSFirstIPv4Address :
+  AWSTotalHosts       :
+  PrivateAddressSpace : True
+
+.EXAMPLE
+
+  Get-SubnetInformation -IPv4Address 10.0.0.0 -Prefix 28 -NoPrivateAddressSpace
+
+  SubnetId            : 10.0.0.0
+  BroadcastAddress    : 10.0.0.15
+  SubnetMask          : 255.255.255.240
+  Prefix              : 28
+  Subnet              : 10.0.0.0/28
+  FirstIPv4Address    : 10.0.0.1
+  LastIPv4Address     : 10.0.0.14
+  TotalHosts          : 14
+  AWSFirstIPv4Address :
+  AWSTotalHosts       :
+  PrivateAddressSpace :
+
+.NOTES
+
+  This function will only return results for AWS if the subnet has a prefix greater or equal to 16 and less than or
+  equal 28 and resides in the Private Address Space.
 
 .LINK
 
