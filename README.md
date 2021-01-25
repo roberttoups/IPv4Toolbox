@@ -1,6 +1,6 @@
-![Pester](https://github.com/roberttoups/IPv4Toolbox/workflows/Pester/badge.svg) ![License](https://img.shields.io/github/license/roberttoups/IPv4Toolbox) ![PowerShell Gallery](https://img.shields.io/powershellgallery/v/IPv4Toolbox) ![platform](https://img.shields.io/powershellgallery/p/IPv4Toolbox)
-
 # ![IPv4Toolbox](icons/Color-small.png) IPv4Toolbox PowerShell Module
+
+![Pester](https://github.com/roberttoups/IPv4Toolbox/workflows/Pester/badge.svg) ![License](https://img.shields.io/github/license/roberttoups/IPv4Toolbox) ![PowerShell Gallery](https://img.shields.io/powershellgallery/v/IPv4Toolbox) ![platform](https://img.shields.io/powershellgallery/p/IPv4Toolbox)
 
 ## Description
 
@@ -11,6 +11,7 @@ Module to simplify the calculations associated to IPv4 addressing.
 ```powershell
 Install-Module -Name 'IPv4Toolbox' -Scope 'CurrentUser'
 ```
+
 ### [PowerShell Gallery Package Information](https://www.powershellgallery.com/packages/IPv4Toolbox)
 
 ## Functions
