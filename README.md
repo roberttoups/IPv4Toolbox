@@ -8,11 +8,19 @@ Module to simplify the calculations associated to IPv4 addressing.
 
 ## How to Install from the PowerShell Gallery
 
+### [PowerShell Gallery Package Information](https://www.powershellgallery.com/packages/IPv4Toolbox)
+
+### Install
+
 ```powershell
 Install-Module -Name 'IPv4Toolbox' -Scope 'CurrentUser'
 ```
 
-### [PowerShell Gallery Package Information](https://www.powershellgallery.com/packages/IPv4Toolbox)
+### Update
+
+```powershell
+Update-Module -Name 'IPv4Toolbox' -Scope 'CurrentUser'
+```
 
 ## Functions
 
