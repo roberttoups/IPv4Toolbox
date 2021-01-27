@@ -21,7 +21,8 @@ Find-IPv4Address will search a block of text for IPv4 Addresses and returns only
 
 ## EXAMPLES
 
-### EXAMPLE 1
+### -------------------------- EXAMPLE 1 --------------------------
+
 ```powershell
 Find-IPv4Address -Text 'Mary had little lamb 192.168.1.1 who fleece was white as snow, 127.0.0.1.'
 
@@ -29,7 +30,8 @@ Find-IPv4Address -Text 'Mary had little lamb 192.168.1.1 who fleece was white as
 127.0.0.1
 ```
 
-### EXAMPLE 2
+### -------------------------- EXAMPLE 2 --------------------------
+
 ```powershell
 cat /var/log/fail2ban.log | Find-IPv4Address | Sort-Object -Property @{Expression = { $_ -as [System.Version] } } -Unique
 ```

@@ -27,7 +27,8 @@ Returns the information regarding a subnet that an IPv4 Address exists and retur
 
 ## EXAMPLES
 
-### EXAMPLE 1
+### -------------------------- EXAMPLE 1 --------------------------
+
 ```powershell
 Get-SubnetInformation -IPv4Address 192.168.1.120 -SubnetMask 255.255.254.0
 
@@ -44,7 +45,8 @@ AWSTotalHosts       : 507
 PrivateAddressSpace : True
 ```
 
-### EXAMPLE 2
+### -------------------------- EXAMPLE 2 --------------------------
+
 ```powershell
 Get-SubnetInformation -IPv4Address 8.8.0.0 -Prefix 21
 
@@ -61,7 +63,8 @@ AWSTotalHosts       :
 PrivateAddressSpace : False
 ```
 
-### EXAMPLE 3
+### -------------------------- EXAMPLE 3 --------------------------
+
 ```powershell
 Get-SubnetInformation -IPv4Address 10.0.0.0 -Prefix 12
 
@@ -78,7 +81,8 @@ AWSTotalHosts       :
 PrivateAddressSpace : True
 ```
 
-### EXAMPLE 4
+### -------------------------- EXAMPLE 4 --------------------------
+
 ```powershell
 Get-SubnetInformation -IPv4Address 10.0.0.0 -Prefix 28 -NoPrivateAddressSpace
 

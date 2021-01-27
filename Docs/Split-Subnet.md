@@ -21,7 +21,8 @@ Breaks up a larger CIDR into small CIDRs.
 
 ## EXAMPLES
 
-### EXAMPLE 1
+### -------------------------- EXAMPLE 1 --------------------------
+
 ```powershell
 Split-Subnet -Subnet 10.2.2.0 -Prefix 24 -TargetPrefix 25
 

@@ -21,14 +21,16 @@ Determines if an IPv4 Address is in a private address space.
 
 ## EXAMPLES
 
-### EXAMPLE 1
+### -------------------------- EXAMPLE 1 --------------------------
+
 ```powershell
 Test-PrivateIPv4Address -IPv4Address 192.168.1.1
 
 True
 ```
 
-### EXAMPLE 2
+### -------------------------- EXAMPLE 2 --------------------------
+
 ```powershell
 Test-PrivateIPv4Address -IPv4Address 8.8.8.8
 
