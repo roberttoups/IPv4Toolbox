@@ -5,14 +5,15 @@ if((Test-Path -Path $ModulePath) -eq $false) {
   throw "Unable to locate $ModulePath"
 }
 $ManifestTest = Test-ModuleManifest -Path $ModulePath
+$Author = 'Robert M. Toups, Jr.'
 $TestObject = [PSCustomObject]@{
   Name        = 'IPv4Toolbox'
   Guid        = 'b1a4c4a0-f480-4831-a6e0-141487f746b4'
-  Author      = 'Robert M. Toups, Jr.'
+  Author      = $Author
   CompanyName = 'Toups Design Bureau'
-  Copyright   = '(c) 2021 Robert M. Toups, Jr., All rights reserved.'
+  Copyright   = "(c) $(Get-Date -Format 'yyyy') $Author, All rights reserved."
   Description = 'Module to assist in the manipulation of IPv4 Addresses and Subnets.'
-  Version     = '0.3.0'
+  Version     = '0.4.0'
   ProjectUri  = 'https://github.com/roberttoups/IPv4Toolbox'
   IconUri     = 'https://raw.githubusercontent.com/roberttoups/IPv4Toolbox/master/icons/Color-PSGallery.png'
   LicenseUri  = 'https://github.com/roberttoups/IPv4Toolbox/blob/master/LICENSE'

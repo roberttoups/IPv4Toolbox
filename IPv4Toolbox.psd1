@@ -12,7 +12,7 @@
   RootModule        = 'IPv4Toolbox.psm1'
 
   # Version number of this module.
-  ModuleVersion     = '0.3.0'
+  ModuleVersion     = '0.4.0'
 
   # Supported PSEditions
   # CompatiblePSEditions = @()
@@ -72,6 +72,7 @@
   FunctionsToExport = @(
     'ConvertTo-InverseAddress'
     'Get-SubnetInformation'
+    'Find-IPv4Address'
     'Invoke-IPv4GeoLookup'
     'Invoke-IPv4ListSort'
     'Out-SubnetRange'

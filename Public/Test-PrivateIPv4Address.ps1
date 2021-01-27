@@ -74,13 +74,14 @@ function Test-PrivateIPv4Address {
     $Found = $false
     foreach($PrivateAddress in $PrivateAddressCollection) {
       $ArgumentCollection = @{
-        IPv4Address = $PrivateAddress.Subnet
-        Prefix      = $PrivateAddress.Prefix
+        IPv4Address           = $PrivateAddress.Subnet
+        Prefix                = $PrivateAddress.Prefix
+        NoPrivateAddressSpace = $true
       }
       $SubnetInformation = Get-SubnetInformation @ArgumentCollection
       $ArgumentCollection = @{
-        FirstIPv4Address = $SubnetInformation.FirstIPv4Address
-        LastIPv4Address  = $SubnetInformation.LastIPv4Address
+        FirstIPv4Address = $SubnetInformation.SubnetId
+        LastIPv4Address  = $SubnetInformation.BroadcastAddress
         TestIPv4Address  = $IPv4Address
       }
       $Result = Test-IPv4AddressWithinRange @ArgumentCollection

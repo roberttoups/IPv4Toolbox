@@ -1,23 +1,57 @@
-![Pester](https://github.com/roberttoups/IPv4Toolbox/workflows/Pester/badge.svg) ![License](https://img.shields.io/github/license/roberttoups/IPv4Toolbox) ![PowerShell Gallery](https://img.shields.io/powershellgallery/v/IPv4Toolbox) ![platform](https://img.shields.io/powershellgallery/p/IPv4Toolbox)
-
 # ![IPv4Toolbox](icons/Color-small.png) IPv4Toolbox PowerShell Module
+
+![Pester](https://github.com/roberttoups/IPv4Toolbox/workflows/Pester/badge.svg) ![License](https://img.shields.io/github/license/roberttoups/IPv4Toolbox) ![PowerShell Gallery](https://img.shields.io/powershellgallery/v/IPv4Toolbox) ![platform](https://img.shields.io/powershellgallery/p/IPv4Toolbox)
 
 ## Description
 
 Module to simplify the calculations associated to IPv4 addressing.
 
-## How to Install from the PowerShell Gallery
+## How to deploy from the PowerShell Gallery
+
+### [PowerShell Gallery Package Information](https://www.powershellgallery.com/packages/IPv4Toolbox)
+
+### Install
 
 ```powershell
 Install-Module -Name 'IPv4Toolbox' -Scope 'CurrentUser'
 ```
-### [PowerShell Gallery Package Information](https://www.powershellgallery.com/packages/IPv4Toolbox)
+
+### Update
+
+```powershell
+Update-Module -Name 'IPv4Toolbox' -Scope 'CurrentUser'
+```
+
+### PowerShell Desired State Configuration
+
+The PackageManagement module should be at least version 1.1.7.0 for the following property information to be correct.
+
+```powershell
+PackageManagementSource PSGallery {
+    Ensure             = 'Present'
+    Name               = 'PSGallery'
+    ProviderName       = 'PowerShellGet'
+    SourceLocation     = 'https://www.powershellgallery.com/api/v2'
+    InstallationPolicy = 'Trusted'
+}
+
+PackageManagement IPv4Toolbox {
+    Ensure             = 'Present'
+    Name               = 'IPv4Toolbox'
+    Source             = 'PSGallery'
+    DependsOn          = '[PackageManagementSource]PSGallery'
+}
+```
 
 ## Functions
 
 ### [ConvertTo-InverseAddress](Docs/ConvertTo-InverseAddress.md)
 
 Converts an IPv4 Address or Subnet into Windows PTR Zone compatible domain name.
+
+### [Find-IPv4Address](Docs/Find-IPv4Address)
+
+Returns all valid IPv4 Address in a string.
 
 ### [Get-SubnetInformation](Docs/Get-SubnetInformation.md)
 

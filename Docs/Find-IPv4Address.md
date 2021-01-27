@@ -5,49 +5,57 @@ online version: http://www.github.com/roberttoups/IPv4Toolbox
 schema: 2.0.0
 ---
 
-# Test-PrivateIPv4Address
+# Find-IPv4Address
 
 ## SYNOPSIS
-Determines if an IPv4 Address is in a private address space.
+Returns all valid IPv4 Address in a string.
 
 ## SYNTAX
 
 ```
-Test-PrivateIPv4Address [-IPv4Address] <String> [<CommonParameters>]
+Find-IPv4Address [[-Text] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Determines if an IPv4 Address is in a private address space.
+Find-IPv4Address will search a block of text for IPv4 Addresses and returns only the IPv4 Addresses found.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 
 ```powershell
-Test-PrivateIPv4Address -IPv4Address 192.168.1.1
+Find-IPv4Address -Text 'Mary had little lamb 192.168.1.1 who fleece was white as snow, 127.0.0.1.'
 
-True
+192.168.1.1
+127.0.0.1
 ```
 
 ### -------------------------- EXAMPLE 2 --------------------------
 
 ```powershell
-Test-PrivateIPv4Address -IPv4Address 8.8.8.8
+cat /var/log/fail2ban.log | Find-IPv4Address | Sort-Object -Property @{Expression = { $_ -as [System.Version] } } -Unique
 
-False
+2.90.110.124
+14.184.248.97
+14.186.84.158
+27.147.226.173
+37.144.205.31
+39.59.34.40
+41.228.238.217
+...
 ```
 
 ## PARAMETERS
 
-### -IPv4Address
-The IPv4 Address
+### -Text
+The block of text to discover IPv4 Addresses
 
 ```yaml
-Type: System.String
+Type: System.String[]
 Parameter Sets: (All)
-Aliases: IPAddress
+Aliases:
 
-Required: True
+Required: False
 Position: 1
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -61,9 +69,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Boolean
+### System.String[]
 ## NOTES
-The function supports RFC 1918 & RFC 6598 address space.
+The body of text provided to the Text parameter can be multi-line.
+The function will only return valid IPv4 Addresses from 0.0.0.0 to 255.255.255.255.
 
 ## RELATED LINKS
 

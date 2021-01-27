@@ -19,6 +19,10 @@
 
   The network prefix
 
+.PARAMETER NoPrivateAddressSpace
+
+  This switch omits the reporting of Private Address Space for the subnet and any associated AWS information
+
 .EXAMPLE
 
   Get-SubnetInformation -IPv4Address 192.168.1.120 -SubnetMask 255.255.254.0
@@ -33,21 +37,60 @@
   TotalHosts          : 510
   AWSFirstIPv4Address : 192.168.0.4
   AWSTotalHosts       : 507
+  PrivateAddressSpace : True
 
 .EXAMPLE
 
-  Get-SubnetInformation -Ipv4Address 192.168.1.120 -Prefix 16
+  Get-SubnetInformation -IPv4Address 8.8.0.0 -Prefix 21
 
-  SubnetId            : 192.168.0.0
-  BroadcastAddress    : 192.168.255.255
-  SubnetMask          : 255.255.0.0
-  Prefix              : 16
-  Subnet              : 192.168.0.0/16
-  FirstIPv4Address    : 192.168.0.1
-  LastIPv4Address     : 192.168.255.254
-  TotalHosts          : 65534
-  AWSFirstIPv4Address : 192.168.0.4
-  AWSTotalHosts       : 65531
+  SubnetId            : 8.8.0.0
+  BroadcastAddress    : 8.8.7.255
+  SubnetMask          : 255.255.248.0
+  Prefix              : 21
+  Subnet              : 8.8.0.0/21
+  FirstIPv4Address    : 8.8.0.1
+  LastIPv4Address     : 8.8.7.254
+  TotalHosts          : 2046
+  AWSFirstIPv4Address :
+  AWSTotalHosts       :
+  PrivateAddressSpace : False
+
+.EXAMPLE
+
+  Get-SubnetInformation -IPv4Address 10.0.0.0 -Prefix 12
+
+  SubnetId            : 10.0.0.0
+  BroadcastAddress    : 10.15.255.255
+  SubnetMask          : 255.240.0.0
+  Prefix              : 12
+  Subnet              : 10.0.0.0/12
+  FirstIPv4Address    : 10.0.0.1
+  LastIPv4Address     : 10.15.255.254
+  TotalHosts          : 1048574
+  AWSFirstIPv4Address :
+  AWSTotalHosts       :
+  PrivateAddressSpace : True
+
+.EXAMPLE
+
+  Get-SubnetInformation -IPv4Address 10.0.0.0 -Prefix 28 -NoPrivateAddressSpace
+
+  SubnetId            : 10.0.0.0
+  BroadcastAddress    : 10.0.0.15
+  SubnetMask          : 255.255.255.240
+  Prefix              : 28
+  Subnet              : 10.0.0.0/28
+  FirstIPv4Address    : 10.0.0.1
+  LastIPv4Address     : 10.0.0.14
+  TotalHosts          : 14
+  AWSFirstIPv4Address :
+  AWSTotalHosts       :
+  PrivateAddressSpace :
+
+.NOTES
+
+  This function will only return results for AWS if the subnet has a prefix greater or equal to 16 and less than or
+  equal 28 and resides in the Private Address Space.
 
 .LINK
 
@@ -112,7 +155,14 @@ function Get-SubnetInformation {
     )]
     [ValidateRange(8 , 30)]
     [Int32]
-    $Prefix = 24
+    $Prefix = 24,
+
+    [Parameter(
+      Mandatory = $false,
+      ParameterSetName = 'Prefix'
+    )]
+    [Switch]
+    $NoPrivateAddressSpace
   )
 
   begin {}
@@ -141,9 +191,19 @@ function Get-SubnetInformation {
       $EndingAddress = ConvertTo-Int64 -IPv4Address $BroadcastAddressObject.IPAddressToString
       $LastAddress = ConvertTo-IPv4 -Integer ($EndingAddress - 1)
       $FirstAddress = ConvertTo-IPv4 -Integer ($StartingAddress + 1)
-      $AWSFirstIPv4Address = ConvertTo-IPv4 -Integer ($StartingAddress + 4)
       $Hosts = ((ConvertTo-DecimalIP -IPAddressObject $BroadcastAddressObject) - (ConvertTo-DecimalIP -IPAddressObject $SubnetAddressObject) - 1)
-
+      $PrivateAddressSpace = if($NoPrivateAddressSpace) {
+        $null
+      } else {
+        Test-PrivateIPv4Address -IPv4Address $FirstAddress
+      }
+      if($PrivateAddressSpace -and ($Prefix -ge 16 -and $Prefix -le 28)) {
+        $AWSFirstIPv4Address = ConvertTo-IPv4 -Integer ($StartingAddress + 4)
+        $AWSTotalHosts = ($Hosts - ((ConvertTo-Int64 -IPv4Address $AWSFirstIPv4Address) - (ConvertTo-Int64 -IPv4Address $FirstAddress)))
+      } else {
+        $AWSFirstIPv4Address = $null
+        $AWSTotalHosts = $null
+      }
       [PsCustomObject] @{
         'SubnetId'            = $SubnetAddressObject.IPAddressToString
         'BroadcastAddress'    = $BroadcastAddressObject.IPAddressToString
@@ -154,7 +214,8 @@ function Get-SubnetInformation {
         'LastIPv4Address'     = $LastAddress
         'TotalHosts'          = $Hosts
         'AWSFirstIPv4Address' = $AWSFirstIPv4Address
-        'AWSTotalHosts'       = ($Hosts - ((ConvertTo-Int64 -IPv4Address $AWSFirstIPv4Address) - (ConvertTo-Int64 -IPv4Address $FirstAddress)))
+        'AWSTotalHosts'       = $AWSTotalHosts
+        'PrivateAddressSpace' = $PrivateAddressSpace
       }
     } else {
       Write-Error "-IPv4Address is NULL!"
