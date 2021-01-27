@@ -38,12 +38,12 @@ function Find-IPv4Address {
     # The block of text to find IPv4Addresses in.
     [Parameter(
       Position = 0,
-      Mandatory = $true,
+      Mandatory = $false,
       ValueFromPipeline = $true,
       HelpMessage = 'The block of text to find IPv4Addresses in.'
     )]
     [String[]]
-    $Text
+    $Text = $null
   )
 
   begin {}
@@ -51,12 +51,13 @@ function Find-IPv4Address {
   process {
     $RegularExpression = '^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])$'
     $Text = $Text -replace '\n', ' '
+    $Text = $Text -replace ',', ' '
     $Data = $Text.Split(' ')
     foreach($Word in $Data) {
-      if($Word -match '\W$') {
+      while($Word -match '\W$') {
         $Word = $Word.Substring(0, ($Word.Length - 1))
       }
-      if($Word -match '^\W') {
+      while($Word -match '^\W') {
         $Word = $Word.Substring(1, ($Word.Length - 1))
       }
       if($Word -match $RegularExpression) {
