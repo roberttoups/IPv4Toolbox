@@ -6,7 +6,7 @@
 
 Module to simplify the calculations associated to IPv4 addressing.
 
-## How to Install from the PowerShell Gallery
+## How to deploy from the PowerShell Gallery
 
 ### [PowerShell Gallery Package Information](https://www.powershellgallery.com/packages/IPv4Toolbox)
 
@@ -20,6 +20,27 @@ Install-Module -Name 'IPv4Toolbox' -Scope 'CurrentUser'
 
 ```powershell
 Update-Module -Name 'IPv4Toolbox' -Scope 'CurrentUser'
+```
+
+### PowerShell Desired State Configuration
+
+The PackageManagement module should be at least version 1.1.7.0 for the following property information to be correct.
+
+```powershell
+PackageManagementSource PSGallery {
+    Ensure             = 'Present'
+    Name               = 'PSGallery'
+    ProviderName       = 'PowerShellGet'
+    SourceLocation     = 'https://www.powershellgallery.com/api/v2'
+    InstallationPolicy = 'Trusted'
+}
+
+PackageManagement IPv4Toolbox {
+    Ensure             = 'Present'
+    Name               = 'IPv4Toolbox'
+    Source             = 'PSGallery'
+    DependsOn          = '[PackageManagementSource]PSGallery'
+}
 ```
 
 ## Functions
