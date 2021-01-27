@@ -52,6 +52,9 @@ function Find-IPv4Address {
       if($Word -match '\W$') {
         $Word = $Word.Substring(0, ($Word.Length - 1))
       }
+      if($Word -match '^\W') {
+        $Word = $Word.Substring(1, ($Word.Length - 1))
+      }
       if($Word -match $RegularExpression) {
         $Matches[0]
       }
