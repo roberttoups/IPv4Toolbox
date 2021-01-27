@@ -142,6 +142,84 @@
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
+      <command:name>Find-IPv4Address</command:name>
+      <command:verb>Find</command:verb>
+      <command:noun>IPv4Address</command:noun>
+      <maml:description>
+        <maml:para>Returns all valid IPv4 Address in a string.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Find-IPv4Address will search a block of text for IPv4 Addresses and returns only the IPv4 Addresses found.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Find-IPv4Address</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>Text</maml:name>
+          <maml:description>
+            <maml:para>The block of text to discover IPv4 Addresses</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>Text</maml:name>
+        <maml:description>
+          <maml:para>The block of text to discover IPv4 Addresses</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.String[]</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>The body of text provided to the Text parameter can be multi-line. The function will only return valid IPv4 Addresses from 0.0.0.0 to 255.255.255.255.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Find-IPv4Address -Text 'Mary had little lamb 192.168.1.1 who fleece was white as snow, 127.0.0.1.'
+
+192.168.1.1
+127.0.0.1</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>http://www.github.com/roberttoups/IPv4Toolbox</maml:linkText>
+        <maml:uri>http://www.github.com/roberttoups/IPv4Toolbox</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
       <command:name>Get-SubnetInformation</command:name>
       <command:verb>Get</command:verb>
       <command:noun>SubnetInformation</command:noun>
@@ -166,6 +244,17 @@
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>NoPrivateAddressSpace</maml:name>
+          <maml:description>
+            <maml:para>This switch omits the reporting of Private Address Space for the subnet and any associated AWS information</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>Prefix</maml:name>
@@ -222,6 +311,18 @@
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>NoPrivateAddressSpace</maml:name>
+        <maml:description>
+          <maml:para>This switch omits the reporting of Private Address Space for the subnet and any associated AWS information</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Management.Automation.SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Prefix</maml:name>
         <maml:description>
           <maml:para>The network prefix</maml:para>
@@ -259,7 +360,7 @@
     </command:returnValues>
     <maml:alertSet>
       <maml:alert>
-        <maml:para></maml:para>
+        <maml:para>This function will only return results for AWS if the subnet has a prefix greater or equal to 16 and less than or equal 28 and resides in the Private Address Space.</maml:para>
       </maml:alert>
     </maml:alertSet>
     <command:examples>
@@ -276,25 +377,65 @@ FirstIPv4Address    : 192.168.0.1
 LastIPv4Address     : 192.168.1.254
 TotalHosts          : 510
 AWSFirstIPv4Address : 192.168.0.4
-AWSTotalHosts       : 507</dev:code>
+AWSTotalHosts       : 507
+PrivateAddressSpace : True</dev:code>
         <dev:remarks>
           <maml:para></maml:para>
         </dev:remarks>
       </command:example>
       <command:example>
         <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
-        <dev:code>Get-SubnetInformation -Ipv4Address 192.168.1.120 -Prefix 16
+        <dev:code>Get-SubnetInformation -IPv4Address 8.8.0.0 -Prefix 21
 
-SubnetId            : 192.168.0.0
-BroadcastAddress    : 192.168.255.255
-SubnetMask          : 255.255.0.0
-Prefix              : 16
-Subnet              : 192.168.0.0/16
-FirstIPv4Address    : 192.168.0.1
-LastIPv4Address     : 192.168.255.254
-TotalHosts          : 65534
-AWSFirstIPv4Address : 192.168.0.4
-AWSTotalHosts       : 65531</dev:code>
+SubnetId            : 8.8.0.0
+BroadcastAddress    : 8.8.7.255
+SubnetMask          : 255.255.248.0
+Prefix              : 21
+Subnet              : 8.8.0.0/21
+FirstIPv4Address    : 8.8.0.1
+LastIPv4Address     : 8.8.7.254
+TotalHosts          : 2046
+AWSFirstIPv4Address :
+AWSTotalHosts       :
+PrivateAddressSpace : False</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 3 --------------------------</maml:title>
+        <dev:code>Get-SubnetInformation -IPv4Address 10.0.0.0 -Prefix 12
+
+SubnetId            : 10.0.0.0
+BroadcastAddress    : 10.15.255.255
+SubnetMask          : 255.240.0.0
+Prefix              : 12
+Subnet              : 10.0.0.0/12
+FirstIPv4Address    : 10.0.0.1
+LastIPv4Address     : 10.15.255.254
+TotalHosts          : 1048574
+AWSFirstIPv4Address :
+AWSTotalHosts       :
+PrivateAddressSpace : True</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 4 --------------------------</maml:title>
+        <dev:code>Get-SubnetInformation -IPv4Address 10.0.0.0 -Prefix 28 -NoPrivateAddressSpace
+
+SubnetId            : 10.0.0.0
+BroadcastAddress    : 10.0.0.15
+SubnetMask          : 255.255.255.240
+Prefix              : 28
+Subnet              : 10.0.0.0/28
+FirstIPv4Address    : 10.0.0.1
+LastIPv4Address     : 10.0.0.14
+TotalHosts          : 14
+AWSFirstIPv4Address :
+AWSTotalHosts       :
+PrivateAddressSpace :</dev:code>
         <dev:remarks>
           <maml:para></maml:para>
         </dev:remarks>
