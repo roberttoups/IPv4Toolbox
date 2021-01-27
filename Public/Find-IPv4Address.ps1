@@ -35,6 +35,7 @@ function Find-IPv4Address {
     [Parameter(
       Position = 0,
       Mandatory = $true,
+      ValueFromPipeline = $true,
       HelpMessage = 'The block of text to find IPv4Addresses in.'
     )]
     [String[]]
