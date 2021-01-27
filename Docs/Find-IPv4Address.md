@@ -13,7 +13,7 @@ Returns all valid IPv4 Address in a string.
 ## SYNTAX
 
 ```
-Find-IPv4Address [-Text] <String[]> [<CommonParameters>]
+Find-IPv4Address [[-Text] <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -44,7 +44,7 @@ Type: System.String[]
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: 1
 Default value: None
 Accept pipeline input: True (ByValue)

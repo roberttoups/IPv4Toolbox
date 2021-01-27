@@ -155,7 +155,7 @@
     <command:syntax>
       <command:syntaxItem>
         <maml:name>Find-IPv4Address</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
           <maml:name>Text</maml:name>
           <maml:description>
             <maml:para>The block of text to discover IPv4 Addresses</maml:para>
@@ -170,7 +170,7 @@
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
         <maml:name>Text</maml:name>
         <maml:description>
           <maml:para>The block of text to discover IPv4 Addresses</maml:para>
