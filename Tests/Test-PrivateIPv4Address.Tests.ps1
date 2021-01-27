@@ -47,6 +47,5 @@ InModuleScope $ModuleName {
         }
       }
     }
-
   }
 }
