@@ -29,6 +29,11 @@ Find-IPv4Address -Text 'Mary had little lamb 192.168.1.1 who fleece was white as
 127.0.0.1
 ```
 
+### EXAMPLE 2
+```powershell
+cat /var/log/fail2ban.log | Find-IPv4Address | Sort-Object -Property @{Expression = { $_ -as [System.Version] } } -Unique
+```
+
 ## PARAMETERS
 
 ### -Text

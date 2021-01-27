@@ -18,6 +18,10 @@
   192.168.1.1
   127.0.0.1
 
+.EXAMPLE
+
+  cat /var/log/fail2ban.log | Find-IPv4Address | Sort-Object -Property @{Expression = { $_ -as [System.Version] } } -Unique
+
 .NOTES
 
   The body of text provided to the Text parameter can be multi-line. The function will only return valid IPv4 Addresses from 0.0.0.0 to 255.255.255.255.
