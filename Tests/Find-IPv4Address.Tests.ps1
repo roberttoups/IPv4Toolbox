@@ -29,7 +29,6 @@ InModuleScope $ModuleName {
       '172.18.0.1'
       '4.2.2.1'
     }
-
     Context "Testing return by $FunctionName" {
       $TestCase = @{
         TestText = $TestText
