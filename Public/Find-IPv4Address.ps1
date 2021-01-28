@@ -60,7 +60,6 @@ function Find-IPv4Address {
   process {
     $RegularExpression = '^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])$'
     $SpaceOut = @(
-      '\n'
       ','
       ';'
       '-'
@@ -72,6 +71,7 @@ function Find-IPv4Address {
       '<'
       '>'
     )
+    $Text = $Text -replace '\n', ' '
     foreach($Spacer in $SpaceOut) {
       $Text = $Text.Replace($Spacer, ' ')
     }
