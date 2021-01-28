@@ -49,7 +49,7 @@ PackageManagement IPv4Toolbox {
 
 Converts an IPv4 Address or Subnet into Windows PTR Zone compatible domain name.
 
-### [Find-IPv4Address](Docs/Find-IPv4Address)
+### [Find-IPv4Address](Docs/Find-IPv4Address.md)
 
 Returns all valid IPv4 Address in a string.
 
