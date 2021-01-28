@@ -46,6 +46,15 @@ InModuleScope $ModuleName {
         Find-IPv4Address @ArgumentCollection |
           Should -Be $ShouldBe
       }
+      It "Return should be $($ShouldBe -join ',') from the pipeline" -TestCases $TestCase {
+        param(
+          $TestText,
+          $ShouldBe
+        )
+        $TestText |
+          Find-IPv4Address |
+          Should -Be $ShouldBe
+      }
     }
   }
 }
