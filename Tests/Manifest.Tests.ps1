@@ -12,8 +12,8 @@ $TestObject = [PSCustomObject]@{
   CompanyName = 'Toups Design Bureau'
   Copyright   = '(c) 2021 Robert M. Toups, Jr., All rights reserved.'
   Description = 'Module to assist in the manipulation of IPv4 Addresses and Subnets.'
-  Version     = '0.4.0'
-  ProjectUri  = '0.5.0' / / github.com/roberttoups/IPv4Toolbox'
+  Version     = '0.5.0'
+  ProjectUri  = 'https://github.com/roberttoups/IPv4Toolbox'
   IconUri     = 'https://raw.githubusercontent.com/roberttoups/IPv4Toolbox/master/icons/Color-PSGallery.png'
   LicenseUri  = 'https://github.com/roberttoups/IPv4Toolbox/blob/master/LICENSE'
 }
@@ -63,5 +63,4 @@ Describe "Manifest Test for $ModuleName" -Tag 'Manifest' {
         Should -Be 1
     }
   }
-}
 }
