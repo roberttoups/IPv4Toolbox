@@ -5,16 +5,15 @@ if((Test-Path -Path $ModulePath) -eq $false) {
   throw "Unable to locate $ModulePath"
 }
 $ManifestTest = Test-ModuleManifest -Path $ModulePath
-$Author = 'Robert M. Toups, Jr.'
 $TestObject = [PSCustomObject]@{
   Name        = 'IPv4Toolbox'
   Guid        = 'b1a4c4a0-f480-4831-a6e0-141487f746b4'
-  Author      = $Author
+  Author      = 'Robert M. Toups, Jr.'
   CompanyName = 'Toups Design Bureau'
-  Copyright   = "(c) $(Get-Date -Format 'yyyy') $Author, All rights reserved."
+  Copyright   = '(c) 2021 Robert M. Toups, Jr., All rights reserved.'
   Description = 'Module to assist in the manipulation of IPv4 Addresses and Subnets.'
   Version     = '0.4.0'
-  ProjectUri  = 'https://github.com/roberttoups/IPv4Toolbox'
+  ProjectUri  = '0.5.0' / / github.com/roberttoups/IPv4Toolbox'
   IconUri     = 'https://raw.githubusercontent.com/roberttoups/IPv4Toolbox/master/icons/Color-PSGallery.png'
   LicenseUri  = 'https://github.com/roberttoups/IPv4Toolbox/blob/master/LICENSE'
 }
@@ -44,7 +43,7 @@ Describe "Manifest Test for $ModuleName" -Tag 'Manifest' {
     CurrentItem = $CurrentTags
     TestItem    = $TestTags
   }
-  It "The Manifest should have these tags $($TestTags -join ',')" -TestCases $TestCase {
+  It "The Manifest should have these tags $($TestTags -join ', ')" -TestCases $TestCase {
     param(
       $CurrentItem,
       $TestItem
@@ -64,4 +63,5 @@ Describe "Manifest Test for $ModuleName" -Tag 'Manifest' {
         Should -Be 1
     }
   }
+}
 }
