@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - "development"
-      - "main"
+      - "master"
 jobs:
   test-windows:
     runs-on: windows-latest
