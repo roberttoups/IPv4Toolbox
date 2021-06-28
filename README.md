@@ -87,6 +87,6 @@ Determines if an IPv4 Address is in a private address space.
 
 ## License
 
-IPv4Toolbox is provided under the [Apache license](LICENSE.md).
+IPv4Toolbox is provided under the [Apache license](LICENSE).
 
 Authored by Robert M. Toups, Jr.
