@@ -1,12 +1,25 @@
 name: Check Links
-
-on: [push]
-
+on:
+  push:
+    branches:
+      - "development"
+      - "master"
 jobs:
-  build:
+  linkChecker:
     runs-on: ubuntu-latest
     steps:
-      - name: Check URLs
-        uses: paramt/url-checker@master
+      - uses: actions/checkout@v2
+
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v1.0.8
         with:
-          files: "README.md"
+          args: --verbose --no-progress **/*.md **/*.html
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Create Issue From File
+        uses: peter-evans/create-issue-from-file@v2
+        with:
+          title: Link Checker Report
+          content-filepath: ./lychee/out.md
+          labels: report, automated issue
