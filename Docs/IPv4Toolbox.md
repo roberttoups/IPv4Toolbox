@@ -1,8 +1,8 @@
 ---
 Module Name: IPv4Toolbox
 Module Guid: b1a4c4a0-f480-4831-a6e0-141487f746b4
-Download Help Link: https://github.com/roberttoups/IPv4Toolbox
-Help Version: 0.4.0
+Download Help Link: https://raw.githubusercontent.com/roberttoups/IPv4Toolbox/master/en-US/IPv4Toolbox-help.xml
+Help Version: 0.5.0
 Locale: en-US
 ---
 
@@ -21,6 +21,10 @@ Converts an IPv4 Address or Subnet into Windows PTR Zone compatible domain name.
 ### [Find-IPv4Address](Find-IPv4Address.md)
 
 Find-IPv4Address will search a block of text for IPv4 Addresses and returns only the IPv4 Addresses found.
+
+### [Get-MyPublicIP](Get-MyPublicIP.md)
+
+Returns the Public IPv4 Address of the client returned by a web API.
 
 ### [Get-SubnetInformation](Get-SubnetInformation.md)
 
