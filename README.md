@@ -49,9 +49,13 @@ PackageManagement IPv4Toolbox {
 
 Converts an IPv4 Address or Subnet into Windows PTR Zone compatible domain name.
 
-### [Find-IPv4Address](Docs/Find-IPv4Address)
+### [Find-IPv4Address](Docs/Find-IPv4Address.md)
 
 Returns all valid IPv4 Address in a string.
+
+### [Get-MyPublicIP](Docs/Get-MyPublicIP.md)
+
+Returns the Public IPv4 Address of the client returned by a web API.
 
 ### [Get-SubnetInformation](Docs/Get-SubnetInformation.md)
 
@@ -83,6 +87,6 @@ Determines if an IPv4 Address is in a private address space.
 
 ## License
 
-IPv4Toolbox is provided under the [Apache license](LICENSE.md).
+IPv4Toolbox is provided under the [Apache license](LICENSE).
 
 Authored by Robert M. Toups, Jr.

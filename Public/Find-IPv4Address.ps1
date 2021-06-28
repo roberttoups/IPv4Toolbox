@@ -59,8 +59,22 @@ function Find-IPv4Address {
 
   process {
     $RegularExpression = '^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])$'
+    $SpaceOut = @(
+      ','
+      ';'
+      '-'
+      '#'
+      '%'
+      '|'
+      '='
+      '_'
+      '<'
+      '>'
+    )
     $Text = $Text -replace '\n', ' '
-    $Text = $Text -replace ',', ' '
+    foreach($Spacer in $SpaceOut) {
+      $Text = $Text.Replace($Spacer, ' ')
+    }
     $Data = $Text.Split(' ')
     foreach($Word in $Data) {
       while($Word -match '\W$') {

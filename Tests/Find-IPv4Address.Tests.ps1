@@ -29,7 +29,6 @@ InModuleScope $ModuleName {
       '172.18.0.1'
       '4.2.2.1'
     }
-
     Context "Testing return by $FunctionName" {
       $TestCase = @{
         TestText = $TestText
@@ -44,6 +43,15 @@ InModuleScope $ModuleName {
           Text = $TestText
         }
         Find-IPv4Address @ArgumentCollection |
+          Should -Be $ShouldBe
+      }
+      It "Return should be $($ShouldBe -join ',') from the pipeline" -TestCases $TestCase {
+        param(
+          $TestText,
+          $ShouldBe
+        )
+        $TestText |
+          Find-IPv4Address |
           Should -Be $ShouldBe
       }
     }
