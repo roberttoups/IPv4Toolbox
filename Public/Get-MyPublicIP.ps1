@@ -37,7 +37,7 @@ function Get-MyPublicIP {
   [CmdletBinding()]
   [OutputType([String])]
   param (
-    # The thing you want the single string for.
+    # The URI of the API Service.
     [Parameter(
       Position = 0,
       Mandatory = $false,
