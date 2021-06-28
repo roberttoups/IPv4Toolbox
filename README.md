@@ -53,6 +53,10 @@ Converts an IPv4 Address or Subnet into Windows PTR Zone compatible domain name.
 
 Returns all valid IPv4 Address in a string.
 
+### [Get-MyPublicIP](Docs/Get-MyPublicIP.md)
+
+Returns the Public IPv4 Address of the client returned by a web API.
+
 ### [Get-SubnetInformation](Docs/Get-SubnetInformation.md)
 
 Returns the information regarding a subnet that an IPv4 Address exists.
