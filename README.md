@@ -63,7 +63,7 @@ Returns the information regarding a subnet that an IPv4 Address exists.
 
 ### [Invoke-IPv4GeoLookup](Docs/Invoke-IPv4GeoLookup.md)
 
-Returns GeoIP Information from [ip-api.com](https://ip-api.com).
+Returns GeoIP Information from [ip-api](https://ip-api.com).
 
 ### [Invoke-IPv4ListSort](Docs/Invoke-IPv4ListSort.md)
 
