@@ -51,46 +51,56 @@ function Test-PrivateIPv4Address {
   begin {}
 
   process {
-    $PrivateAddressCollection = DATA {
-      # RFC 1918
-      @{
-        Subnet = '10.0.0.0'
-        Prefix = 8
+    $FirstOctet = $IPv4Address.Split('.')[0]
+    if($FirstOctet -ne '192' -and
+      $FirstOctet -ne '172' -and
+      $FirstOctet -ne '100' -and
+      $FirstOctet -ne '10'
+    ) {
+      $false
+    } else {
+      $PrivateAddressCollection = DATA {
+        # RFC 1918
+        @{
+          # 10.0.0.0/8
+          FirstIPv4Address = '10.0.0.0'
+          LastIPv4Address  = '10.255.255.255'
+        }
+        @{
+          # 172.16.0.0/12
+          FirstIPv4Address = '172.16.0.0'
+          LastIPv4Address  = '172.31.255.255'
+        }
+        @{
+          # 192.168.0.0/16
+          FirstIPv4Address = '192.168.0.0'
+          LastIPv4Address  = '192.168.255.255'
+        }
+        # RFC RFC 6598
+        @{
+          # 100.64.0.0/10
+          FirstIPv4Address = '100.64.0.0'
+          LastIPv4Address  = '100.127.255.255'
+        }
       }
-      @{
-        Subnet = '172.16.0.0'
-        Prefix = 12
+      $Found = $false
+      foreach($PrivateAddress in $PrivateAddressCollection) {
+        if($PrivateAddress.FirstIPv4Address.Split('.')[0] -ne $FirstOctet) {
+          continue
+        }
+        $ArgumentCollection = @{
+          FirstIPv4Address = $PrivateAddress.FirstIPv4Address
+          LastIPv4Address  = $PrivateAddress.LastIPv4Address
+          TestIPv4Address  = $IPv4Address
+        }
+        $Result = Test-IPv4AddressWithinRange @ArgumentCollection
+        if($Result) {
+          $Found = $true
+          break
+        }
       }
-      @{
-        Subnet = '192.168.0.0'
-        Prefix = 16
-      }
-      # RFC RFC 6598
-      @{
-        Subnet = '100.64.0.0'
-        Prefix = 10
-      }
+      $Found
     }
-    $Found = $false
-    foreach($PrivateAddress in $PrivateAddressCollection) {
-      $ArgumentCollection = @{
-        IPv4Address           = $PrivateAddress.Subnet
-        Prefix                = $PrivateAddress.Prefix
-        NoPrivateAddressSpace = $true
-      }
-      $SubnetInformation = Get-SubnetInformation @ArgumentCollection
-      $ArgumentCollection = @{
-        FirstIPv4Address = $SubnetInformation.SubnetId
-        LastIPv4Address  = $SubnetInformation.BroadcastAddress
-        TestIPv4Address  = $IPv4Address
-      }
-      $Result = Test-IPv4AddressWithinRange @ArgumentCollection
-      if($Result) {
-        $Found = $true
-        break
-      }
-    }
-    $Found
   }
 
   end {}
