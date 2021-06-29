@@ -2,7 +2,7 @@
 Module Name: IPv4Toolbox
 Module Guid: b1a4c4a0-f480-4831-a6e0-141487f746b4
 Download Help Link: https://raw.githubusercontent.com/roberttoups/IPv4Toolbox/master/en-US/IPv4Toolbox-help.xml
-Help Version: 0.5.0
+Help Version: 0.6.0
 Locale: en-US
 ---
 
