@@ -50,7 +50,7 @@ Aliases:
 
 Required: False
 Position: 1
-Default value: Http://ipinfo.io/ip
+Default value: Https://ipinfo.io/ip
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
