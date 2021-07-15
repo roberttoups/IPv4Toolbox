@@ -78,6 +78,7 @@
     'Invoke-IPv4ListSort'
     'Out-SubnetRange'
     'Split-Subnet'
+    'Test-IPv4Address'
     'Test-IPv4AddressWithinRange'
     'Test-PrivateIPv4Address'
   )
