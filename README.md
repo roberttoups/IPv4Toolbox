@@ -4,7 +4,7 @@
 
 ## Description
 
-Module to simplify the calculations associated to IPv4 addressing.
+Module to simplify the manipulation, discovery, and testing of IPv4 Addresses .
 
 ## How to deploy from the PowerShell Gallery
 
@@ -47,13 +47,13 @@ PackageManagement IPv4Toolbox {
 
 ### [ConvertTo-InverseAddress](Docs/ConvertTo-InverseAddress.md)
 
-Converts an IPv4 Address or Subnet into Windows PTR Zone compatible domain name.
+Converts an IPv4 Address or Subnet into a Windows PTR Zone compatible domain name.
 
 ![ConvertTo-InverseAddress](Examples/Graphics/ConvertTo-InverseAddress.gif)
 
 ### [Find-IPv4Address](Docs/Find-IPv4Address.md)
 
-Returns all valid IPv4 Address in a string.
+Returns all valid IPv4 Addresses in a string.
 
 ![Find-IPv4Address](Examples/Graphics/Find-IPv4Address.gif)
 
@@ -71,7 +71,7 @@ Returns the information regarding a subnet that an IPv4 Address exists.
 
 ### [Invoke-IPv4GeoLookup](Docs/Invoke-IPv4GeoLookup.md)
 
-Returns GeoIP Information from [ip-api](https://ip-api.com).
+Returns GeoIP Information for an IPv4 Address from [ip-api](https://ip-api.com).
 
 ![Invoke-IPv4GeoLookup](Examples/Graphics/Invoke-IPv4GeoLookup.gif)
 
@@ -101,7 +101,7 @@ Evaluates if an IPv4 Address is equal or within an IPv4 Address range.
 
 ### [Test-PrivateIPv4Address](Docs/Test-PrivateIPv4Address.md)
 
-Determines if an IPv4 Address is in a private address space.
+Determines if an IPv4 Address is in a private address space as defined by [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918) & [RFC 6598](https://datatracker.ietf.org/doc/html/rfc6598).
 
 ![Test-PrivateIPv4Address](Examples/Graphics/Test-PrivateIPv4Address.gif)
 
