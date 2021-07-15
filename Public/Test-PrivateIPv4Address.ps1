@@ -76,7 +76,7 @@ function Test-PrivateIPv4Address {
           FirstIPv4Address = '192.168.0.0'
           LastIPv4Address  = '192.168.255.255'
         }
-        # RFC RFC 6598
+        # RFC 6598
         @{
           # 100.64.0.0/10
           FirstIPv4Address = '100.64.0.0'
