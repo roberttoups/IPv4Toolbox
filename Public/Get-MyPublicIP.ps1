@@ -44,8 +44,8 @@ function Get-MyPublicIP {
       HelpMessage = 'The URI of the API Service.'
     )]
     [ValidateSet(
-      'http://icanhazip.com',
-      'http://ident.me',
+      'http://ipv4.icanhazip.com',
+      'https://v4.ident.me',
       'http://ifconfig.me/ip',
       'http://ipinfo.io/ip'
     )]
