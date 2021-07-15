@@ -259,7 +259,7 @@
             <maml:name>System.String</maml:name>
             <maml:uri />
           </dev:type>
-          <dev:defaultValue>Http://ipinfo.io/ip</dev:defaultValue>
+          <dev:defaultValue>Https://ipinfo.io/ip</dev:defaultValue>
         </command:parameter>
       </command:syntaxItem>
     </command:syntax>
@@ -274,7 +274,7 @@
           <maml:name>System.String</maml:name>
           <maml:uri />
         </dev:type>
-        <dev:defaultValue>Http://ipinfo.io/ip</dev:defaultValue>
+        <dev:defaultValue>Https://ipinfo.io/ip</dev:defaultValue>
       </command:parameter>
     </command:parameters>
     <command:inputTypes />
@@ -565,7 +565,7 @@ PrivateAddressSpace :</dev:code>
     <command:syntax>
       <command:syntaxItem>
         <maml:name>Invoke-IPv4GeoLookup</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="IPAddress">
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="IPAddress">
           <maml:name>IPv4Address</maml:name>
           <maml:description>
             <maml:para>The non-RFC 1918 IPv4 Address to obtain the GeoIP information.</maml:para>
@@ -580,7 +580,7 @@ PrivateAddressSpace :</dev:code>
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="IPAddress">
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="IPAddress">
         <maml:name>IPv4Address</maml:name>
         <maml:description>
           <maml:para>The non-RFC 1918 IPv4 Address to obtain the GeoIP information.</maml:para>
@@ -732,7 +732,7 @@ mapReference : https://www.google.com/maps?q=-27.4766,153.0166</dev:code>
       </command:example>
       <command:example>
         <maml:title>-------------------------- EXAMPLE 3 --------------------------</maml:title>
-        <dev:code>Invoke-IPv4ListSort -IPv4AddressList @('1.1.1.1','192.168.1.0/28','10.12.13.14','8.8.8.8','4.2.2.1','192.168.23.2/29')
+        <dev:code>Invoke-IPv4ListSort -IPv4AddressList @('192.168.1.0/28','10.12.13.14/32','8.8.8.8','4.2.2.1','192.168.23.2/29','1.1.1.1')
 
 1.1.1.1
 4.2.2.1
@@ -1049,6 +1049,78 @@ AWSTotalHosts       : 123</dev:code>
         <maml:uri>http://www.github.com/roberttoups/IPv4Toolbox</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Test-IPv4Address</command:name>
+      <command:verb>Test</command:verb>
+      <command:noun>IPv4Address</command:noun>
+      <maml:description>
+        <maml:para>Tests a string to determine if it is a valid IPv4 Address.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Tests a string to determine if it is a valid IPv4 Address.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Test-IPv4Address</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
+          <maml:name>IPv4Address</maml:name>
+          <maml:description>
+            <maml:para>The string to test if it is a valid IPv4 Address.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
+        <maml:name>IPv4Address</maml:name>
+        <maml:description>
+          <maml:para>The string to test if it is a valid IPv4 Address.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>http://www.github.com/roberttoups/IPv4Toolbox</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Test-IPv4Address -IPv4Address 192.168.0.1
+
+True</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <dev:code>Test-IPv4Address -IPv4Address 192.apple.0.1
+
+False</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
