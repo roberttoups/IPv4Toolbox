@@ -46,6 +46,7 @@ function Invoke-IPv4GeoLookup {
     # The non-RFC 1918 IPv4 Address to obtain the GeoIP information.
     [Parameter(
       HelpMessage = 'The non-RFC 1918 IPv4 Address to obtain the GeoIP information.',
+      ValueFromPipeline = $true,
       Mandatory = $true
     )]
     [Alias('IPAddress')]
