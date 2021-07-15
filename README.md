@@ -49,41 +49,61 @@ PackageManagement IPv4Toolbox {
 
 Converts an IPv4 Address or Subnet into Windows PTR Zone compatible domain name.
 
+![ConvertTo-InverseAddress](Examples/Graphics/ConvertTo-InverseAddress.gif)
+
 ### [Find-IPv4Address](Docs/Find-IPv4Address.md)
 
 Returns all valid IPv4 Address in a string.
+
+![Find-IPv4Address](Examples/Graphics/Find-IPv4Address.gif)
 
 ### [Get-MyPublicIP](Docs/Get-MyPublicIP.md)
 
 Returns the Public IPv4 Address of the client returned by a web API.
 
+![Get-MyPublicIP](Examples/Graphics/Get-MyPublicIP.gif)
+
 ### [Get-SubnetInformation](Docs/Get-SubnetInformation.md)
 
 Returns the information regarding a subnet that an IPv4 Address exists.
+
+![Get-SubnetInformation](Examples/Graphics/Get-SubnetInformation.gif)
 
 ### [Invoke-IPv4GeoLookup](Docs/Invoke-IPv4GeoLookup.md)
 
 Returns GeoIP Information from [ip-api](https://ip-api.com).
 
+![Invoke-IPv4GeoLookup](Examples/Graphics/Invoke-IPv4GeoLookup.gif)
+
 ### [Invoke-IPv4ListSort](Docs/Invoke-IPv4ListSort.md)
 
 Sorts an array of IPv4 Addresses include CIDR address ranges.
+
+![Invoke-IPv4ListSort](Examples/Graphics/Invoke-IPv4ListSort.gif)
 
 ### [Out-SubnetRange](Docs/Out-SubnetRange.md)
 
 Outputs a list of IPv4 Addresses from a CIDR address range.
 
+![Out-SubnetRange](Examples/Graphics/Out-SubnetRange.gif)
+
 ### [Split-Subnet](Docs/Split-Subnet.md)
 
 Breaks up a larger CIDR into small CIDRs.
+
+![Split-Subnet](Examples/Graphics/Split-Subnet.gif)
 
 ### [Test-IPv4AddressWithinRange](Docs/Test-IPv4AddressWithinRange.md)
 
 Evaluates if an IPv4 Address is equal or within an IPv4 Address range.
 
+![Test-IPv4AddressWithinRange](Examples/Graphics/Test-IPv4AddressWithinRange.gif)
+
 ### [Test-PrivateIPv4Address](Docs/Test-PrivateIPv4Address.md)
 
 Determines if an IPv4 Address is in a private address space.
+
+![Test-PrivateIPv4Address](Examples/Graphics/Test-PrivateIPv4Address.gif)
 
 ## License
 
