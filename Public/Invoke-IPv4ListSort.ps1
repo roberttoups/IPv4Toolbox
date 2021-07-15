@@ -95,6 +95,9 @@ function Invoke-IPv4ListSort {
     $SingleIpRegEx = '^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])$'
     $SubnetRangeRegEx = '^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])/([8-9]|[1-2][0-9]|3[0])$'
     $ValidatedIPv4AddressList = foreach($IPv4Address in $IPv4AddressList) {
+      if($IPv4Address -match '/32$') {
+        $IPv4Address = $IPv4Address -replace ('/32$', '')
+      }
       if($IPv4Address -match $SingleIpRegEx) {
         $IPv4Address
       } elseif($IPv4Address -match $SubnetRangeRegEx) {
