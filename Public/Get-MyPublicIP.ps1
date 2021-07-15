@@ -44,13 +44,13 @@ function Get-MyPublicIP {
       HelpMessage = 'The URI of the API Service.'
     )]
     [ValidateSet(
-      'http://ipv4.icanhazip.com',
+      'https://ipv4.icanhazip.com',
       'https://v4.ident.me',
-      'http://ifconfig.me/ip',
-      'http://ipinfo.io/ip'
+      'https://ifconfig.me/ip',
+      'https://ipinfo.io/ip'
     )]
     [String]
-    $Uri = 'http://ipinfo.io/ip'
+    $Uri = 'https://ipinfo.io/ip'
   )
   begin {}
 
