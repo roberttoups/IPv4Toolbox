@@ -43,6 +43,15 @@ PackageManagement IPv4Toolbox {
 }
 ```
 
+## What's New
+
+### 0.6.0
+
+- Added [Get-MyPublicIP](Docs/Get-MyPublicIP.md) function
+- Added [Test-IPv4Address](Docs/Test-IPv4Address.md) function
+- [Invoke-IPv4ListSort](Docs/Invoke-IPv4ListSort.md) accepts input from the command line
+- Migrating functions to use HTTPS APIs
+
 ## Functions
 
 ### [ConvertTo-InverseAddress](Docs/ConvertTo-InverseAddress.md)
