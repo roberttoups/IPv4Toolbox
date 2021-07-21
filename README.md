@@ -49,8 +49,9 @@ PackageManagement IPv4Toolbox {
 
 - Added [Get-MyPublicIP](Docs/Get-MyPublicIP.md) function
 - Added [Test-IPv4Address](Docs/Test-IPv4Address.md) function
-- [Invoke-IPv4ListSort](Docs/Invoke-IPv4ListSort.md) accepts input from the command line
+- [Invoke-IPv4GeoLookup](Docs/Invoke-IPv4GeoLookup.md) accepts input from the command line
 - Migrating functions to use HTTPS APIs
+- Increased verbosity of functions
 
 ## Functions
 
