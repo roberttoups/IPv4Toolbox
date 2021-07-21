@@ -46,6 +46,10 @@ Outputs a list of IPv4 Addresses from a CIDR address range.
 
 Breaks up a larger CIDR into small CIDRs.
 
+### [Test-IPv4Address](Test-IPv4Address.md)
+
+Tests a string to determine if it is a valid IPv4 Address.
+
 ### [Test-IPv4AddressWithinRange](Test-IPv4AddressWithinRange.md)
 
 Evaluates if an IPv4 Address is equal or within an IPv4 Address range.

@@ -77,8 +77,10 @@ function Test-IPv4AddressWithinRange {
     $TestInt64 = ConvertTo-Int64 -IPv4Address $TestIPv4Address
     Write-Verbose -Message "       TestInt64: $TestInt64"
     if($FirstInt64 -le $TestInt64 -and $LastInt64 -ge $TestInt64) {
+      Write-Verbose -Message "TestIPv4Address is within FirstIPv4Address and LastIPv4Address"
       $true
     } else {
+      Write-Verbose -Message "TestIPv4Address is not within FirstIPv4Address and LastIPv4Address"
       $false
     }
   }

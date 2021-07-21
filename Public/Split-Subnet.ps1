@@ -94,6 +94,7 @@ function Split-Subnet {
       $Start = (ConvertTo-Int64 -IPv4Address $SubnetInformation.'SubnetId')
       $Output = for ($i = 0; $i -lt $SubnetCount; $i++) {
         $NewSubnet = ConvertTo-IPv4 -Integer ($Start + (($TargetSubnetInformation.TotalHosts + 2) * $i))
+        Write-Verbose -Message "New Subnet: $NewSubnet/$TargetPrefix"
         Get-SubnetInformation -IPv4Address $NewSubnet -Prefix $TargetPrefix
       }
     }
