@@ -93,6 +93,10 @@ Breaks up a larger CIDR into small CIDRs.
 
 ![Split-Subnet](Examples/Graphics/Split-Subnet.gif)
 
+### [Test-IPv4Address](Docs/Test-IPv4Address.md)
+
+Tests a string to determine if it is a valid IPv4 Address (0.0.0.0 to 255.255.255.255).
+
 ### [Test-IPv4AddressWithinRange](Docs/Test-IPv4AddressWithinRange.md)
 
 Evaluates if an IPv4 Address is equal or within an IPv4 Address range.
