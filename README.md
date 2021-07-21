@@ -104,6 +104,8 @@ Breaks up a larger CIDR into small CIDRs.
 
 ### [Test-IPv4Address](Docs/Test-IPv4Address.md)
 
+![Test-IPv4Address](Examples/Graphics/Test-IPv4Address.gif)
+
 Tests a string to determine if it is a valid IPv4 Address (0.0.0.0 to 255.255.255.255).
 
 ### [Test-IPv4AddressWithinRange](Docs/Test-IPv4AddressWithinRange.md)
