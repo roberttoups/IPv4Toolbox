@@ -52,19 +52,24 @@ function Test-IPv4Address {
   begin { }
 
   process {
+    Write-Verbose -Message "Validating IPv4 Address $IPv4Address"
     $RegularExpression = '^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])$'
     if($IPv4Address -match $RegularExpression) {
       try {
         $TestIPv4Address = [System.Net.IPAddress]$IPv4Address
         if($TestIPv4Address) {
+          Write-Verbose -Message "IPv4 Address $IPv4Address is valid."
           $true
         } else {
+          Write-Verbose -Message "IPv4 Address $IPv4Address is not valid. (Failed System.Net.IPAddress)"
           $false
         }
       } catch {
+        Write-Verbose -Message "IPv4 Address $IPv4Address is not valid. (Failed System.Net.IPAddress)"
         $false
       }
     } else {
+      Write-Verbose -Message "IPv4 Address $IPv4Address is not valid. (Regular Expression)"
       $false
     }
   }

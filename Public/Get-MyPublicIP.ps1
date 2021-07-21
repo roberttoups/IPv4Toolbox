@@ -55,6 +55,7 @@ function Get-MyPublicIP {
   begin {}
 
   process {
+    Write-Verbose -Message "Querying $Uri"
     ((Invoke-WebRequest -Uri $Uri).Content).Trim()
   }
 

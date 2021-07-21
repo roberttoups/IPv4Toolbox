@@ -193,14 +193,18 @@ function Get-SubnetInformation {
       $FirstAddress = ConvertTo-IPv4 -Integer ($StartingAddress + 1)
       $Hosts = ((ConvertTo-DecimalIP -IPAddressObject $BroadcastAddressObject) - (ConvertTo-DecimalIP -IPAddressObject $SubnetAddressObject) - 1)
       $PrivateAddressSpace = if($NoPrivateAddressSpace) {
+        Write-Verbose -Message 'Private Address Space: False'
         $null
       } else {
+        Write-Verbose -Message 'Private Address Space: True'
         Test-PrivateIPv4Address -IPv4Address $FirstAddress
       }
       if($PrivateAddressSpace -and ($Prefix -ge 16 -and $Prefix -le 28)) {
+        Write-Verbose -Message 'AWS Subnet: True'
         $AWSFirstIPv4Address = ConvertTo-IPv4 -Integer ($StartingAddress + 4)
         $AWSTotalHosts = ($Hosts - ((ConvertTo-Int64 -IPv4Address $AWSFirstIPv4Address) - (ConvertTo-Int64 -IPv4Address $FirstAddress)))
       } else {
+        Write-Verbose -Message 'AWS Subnet: False'
         $AWSFirstIPv4Address = $null
         $AWSTotalHosts = $null
       }
@@ -218,7 +222,7 @@ function Get-SubnetInformation {
         'PrivateAddressSpace' = $PrivateAddressSpace
       }
     } else {
-      Write-Error "-IPv4Address is NULL!"
+      Write-Error '-IPv4Address is NULL!'
       $null
     }
   }

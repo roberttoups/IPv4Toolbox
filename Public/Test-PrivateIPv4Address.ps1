@@ -57,6 +57,7 @@ function Test-PrivateIPv4Address {
       $FirstOctet -ne '100' -and
       $FirstOctet -ne '10'
     ) {
+      Write-Verbose -Message 'IPv4 Address is not in a private address space'
       $false
     } else {
       $PrivateAddressCollection = DATA {
@@ -85,6 +86,7 @@ function Test-PrivateIPv4Address {
       }
       $Found = $false
       foreach($PrivateAddress in $PrivateAddressCollection) {
+        Write-Verbose -Message "Checking if $IPv4Address is between $($PrivateAddress.FirstIPv4Address) and $($PrivateAddress.LastIPv4Address)"
         if($PrivateAddress.FirstIPv4Address.Split('.')[0] -ne $FirstOctet) {
           continue
         }
@@ -95,6 +97,7 @@ function Test-PrivateIPv4Address {
         }
         $Result = Test-IPv4AddressWithinRange @ArgumentCollection
         if($Result) {
+          Write-Verbose -Message 'IPv4 Address is in a private address space'
           $Found = $true
           break
         }

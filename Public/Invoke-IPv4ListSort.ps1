@@ -96,9 +96,11 @@ function Invoke-IPv4ListSort {
     $SubnetRangeRegEx = '^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])/([8-9]|[1-2][0-9]|3[0])$'
     $ValidatedIPv4AddressList = foreach($IPv4Address in $IPv4AddressList) {
       if($IPv4Address -match '/32$') {
+        Write-Verbose -Message "$IPv4Address is /32"
         $IPv4Address = $IPv4Address -replace ('/32$', '')
       }
       if($IPv4Address -match $SingleIpRegEx) {
+        Write-Verbose -Message "$IPv4Address is a single IPv4 Address"
         $IPv4Address
       } elseif($IPv4Address -match $SubnetRangeRegEx) {
         Write-Verbose -Message "Subnet: $IPv4Address"
@@ -110,9 +112,11 @@ function Invoke-IPv4ListSort {
       }
     }
     if($Descending) {
+      Write-Verbose -Message "Sorting IPv4 Addresses in Descending order"
       [System.Array]$SortedIPv4AddressList = $ValidatedIPv4AddressList |
         Sort-Object -Property @{Expression = { $_ -as [System.Version] } } -Descending -Unique
     } else {
+      Write-Verbose -Message "Sorting IPv4 Addresses in Ascending order"
       [System.Array]$SortedIPv4AddressList = $ValidatedIPv4AddressList |
         Sort-Object -Property @{Expression = { $_ -as [System.Version] } } -Unique
     }
