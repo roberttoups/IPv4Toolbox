@@ -38,6 +38,7 @@ The string to test if it is a valid IPv4 Address.
 #>
 function Test-IPv4Address {
   [CmdletBinding()]
+  [OutputType([Boolean])]
   param (
     # The IPv4 Address string to test.
     [Parameter(
