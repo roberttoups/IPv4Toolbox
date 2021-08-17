@@ -2,6 +2,83 @@
 <helpItems schema="maml" xmlns="http://msh">
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
+      <command:name>ConvertFrom-InverseAddress</command:name>
+      <command:verb>ConvertFrom</command:verb>
+      <command:noun>InverseAddress</command:noun>
+      <maml:description>
+        <maml:para>Converts an Inverse Address to either an IPv4 Address or Subnet in CIDR address format.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Converts an Inverse Address to either an IPv4 Address or Subnet in CIDR address format.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>ConvertFrom-InverseAddress</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
+          <maml:name>InverseAddress</maml:name>
+          <maml:description>
+            <maml:para>The Inverse Address to produce the IPv4Address.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
+        <maml:name>InverseAddress</maml:name>
+        <maml:description>
+          <maml:para>The Inverse Address to produce the IPv4Address.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>ConvertFrom-InverseAddress -InverseAddress '12.0.12.10.in-addr.arpa'
+
+10.12.0.12</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <dev:code>ConvertFrom-InverseAddress -InverseAddress '0.12.10.in-addr.arpa'
+
+10.12.0.0/24</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>http://www.github.com/roberttoups/IPv4Toolbox</maml:linkText>
+        <maml:uri>http://www.github.com/roberttoups/IPv4Toolbox</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
       <command:name>ConvertTo-InverseAddress</command:name>
       <command:verb>ConvertTo</command:verb>
       <command:noun>InverseAddress</command:noun>
@@ -1060,7 +1137,7 @@ AWSTotalHosts       : 123</dev:code>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>Tests a string to determine if it is a valid IPv4 Address.</maml:para>
+      <maml:para>Tests a string to determine if it is a valid IPv4 Address (0.0.0.0 to 255.255.255.255).</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -1094,7 +1171,16 @@ AWSTotalHosts       : 123</dev:code>
       </command:parameter>
     </command:parameters>
     <command:inputTypes />
-    <command:returnValues />
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Boolean</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
     <maml:alertSet>
       <maml:alert>
         <maml:para>http://www.github.com/roberttoups/IPv4Toolbox</maml:para>
@@ -1113,6 +1199,15 @@ True</dev:code>
       <command:example>
         <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
         <dev:code>Test-IPv4Address -IPv4Address 192.apple.0.1
+
+False</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 3 --------------------------</maml:title>
+        <dev:code>Test-IPv4Address -IPv4Address 192.256.0.1
 
 False</dev:code>
         <dev:remarks>
