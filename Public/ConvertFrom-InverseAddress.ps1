@@ -9,6 +9,8 @@
 
 .PARAMETER InverseAddress
 
+  The Inverse Address to convert to IPv4 Address or CIDR format.
+
 .EXAMPLE
 
   ConvertFrom-InverseAddress -InverseAddress '12.0.12.10.in-addr.arpa'
@@ -30,12 +32,12 @@
 function ConvertFrom-InverseAddress {
   [CmdletBinding()]
   param (
-    # The Inverse Address to produce the IPv4Address.
+    # The Inverse Address to convert to IPv4 Address or CIDR format.
     [Parameter(
       Position = 0,
       Mandatory = $true,
       ValueFromPipeline = $true,
-      HelpMessage = 'The Inverse Address to produce the IPv4Address.',
+      HelpMessage = 'The Inverse Address to convert to IPv4 Address or CIDR format.',
       ParameterSetName = 'InverseAddress'
     )]
     [ValidateScript(
