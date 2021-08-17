@@ -1,18 +1,31 @@
 <#
 .SYNOPSIS
 
+  Converts an Inverse Address to either an IPv4 Address or Subnet in CIDR address format.
+
 .DESCRIPTION
 
-.PARAMETER
+  Converts an Inverse Address to either an IPv4 Address or Subnet in CIDR address format.
+
+.PARAMETER InverseAddress
 
 .EXAMPLE
 
-  ConvertFrom-InverseAddress
+  ConvertFrom-InverseAddress -InverseAddress '12.0.12.10.in-addr.arpa'
+
+  10.12.0.12
+
+.EXAMPLE
+
+  ConvertFrom-InverseAddress -InverseAddress '0.12.10.in-addr.arpa'
+
+  10.12.0.0/24
 
 .NOTES
 
 .LINK
 
+  http://www.github.com/roberttoups/IPv4Toolbox
 #>
 function ConvertFrom-InverseAddress {
   [CmdletBinding()]
