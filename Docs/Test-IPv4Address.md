@@ -17,7 +17,7 @@ Test-IPv4Address [-IPv4Address] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Tests a string to determine if it is a valid IPv4 Address.
+Tests a string to determine if it is a valid IPv4 Address (0.0.0.0 to 255.255.255.255).
 
 ## EXAMPLES
 
@@ -33,6 +33,14 @@ True
 
 ```powershell
 Test-IPv4Address -IPv4Address 192.apple.0.1
+
+False
+```
+
+### -------------------------- EXAMPLE 3 --------------------------
+
+```powershell
+Test-IPv4Address -IPv4Address 192.256.0.1
 
 False
 ```
@@ -61,6 +69,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
+### System.Boolean
 ## NOTES
 http://www.github.com/roberttoups/IPv4Toolbox
 
