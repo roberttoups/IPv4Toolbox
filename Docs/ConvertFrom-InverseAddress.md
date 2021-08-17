@@ -40,7 +40,7 @@ ConvertFrom-InverseAddress -InverseAddress '0.12.10.in-addr.arpa'
 ## PARAMETERS
 
 ### -InverseAddress
-The Inverse Address to produce the IPv4Address.
+The Inverse Address to convert to IPv4 Address or CIDR format.
 
 ```yaml
 Type: System.String

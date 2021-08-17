@@ -18,7 +18,7 @@
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
           <maml:name>InverseAddress</maml:name>
           <maml:description>
-            <maml:para>The Inverse Address to produce the IPv4Address.</maml:para>
+            <maml:para>The Inverse Address to convert to IPv4 Address or CIDR format.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
           <dev:type>
@@ -33,7 +33,7 @@
       <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
         <maml:name>InverseAddress</maml:name>
         <maml:description>
-          <maml:para>The Inverse Address to produce the IPv4Address.</maml:para>
+          <maml:para>The Inverse Address to convert to IPv4 Address or CIDR format.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
         <dev:type>
