@@ -14,6 +14,10 @@ Module to assist in the manipulation of IPv4 Addresses and Subnets.
 
 ## IPv4Toolbox Cmdlets
 
+### [ConvertFrom-InverseAddress](ConvertFrom-InverseAddress.md)
+
+Converts an Inverse Address to either an IPv4 Address or Subnet in CIDR address format.
+
 ### [ConvertTo-InverseAddress](ConvertTo-InverseAddress.md)
 
 Converts an IPv4 Address or Subnet into Windows PTR Zone compatible domain name.
@@ -48,7 +52,7 @@ Breaks up a larger CIDR into small CIDRs.
 
 ### [Test-IPv4Address](Test-IPv4Address.md)
 
-Tests a string to determine if it is a valid IPv4 Address.
+Tests a string to determine if it is a valid IPv4 Address (0.0.0.0 to 255.255.255.255).
 
 ### [Test-IPv4AddressWithinRange](Test-IPv4AddressWithinRange.md)
 
