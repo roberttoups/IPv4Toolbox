@@ -92,7 +92,7 @@ Returns GeoIP Information for an IPv4 Address from [ip-api](https://ip-api.com).
 
 ### [Invoke-IPv4ListSort](Docs/Invoke-IPv4ListSort.md)
 
-Sorts an array of IPv4 Addresses include CIDR address ranges.
+Sorts an array of IPv4 Addresses including CIDR address ranges.
 
 ![Invoke-IPv4ListSort](Examples/Graphics/Invoke-IPv4ListSort.gif)
 
