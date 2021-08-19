@@ -51,7 +51,7 @@ InModuleScope $ModuleName {
       Answer   = $false
     }
     $TestCollection += [PSCustomObject]@{
-      Question = '172.16.1.2.0'
+      Question = '2607:fb90:5c0:786d:cb5d:b590:8254:1b00'
       Answer   = $false
     }
     Context "Testing return by $FunctionName" {
