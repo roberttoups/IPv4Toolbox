@@ -62,6 +62,7 @@ PackageManagement IPv4Toolbox {
 Converts an Inverse Address to either an IPv4 Address or Subnet in CIDR address format.
 
 ![ConvertFrom-InverseAddress](Examples/Graphics/ConvertFrom-InverseAddress.gif)
+
 ### [ConvertTo-InverseAddress](Docs/ConvertTo-InverseAddress.md)
 
 Converts an IPv4 Address or Subnet into a Windows PTR Zone compatible domain name.
