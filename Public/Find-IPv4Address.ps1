@@ -70,6 +70,8 @@ function Find-IPv4Address {
       '_'
       '<'
       '>'
+      '/'
+      '\'
     )
     $Text = $Text -replace '\n', ' '
     foreach($Spacer in $SpaceOut) {
