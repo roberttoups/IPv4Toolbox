@@ -18,6 +18,8 @@ jobs:
           Write-Host $Path
           Invoke-Pester -Path $Path -Output 'Detailed'
         shell: pwsh
+      - name: pester-tests-report
+        uses: zyborg/pester-tests-report@v1.5.0
   test-ubuntu:
     runs-on: ubuntu-latest
     steps:
