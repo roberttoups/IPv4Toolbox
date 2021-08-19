@@ -5,53 +5,47 @@ online version: http://www.github.com/roberttoups/IPv4Toolbox
 schema: 2.0.0
 ---
 
-# Invoke-IPv4GeoLookup
+# ConvertFrom-InverseAddress
 
 ## SYNOPSIS
-Returns GeoIP Information from ip-api.com.
+Converts an Inverse Address to either an IPv4 Address or Subnet in CIDR address format.
 
 ## SYNTAX
 
 ```
-Invoke-IPv4GeoLookup [-IPv4Address] <String> [<CommonParameters>]
+ConvertFrom-InverseAddress [-InverseAddress] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Returns GeoIP Information from ip-api.com.
+Converts an Inverse Address to either an IPv4 Address or Subnet in CIDR address format.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 
 ```powershell
-Invoke-IPv4GeoLookup -IPv4Address 1.1.1.1
+ConvertFrom-InverseAddress -InverseAddress '12.0.12.10.in-addr.arpa'
 
-status       : success
-country      : Australia
-countryCode  : AU
-region       : QLD
-regionName   : Queensland
-city         : South Brisbane
-zip          : 4101
-lat          : -27.4766
-lon          : 153.0166
-timezone     : Australia/Brisbane
-isp          : Cloudflare, Inc
-org          : APNIC and Cloudflare DNS Resolver project
-as           : AS13335 Cloudflare, Inc.
-query        : 1.1.1.1
-mapReference : https://www.google.com/maps?q=-27.4766,153.0166
+10.12.0.12
+```
+
+### -------------------------- EXAMPLE 2 --------------------------
+
+```powershell
+ConvertFrom-InverseAddress -InverseAddress '0.12.10.in-addr.arpa'
+
+10.12.0.0/24
 ```
 
 ## PARAMETERS
 
-### -IPv4Address
-The non-RFC 1918 IPv4 Address to obtain the GeoIP information.
+### -InverseAddress
+The Inverse Address to convert to IPv4 Address or CIDR format.
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
-Aliases: IPAddress
+Aliases:
 
 Required: True
 Position: 1
@@ -68,7 +62,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
-Do not use this function multiple times a second or you will be rate limited.
 
 ## RELATED LINKS
 

@@ -8,6 +8,9 @@
 !Docs/*.md
 !en-US
 !en-US/*.xml
+!Examples
+!Examples/Graphics
+!Examples/Graphics/*.gif
 !icons
 !icons/*.png
 !Private

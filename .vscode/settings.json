@@ -4,7 +4,9 @@
     "Cmdlets",
     "Dont",
     "arpa",
-    "hashtable"
+    "hashtable",
+    "rsync",
+    "auxvv"
   ],
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,

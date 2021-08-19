@@ -2,7 +2,7 @@
 Module Name: IPv4Toolbox
 Module Guid: b1a4c4a0-f480-4831-a6e0-141487f746b4
 Download Help Link: https://raw.githubusercontent.com/roberttoups/IPv4Toolbox/master/en-US/IPv4Toolbox-help.xml
-Help Version: 0.5.0
+Help Version: 0.6.0
 Locale: en-US
 ---
 
@@ -13,6 +13,10 @@ Locale: en-US
 Module to assist in the manipulation of IPv4 Addresses and Subnets.
 
 ## IPv4Toolbox Cmdlets
+
+### [ConvertFrom-InverseAddress](ConvertFrom-InverseAddress.md)
+
+Converts an Inverse Address to either an IPv4 Address or Subnet in CIDR address format.
 
 ### [ConvertTo-InverseAddress](ConvertTo-InverseAddress.md)
 
@@ -45,6 +49,10 @@ Outputs a list of IPv4 Addresses from a CIDR address range.
 ### [Split-Subnet](Split-Subnet.md)
 
 Breaks up a larger CIDR into small CIDRs.
+
+### [Test-IPv4Address](Test-IPv4Address.md)
+
+Tests a string to determine if it is a valid IPv4 Address (0.0.0.0 to 255.255.255.255).
 
 ### [Test-IPv4AddressWithinRange](Test-IPv4AddressWithinRange.md)
 

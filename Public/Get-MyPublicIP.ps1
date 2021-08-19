@@ -37,24 +37,25 @@ function Get-MyPublicIP {
   [CmdletBinding()]
   [OutputType([String])]
   param (
-    # The thing you want the single string for.
+    # The URI of the API Service.
     [Parameter(
       Position = 0,
       Mandatory = $false,
       HelpMessage = 'The URI of the API Service.'
     )]
     [ValidateSet(
-      'http://icanhazip.com',
-      'http://ident.me',
-      'http://ifconfig.me/ip',
-      'http://ipinfo.io/ip'
+      'https://ipv4.icanhazip.com',
+      'https://v4.ident.me',
+      'https://ifconfig.me/ip',
+      'https://ipinfo.io/ip'
     )]
     [String]
-    $Uri = 'http://ipinfo.io/ip'
+    $Uri = 'https://ipinfo.io/ip'
   )
   begin {}
 
   process {
+    Write-Verbose -Message "Querying $Uri"
     ((Invoke-WebRequest -Uri $Uri).Content).Trim()
   }
 

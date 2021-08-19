@@ -70,6 +70,8 @@ function Find-IPv4Address {
       '_'
       '<'
       '>'
+      '/'
+      '\'
     )
     $Text = $Text -replace '\n', ' '
     foreach($Spacer in $SpaceOut) {
@@ -83,7 +85,9 @@ function Find-IPv4Address {
       while($Word -match '^\W') {
         $Word = $Word.Substring(1, ($Word.Length - 1))
       }
+      Write-Verbose -Message "Word: $Word"
       if($Word -match $RegularExpression) {
+        Write-Verbose -Message "IPv4 Address Found: $($Matches[0])"
         $Matches[0]
       }
     }

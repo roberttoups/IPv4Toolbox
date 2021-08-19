@@ -1,57 +1,64 @@
 ---
 external help file: IPv4Toolbox-help.xml
 Module Name: IPv4Toolbox
-online version: http://www.github.com/roberttoups/IPv4Toolbox
+online version:
 schema: 2.0.0
 ---
 
-# Get-MyPublicIP
+# Test-IPv4Address
 
 ## SYNOPSIS
-Returns the Public IPv4 Address of the client returned by a web API.
+Tests a string to determine if it is a valid IPv4 Address.
 
 ## SYNTAX
 
 ```
-Get-MyPublicIP [[-Uri] <String>] [<CommonParameters>]
+Test-IPv4Address [-IPv4Address] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Returns the Public IPv4 Address of the client returned by a web API.
+Tests a string to determine if it is a valid IPv4 Address (0.0.0.0 to 255.255.255.255).
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 
 ```powershell
-Get-MyPublicIP
+Test-IPv4Address -IPv4Address 192.168.0.1
 
-8.8.8.8
+True
 ```
 
 ### -------------------------- EXAMPLE 2 --------------------------
 
 ```powershell
-Get-MyPublicIP -Uri 'http://icanhazip.com'
+Test-IPv4Address -IPv4Address 192.apple.0.1
 
-8.8.8.8
+False
+```
+
+### -------------------------- EXAMPLE 3 --------------------------
+
+```powershell
+Test-IPv4Address -IPv4Address 192.256.0.1
+
+False
 ```
 
 ## PARAMETERS
 
-### -Uri
-This is the URI used to query the Public IPv4 Address.
-Valid URIs are http://icanhazip.com, http://ident.me, http://ifconfig.me/ip, & http://ipinfo.io/ip.
+### -IPv4Address
+The string to test if it is a valid IPv4 Address.
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: 1
-Default value: Https://ipinfo.io/ip
-Accept pipeline input: False
+Default value: None
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -62,11 +69,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.String
+### System.Boolean
 ## NOTES
-This function depends on the traffic reaching the web based API not flowing through a proxy for most accurate results.
+http://www.github.com/roberttoups/IPv4Toolbox
 
 ## RELATED LINKS
-
-[http://www.github.com/roberttoups/IPv4Toolbox](http://www.github.com/roberttoups/IPv4Toolbox)
-
