@@ -52,6 +52,7 @@ PackageManagement IPv4Toolbox {
 - [Invoke-IPv4GeoLookup](Docs/Invoke-IPv4GeoLookup.md) accepts input from the command line
 - Migrating functions to use HTTPS APIs
 - Increased verbosity of functions
+- Cleaned up documentation
 
 ## Functions
 
