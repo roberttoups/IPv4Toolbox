@@ -53,6 +53,7 @@ PackageManagement IPv4Toolbox {
 - Migrating functions to use HTTPS APIs
 - Increased verbosity of functions
 - Cleaned up documentation
+- Example animations
 
 ## Functions
 
