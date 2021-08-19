@@ -1,54 +1,46 @@
 ---
 external help file: IPv4Toolbox-help.xml
 Module Name: IPv4Toolbox
-online version:
+online version: http://www.github.com/roberttoups/IPv4Toolbox
 schema: 2.0.0
 ---
 
-# Test-IPv4Address
+# ConvertFrom-InverseAddress
 
 ## SYNOPSIS
-Tests a string to determine if it is a valid IPv4 Address.
+Converts an Inverse Address to either an IPv4 Address or Subnet in CIDR address format.
 
 ## SYNTAX
 
 ```
-Test-IPv4Address [-IPv4Address] <String> [<CommonParameters>]
+ConvertFrom-InverseAddress [-InverseAddress] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Tests a string to determine if it is a valid IPv4 Address (0.0.0.0 to 255.255.255.255).
+Converts an Inverse Address to either an IPv4 Address or Subnet in CIDR address format.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 
 ```powershell
-Test-IPv4Address -IPv4Address 192.168.0.1
+ConvertFrom-InverseAddress -InverseAddress '12.0.12.10.in-addr.arpa'
 
-True
+10.12.0.12
 ```
 
 ### -------------------------- EXAMPLE 2 --------------------------
 
 ```powershell
-Test-IPv4Address -IPv4Address 192.apple.0.1
+ConvertFrom-InverseAddress -InverseAddress '0.12.10.in-addr.arpa'
 
-False
-```
-
-### -------------------------- EXAMPLE 3 --------------------------
-
-```powershell
-Test-IPv4Address -IPv4Address 192.256.0.1
-
-False
+10.12.0.0/24
 ```
 
 ## PARAMETERS
 
-### -IPv4Address
-The string to test if it is a valid IPv4 Address.
+### -InverseAddress
+The Inverse Address to convert to IPv4 Address or CIDR format.
 
 ```yaml
 Type: System.String
@@ -69,8 +61,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Boolean
 ## NOTES
-http://www.github.com/roberttoups/IPv4Toolbox
 
 ## RELATED LINKS
+
+[http://www.github.com/roberttoups/IPv4Toolbox](http://www.github.com/roberttoups/IPv4Toolbox)
+

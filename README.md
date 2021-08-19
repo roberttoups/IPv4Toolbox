@@ -47,13 +47,21 @@ PackageManagement IPv4Toolbox {
 
 ### 0.6.0
 
-- Added [Get-MyPublicIP](Docs/Get-MyPublicIP.md) function
 - Added [Test-IPv4Address](Docs/Test-IPv4Address.md) function
+- Added [ConvertFrom-InverseAddress](Docs/ConvertFrom-InverseAddress.md) function
 - [Invoke-IPv4GeoLookup](Docs/Invoke-IPv4GeoLookup.md) accepts input from the command line
 - Migrating functions to use HTTPS APIs
 - Increased verbosity of functions
+- Cleaned up documentation
+- Example animations
 
 ## Functions
+
+### [ConvertFrom-InverseAddress](Docs/ConvertFrom-InverseAddress.md)
+
+Converts an Inverse Address to either an IPv4 Address or Subnet in CIDR address format.
+
+![ConvertFrom-InverseAddress](Examples/Graphics/ConvertFrom-InverseAddress.gif)
 
 ### [ConvertTo-InverseAddress](Docs/ConvertTo-InverseAddress.md)
 
@@ -87,7 +95,7 @@ Returns GeoIP Information for an IPv4 Address from [ip-api](https://ip-api.com).
 
 ### [Invoke-IPv4ListSort](Docs/Invoke-IPv4ListSort.md)
 
-Sorts an array of IPv4 Addresses include CIDR address ranges.
+Sorts an array of IPv4 Addresses including CIDR address ranges.
 
 ![Invoke-IPv4ListSort](Examples/Graphics/Invoke-IPv4ListSort.gif)
 
@@ -105,9 +113,9 @@ Breaks up a larger CIDR into small CIDRs.
 
 ### [Test-IPv4Address](Docs/Test-IPv4Address.md)
 
-![Test-IPv4Address](Examples/Graphics/Test-IPv4Address.gif)
-
 Tests a string to determine if it is a valid IPv4 Address (0.0.0.0 to 255.255.255.255).
+
+![Test-IPv4Address](Examples/Graphics/Test-IPv4Address.gif)
 
 ### [Test-IPv4AddressWithinRange](Docs/Test-IPv4AddressWithinRange.md)
 
