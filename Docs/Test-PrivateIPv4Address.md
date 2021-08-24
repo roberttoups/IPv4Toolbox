@@ -45,7 +45,7 @@ The IPv4 Address
 ```yaml
 Type: System.String
 Parameter Sets: (All)
-Aliases: IPAddress
+Aliases:
 
 Required: True
 Position: 1

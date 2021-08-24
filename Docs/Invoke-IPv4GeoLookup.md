@@ -51,7 +51,7 @@ The non-RFC 1918 IPv4 Address to obtain the GeoIP information.
 ```yaml
 Type: System.String
 Parameter Sets: (All)
-Aliases: IPAddress
+Aliases:
 
 Required: True
 Position: 1
