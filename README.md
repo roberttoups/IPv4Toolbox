@@ -43,6 +43,29 @@ PackageManagement IPv4Toolbox {
 }
 ```
 
+## Deployment for Air-Gapped Systems
+
+1. Download the desired version of the module from the [Release Page](https://github.com/roberttoups/IPv4Toolbox/releases).
+2. Copy the module to the desired location using the appropriate security controls.
+3. Add the module to the PowerShell module path.
+
+### PowerShell Module Location
+
+Depending on access to the module, your target module will be different. Below are methods for determining the location to copy the module.
+
+```powershell
+# Current User Profile on PowerShell 7
+$env:PSModulePath.Split(':')[0]
+# All Users Profile on PowerShell 7
+$env:PSModulePath.Split(':')[1]
+
+# Current User Profile on Windows PowerShell 3+
+$env:PSModulePath.Split(';')[0]
+# All Users Profile on Windows PowerShell 3+
+$env:PSModulePath.Split(';')[1]
+
+```
+
 ## What's New
 
 ### 0.7.0
