@@ -47,13 +47,8 @@ PackageManagement IPv4Toolbox {
 
 ### 0.7.0
 
-- Added [Test-IPv4Address](Docs/Test-IPv4Address.md) function
-- Added [ConvertFrom-InverseAddress](Docs/ConvertFrom-InverseAddress.md) function
-- [Invoke-IPv4GeoLookup](Docs/Invoke-IPv4GeoLookup.md) accepts input from the command line
-- Migrating functions to use HTTPS APIs
-- Increased verbosity of functions
-- Cleaned up documentation
-- Example animations
+- Updated function parameter help to be more...helpful.
+- Added [Test-IPv4AddressWithinSubnet](Docs/Test-IPv4AddressWithinSubnet.md) function
 
 ## Functions
 
