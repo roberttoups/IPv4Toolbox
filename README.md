@@ -45,7 +45,7 @@ PackageManagement IPv4Toolbox {
 
 ## What's New
 
-### 0.6.0
+### 0.7.0
 
 - Added [Test-IPv4Address](Docs/Test-IPv4Address.md) function
 - Added [ConvertFrom-InverseAddress](Docs/ConvertFrom-InverseAddress.md) function
