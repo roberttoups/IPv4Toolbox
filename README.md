@@ -47,6 +47,10 @@ PackageManagement IPv4Toolbox {
 
 ### 0.7.0
 
+- BREAKING CHANGE: The alias `-IPAddress` for `-IPv4Address` has been removed. It was inconsistently used in the module and interrupted autocomplete functionality. It was used on the following functions:
+  - [Get-SubnetInformation](Docs/Get-SubnetInformation.md)
+  - [Invoke-IPv4GeoLookup](Docs/Invoke-IPv4GeoLookup.md)
+  - [Test-PrivateIPv4Address](Docs/Test-PrivateIPv4Address.md)
 - Updated function parameter help to be more...helpful.
 - Added [Test-IPv4AddressWithinSubnet](Docs/Test-IPv4AddressWithinSubnet.md) function
 
