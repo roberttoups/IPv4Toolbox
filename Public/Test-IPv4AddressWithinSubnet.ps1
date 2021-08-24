@@ -36,10 +36,8 @@
   http://www.github.com/roberttoups/IPv4Toolbox
 #>
 function Test-IPv4AddressWithinSubnet {
-  [CmdletBinding(
-    DefaultParameterSetName = 'Prefix'
-  )]
-  [OutputType([PSCustomObject])]
+  [CmdletBinding()]
+  [OutputType([Boolean])]
   param (
     # The IPv4 address to test.
     [Parameter(
