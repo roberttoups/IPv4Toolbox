@@ -53,6 +53,7 @@ PackageManagement IPv4Toolbox {
   - [Test-PrivateIPv4Address](Docs/Test-PrivateIPv4Address.md)
 - Updated function parameter help to be more...helpful.
 - Added [Test-IPv4AddressWithinSubnet](Docs/Test-IPv4AddressWithinSubnet.md) function
+- Updated error handling for [Get-MyPublicIP](Docs/Get-MyPublicIP.md) so it will output `$null` on failure instead of throwing an error. Using the `-Verbose` switch will output the error message.
 
 ## Functions
 
