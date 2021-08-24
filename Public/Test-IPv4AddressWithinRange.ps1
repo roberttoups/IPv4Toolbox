@@ -80,6 +80,7 @@ function Test-IPv4AddressWithinRange {
     Write-Verbose -Message " LastIPv4Address: $LastIPv4Address"
     $LastInt64 = ConvertTo-Int64 -IPv4Address $LastIPv4Address
     Write-Verbose -Message "       LastInt64: $LastInt64"
+    Write-Verbose -Message " TestIPv4Address: $TestIPv4Address"
     $TestInt64 = ConvertTo-Int64 -IPv4Address $TestIPv4Address
     Write-Verbose -Message "       TestInt64: $TestInt64"
     if($FirstInt64 -le $TestInt64 -and $LastInt64 -ge $TestInt64) {
