@@ -91,7 +91,7 @@ function ConvertFrom-InverseAddress {
       $IPv4ElementList.Reverse() | Out-Null
       $Output = "$($IPv4ElementList -join '.').0.0.0/8"
     } else {
-      Write-Verbose -Message "Inverse Address is not in proper format. Who did we get here?"
+      Write-Verbose -Message 'Inverse Address is not in proper format. Who did we get here?'
       $Output = $null
     }
     $Output
