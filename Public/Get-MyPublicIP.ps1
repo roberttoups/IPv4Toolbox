@@ -56,7 +56,19 @@ function Get-MyPublicIP {
 
   process {
     Write-Verbose -Message "Querying $Uri"
-    ((Invoke-WebRequest -Uri $Uri).Content).Trim()
+    $ArgumentCollection = @{
+      Uri         = $Uri
+      ErrorAction = 'Stop'
+    }
+    try {
+      ((Invoke-WebRequest @ArgumentCollection).Content).Trim()
+    } catch {
+      $SpecificReason = "Tell us why we failed and why it may have happened."
+      $ErrorMessage = $PSItem.Exception.Message
+      Write-Verbose -Message "($ErrorMessage): $SpecificReason Exiting."
+      $null
+    }
+
   }
 
   end {}
