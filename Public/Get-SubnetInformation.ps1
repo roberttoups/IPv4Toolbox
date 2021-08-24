@@ -103,9 +103,11 @@ function Get-SubnetInformation {
   )]
   [OutputType([PSCustomObject])]
   param (
+    # The IPv4 Address
     [Parameter(
       Mandatory = $true,
-      ValueFromPipeline = $true
+      ValueFromPipeline = $true,
+      HelpMessage = 'The IPv4 Address'
     )]
     [Alias('IPAddress')]
     [ValidatePattern(
@@ -114,9 +116,11 @@ function Get-SubnetInformation {
     [String]
     $IPv4Address,
 
+    # The subnet mask of the network
     [Parameter(
       Mandatory = $true,
-      ParameterSetName = 'SubnetMask'
+      ParameterSetName = 'SubnetMask',
+      HelpMessage = 'The subnet mask of the network'
     )]
     [Alias('Mask')]
     [ValidateSet(
@@ -149,17 +153,21 @@ function Get-SubnetInformation {
     [String]
     $SubnetMask,
 
+    # The network prefix
     [Parameter(
       Mandatory = $false,
-      ParameterSetName = 'Prefix'
+      ParameterSetName = 'Prefix',
+      HelpMessage = 'The network prefix'
     )]
     [ValidateRange(8 , 30)]
     [Int32]
     $Prefix = 24,
 
+    # This switch omits the reporting of Private Address Space for the subnet and any associated AWS information
     [Parameter(
       Mandatory = $false,
-      ParameterSetName = 'Prefix'
+      ParameterSetName = 'Prefix',
+      HelpMessage = 'This switch omits the reporting of Private Address Space for the subnet and any associated AWS information'
     )]
     [Switch]
     $NoPrivateAddressSpace
