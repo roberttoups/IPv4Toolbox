@@ -4,7 +4,7 @@
 
 ## Description
 
-Module to simplify the manipulation, discovery, and testing of IPv4 Addresses .
+Module to simplify the manipulation, discovery, and testing of IPv4 Addresses.
 
 ## How to deploy from the PowerShell Gallery
 
