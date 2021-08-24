@@ -63,7 +63,7 @@ function Get-MyPublicIP {
     try {
       ((Invoke-WebRequest @ArgumentCollection).Content).Trim()
     } catch {
-      $SpecificReason = "Tell us why we failed and why it may have happened."
+      $SpecificReason = "Unable to reach $Uri with current network connection."
       $ErrorMessage = $PSItem.Exception.Message
       Write-Verbose -Message "($ErrorMessage): $SpecificReason Exiting."
       $null
