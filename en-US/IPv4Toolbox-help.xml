@@ -1446,7 +1446,7 @@ True</dev:code>
     <command:returnValues>
       <command:returnValue>
         <dev:type>
-          <maml:name>System.Management.Automation.PSObject</maml:name>
+          <maml:name>System.Boolean</maml:name>
         </dev:type>
         <maml:description>
           <maml:para></maml:para>
