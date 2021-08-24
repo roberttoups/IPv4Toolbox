@@ -22,7 +22,7 @@ Install-Module -Name 'IPv4Toolbox' -Scope 'CurrentUser'
 Update-Module -Name 'IPv4Toolbox' -Scope 'CurrentUser'
 ```
 
-### PowerShell Desired State Configuration
+## PowerShell Desired State Configuration Deployment
 
 The PackageManagement module should be at least version 1.1.7.0 for the following property information to be correct.
 
@@ -47,7 +47,7 @@ PackageManagement IPv4Toolbox {
 
 ### 0.7.0
 
-- BREAKING CHANGE: The alias `-IPAddress` for `-IPv4Address` has been removed. It was inconsistently used in the module and interrupted autocomplete functionality. It was used on the following functions:
+- **BREAKING CHANGE:** The alias `-IPAddress` for `-IPv4Address` has been removed. It was inconsistently used in the module and interrupted autocomplete functionality. It was used on the following functions:
   - [Get-SubnetInformation](Docs/Get-SubnetInformation.md)
   - [Invoke-IPv4GeoLookup](Docs/Invoke-IPv4GeoLookup.md)
   - [Test-PrivateIPv4Address](Docs/Test-PrivateIPv4Address.md)
