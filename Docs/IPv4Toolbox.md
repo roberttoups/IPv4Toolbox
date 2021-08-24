@@ -58,6 +58,11 @@ Tests a string to determine if it is a valid IPv4 Address (0.0.0.0 to 255.255.25
 
 Evaluates if an IPv4 Address is equal or within an IPv4 Address range.
 
+### [Test-IPv4AddressWithinSubnet](Test-IPv4AddressWithinSubnet.md)
+
+Evaluates if an IPv4 Address is within an IPv4 Subnet range.
+
 ### [Test-PrivateIPv4Address](Test-PrivateIPv4Address.md)
 
 Determines if an IPv4 Address is in a private address space.
+

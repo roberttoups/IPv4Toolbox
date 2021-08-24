@@ -412,7 +412,7 @@
     <command:syntax>
       <command:syntaxItem>
         <maml:name>Get-SubnetInformation</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="IPAddress">
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>IPv4Address</maml:name>
           <maml:description>
             <maml:para>The IPv4 Address</maml:para>
@@ -450,7 +450,7 @@
       </command:syntaxItem>
       <command:syntaxItem>
         <maml:name>Get-SubnetInformation</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="IPAddress">
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
           <maml:name>IPv4Address</maml:name>
           <maml:description>
             <maml:para>The IPv4 Address</maml:para>
@@ -477,7 +477,7 @@
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="IPAddress">
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="named" aliases="none">
         <maml:name>IPv4Address</maml:name>
         <maml:description>
           <maml:para>The IPv4 Address</maml:para>
@@ -642,7 +642,7 @@ PrivateAddressSpace :</dev:code>
     <command:syntax>
       <command:syntaxItem>
         <maml:name>Invoke-IPv4GeoLookup</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="IPAddress">
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
           <maml:name>IPv4Address</maml:name>
           <maml:description>
             <maml:para>The non-RFC 1918 IPv4 Address to obtain the GeoIP information.</maml:para>
@@ -657,7 +657,7 @@ PrivateAddressSpace :</dev:code>
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="IPAddress">
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
         <maml:name>IPv4Address</maml:name>
         <maml:description>
           <maml:para>The non-RFC 1918 IPv4 Address to obtain the GeoIP information.</maml:para>
@@ -1353,6 +1353,138 @@ True</dev:code>
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
+      <command:name>Test-IPv4AddressWithinSubnet</command:name>
+      <command:verb>Test</command:verb>
+      <command:noun>IPv4AddressWithinSubnet</command:noun>
+      <maml:description>
+        <maml:para>Evaluates if an IPv4 Address is within an IPv4 Subnet range.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Evaluates if an IPv4 Address is within an IPv4 Subnet range.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Test-IPv4AddressWithinSubnet</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>TestIPv4Address</maml:name>
+          <maml:description>
+            <maml:para>The IPv4 Address to test for within the subnet range.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="Subnet">
+          <maml:name>IPv4Address</maml:name>
+          <maml:description>
+            <maml:para>The IPv4 Address of the Subnet ID or a IPv4 Address within the range of the Subnet.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
+          <maml:name>Prefix</maml:name>
+          <maml:description>
+            <maml:para>The prefix length of the Subnet.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.Int32</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Int32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>0</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="Subnet">
+        <maml:name>IPv4Address</maml:name>
+        <maml:description>
+          <maml:para>The IPv4 Address of the Subnet ID or a IPv4 Address within the range of the Subnet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
+        <maml:name>Prefix</maml:name>
+        <maml:description>
+          <maml:para>The prefix length of the Subnet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Int32</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>0</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>TestIPv4Address</maml:name>
+        <maml:description>
+          <maml:para>The IPv4 Address to test for within the subnet range.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.PSObject</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Test-IPv4AddressWithinSubnet -TestIPv4Address '192.168.1.1' -IPv4Address '192.168.1.0' -Prefix 24
+True</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <dev:code>Test-IPv4AddressWithinSubnet -TestIPv4Address '10.1.1.1' -IPv4Address '192.168.0.0' -Prefix 16
+False</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>http://www.github.com/roberttoups/IPv4Toolbox</maml:linkText>
+        <maml:uri>http://www.github.com/roberttoups/IPv4Toolbox</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
       <command:name>Test-PrivateIPv4Address</command:name>
       <command:verb>Test</command:verb>
       <command:noun>PrivateIPv4Address</command:noun>
@@ -1366,7 +1498,7 @@ True</dev:code>
     <command:syntax>
       <command:syntaxItem>
         <maml:name>Test-PrivateIPv4Address</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="IPAddress">
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
           <maml:name>IPv4Address</maml:name>
           <maml:description>
             <maml:para>The IPv4 Address</maml:para>
@@ -1381,7 +1513,7 @@ True</dev:code>
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="IPAddress">
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="none">
         <maml:name>IPv4Address</maml:name>
         <maml:description>
           <maml:para>The IPv4 Address</maml:para>
