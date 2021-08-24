@@ -47,7 +47,7 @@ PackageManagement IPv4Toolbox {
 
 1. Download the desired version of the module from the [Release Page](https://github.com/roberttoups/IPv4Toolbox/releases).
 2. Copy the module to the desired location using the appropriate security controls.
-3. Add the module to the PowerShell module path.
+3. Add the module to the PowerShell module.
 
 ### PowerShell Module Location
 
@@ -145,6 +145,10 @@ Tests a string to determine if it is a valid IPv4 Address (0.0.0.0 to 255.255.25
 Evaluates if an IPv4 Address is equal or within an IPv4 Address range.
 
 ![Test-IPv4AddressWithinRange](Examples/Graphics/Test-IPv4AddressWithinRange.gif)
+
+### [Test-IPv4AddressWithinSubnet](Test-IPv4AddressWithinSubnet.md)
+
+Evaluates if an IPv4 Address is within an IPv4 Subnet range.
 
 ### [Test-PrivateIPv4Address](Docs/Test-PrivateIPv4Address.md)
 
