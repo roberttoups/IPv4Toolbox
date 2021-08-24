@@ -81,6 +81,7 @@
     'Split-Subnet'
     'Test-IPv4Address'
     'Test-IPv4AddressWithinRange'
+    'Test-IPv4AddressWithinSubnet'
     'Test-PrivateIPv4Address'
   )
 
