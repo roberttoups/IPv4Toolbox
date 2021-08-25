@@ -33,7 +33,7 @@
 
 .NOTES
 
-  Do not use this function multiple times a second or you will be rate limited.
+  Do not use this function more than 40 times per minute as you will be rate limited. Also be aware that this function does not use SSL in communicating to ip-api.com.
 
 .LINK
 
@@ -59,7 +59,7 @@ function Invoke-IPv4GeoLookup {
   begin {}
 
   process {
-    $Uri = "http://ip-api.com/json/$IPv4Address"
+    $Uri = "http://ip-api.com/json/$($IPv4Address)?fields=21233663"
     Write-Verbose -Message "Invoking $Uri"
     $Output = Invoke-WebRequest -Uri $Uri |
       Select-Object -ExpandProperty 'Content' |
