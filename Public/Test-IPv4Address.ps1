@@ -50,7 +50,7 @@ function Test-IPv4Address {
     $IPv4Address
   )
 
-  begin { }
+  begin {}
 
   process {
     Write-Verbose -Message "Validating IPv4 Address $IPv4Address"
@@ -74,5 +74,7 @@ function Test-IPv4Address {
       $false
     }
   }
-  end {  }
+
+  end {}
+
 }

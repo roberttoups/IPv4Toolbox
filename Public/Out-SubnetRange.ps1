@@ -114,9 +114,8 @@ function Out-SubnetRange {
     $Prefix = 24
   )
 
-  begin {
+  begin {}
 
-  }
   process {
     Write-Verbose -Message "IPv4Address: $Subnet"
     Write-Verbose -Message "Parameter Set: $($PSCmdlet.ParameterSetName)"
@@ -131,5 +130,7 @@ function Out-SubnetRange {
       ConvertTo-IPv4 -Integer $i
     }
   }
+
   end {}
+
 }

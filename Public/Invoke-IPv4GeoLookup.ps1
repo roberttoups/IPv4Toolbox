@@ -56,9 +56,7 @@ function Invoke-IPv4GeoLookup {
     $IPv4Address
   )
 
-  begin {
-
-  }
+  begin {}
 
   process {
     $Uri = "http://ip-api.com/json/$IPv4Address"
@@ -74,7 +72,6 @@ function Invoke-IPv4GeoLookup {
     $Output
   }
 
-  end {
+  end {}
 
-  }
 }

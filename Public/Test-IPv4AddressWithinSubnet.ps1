@@ -74,9 +74,7 @@ function Test-IPv4AddressWithinSubnet {
 
   )
 
-  begin {
-
-  }
+  begin {}
 
   process {
     $ArgumentCollection = @{
@@ -101,7 +99,6 @@ function Test-IPv4AddressWithinSubnet {
     }
   }
 
-  end {
+  end {}
 
-  }
 }

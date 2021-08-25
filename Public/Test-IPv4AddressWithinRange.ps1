@@ -70,9 +70,9 @@ function Test-IPv4AddressWithinRange {
     [String]
     $TestIPv4Address
   )
-  begin {
 
-  }
+  begin {}
+
   process {
     Write-Verbose -Message "FirstIPv4Address: $FirstIPv4Address"
     $FirstInt64 = ConvertTo-Int64 -IPv4Address $FirstIPv4Address
@@ -91,7 +91,7 @@ function Test-IPv4AddressWithinRange {
       $false
     }
   }
-  end {
 
-  }
+  end {}
+
 }

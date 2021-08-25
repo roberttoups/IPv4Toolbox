@@ -60,9 +60,7 @@ function ConvertFrom-InverseAddress {
     $InverseAddress
   )
 
-  begin {
-
-  }
+  begin {}
 
   process {
     Write-Verbose -Message "Converting Inverse Address: $InverseAddress"
@@ -97,7 +95,6 @@ function ConvertFrom-InverseAddress {
     $Output
   }
 
-  end {
+  end {}
 
-  }
 }

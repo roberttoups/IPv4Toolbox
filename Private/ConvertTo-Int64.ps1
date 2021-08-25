@@ -35,6 +35,7 @@ function ConvertTo-Int64 {
     [String]
     $IPv4Address
   )
+
   begin {}
 
   process {
@@ -43,4 +44,5 @@ function ConvertTo-Int64 {
   }
 
   end {}
+
 }

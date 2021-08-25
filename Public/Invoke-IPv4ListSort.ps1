@@ -87,9 +87,7 @@ function Invoke-IPv4ListSort {
     $Descending
   )
 
-  begin {
-
-  }
+  begin {}
 
   process {
     $SingleIpRegEx = '^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])$'
@@ -123,7 +121,6 @@ function Invoke-IPv4ListSort {
     $SortedIPv4AddressList
   }
 
-  end {
+  end {}
 
-  }
 }

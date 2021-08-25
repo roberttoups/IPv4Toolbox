@@ -78,9 +78,7 @@ function Split-Subnet {
     $TargetPrefix
   )
 
-  begin {
-
-  }
+  begin {}
 
   process {
     if($TargetPrefix -lt $Prefix) {
@@ -98,9 +96,9 @@ function Split-Subnet {
         Get-SubnetInformation -IPv4Address $NewSubnet -Prefix $TargetPrefix
       }
     }
+    $Output
   }
 
-  end {
-    return $Output
-  }
+  end {}
+
 }

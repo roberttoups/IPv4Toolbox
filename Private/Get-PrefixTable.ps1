@@ -48,6 +48,7 @@ function Get-PrefixTable {
   [CmdletBinding()]
   [OutputType([HashTable])]
   param()
+
   begin {}
 
   process {
@@ -59,4 +60,5 @@ function Get-PrefixTable {
   }
 
   end {}
+
 }

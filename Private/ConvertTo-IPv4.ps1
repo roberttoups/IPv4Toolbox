@@ -32,6 +32,7 @@ function ConvertTo-IPv4 {
     [Int64]
     $Integer
   )
+
   begin {}
 
   process {
@@ -43,4 +44,5 @@ function ConvertTo-IPv4 {
   }
 
   end {}
+
 }

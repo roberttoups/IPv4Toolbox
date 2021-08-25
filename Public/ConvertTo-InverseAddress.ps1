@@ -83,9 +83,7 @@ function ConvertTo-InverseAddress {
     $Prefix
   )
 
-  begin {
-
-  }
+  begin {}
 
   process {
     Write-Verbose -Message "IPv4Address: $IPv4Address"
@@ -134,6 +132,6 @@ function ConvertTo-InverseAddress {
     return $Output
   }
 
-  end {
-  }
+  end {}
+
 }

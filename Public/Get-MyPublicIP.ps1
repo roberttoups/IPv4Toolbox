@@ -52,6 +52,7 @@ function Get-MyPublicIP {
     [String]
     $Uri = 'https://ipinfo.io/ip'
   )
+
   begin {}
 
   process {
@@ -72,4 +73,5 @@ function Get-MyPublicIP {
   }
 
   end {}
+
 }
