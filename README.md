@@ -150,6 +150,8 @@ Evaluates if an IPv4 Address is equal or within an IPv4 Address range.
 
 Evaluates if an IPv4 Address is within an IPv4 Subnet range.
 
+![Test-IPv4AddressWithinSubnet](Examples/Graphics/Test-IPv4AddressWithinSubnet.gif)
+
 ### [Test-PrivateIPv4Address](Docs/Test-PrivateIPv4Address.md)
 
 Determines if an IPv4 Address is in a private address space as defined by [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918) & [RFC 6598](https://datatracker.ietf.org/doc/html/rfc6598).
