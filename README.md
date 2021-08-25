@@ -47,7 +47,7 @@ PackageManagement IPv4Toolbox {
 
 1. Download the desired version of the module from the [Release Page](https://github.com/roberttoups/IPv4Toolbox/releases).
 2. Copy the module to the desired location using the appropriate security controls.
-3. Add the module to the PowerShell module.
+3. Add the module to the PowerShell module path targeting usage audience.
 
 ### PowerShell Module Location
 
