@@ -674,7 +674,7 @@ PrivateAddressSpace :</dev:code>
     <command:returnValues />
     <maml:alertSet>
       <maml:alert>
-        <maml:para>Do not use this function multiple times a second or you will be rate limited.</maml:para>
+        <maml:para>Do not use this function more than 40 times per minute as you will be rate limited. Also be aware that this function does not use SSL in communicating to ip-api.com.</maml:para>
       </maml:alert>
     </maml:alertSet>
     <command:examples>

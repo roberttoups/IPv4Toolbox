@@ -68,7 +68,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
-Do not use this function multiple times a second or you will be rate limited.
+Do not use this function more than 40 times per minute as you will be rate limited.
+Also be aware that this function does not use SSL in communicating to ip-api.com.
 
 ## RELATED LINKS
 
