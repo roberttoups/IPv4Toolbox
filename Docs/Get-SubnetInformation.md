@@ -44,6 +44,7 @@ Prefix              : 23
 Subnet              : 192.168.0.0/23
 FirstIPv4Address    : 192.168.0.1
 LastIPv4Address     : 192.168.1.254
+TotalAddresses      : 512
 TotalHosts          : 510
 AWSFirstIPv4Address : 192.168.0.4
 AWSTotalHosts       : 507
@@ -62,6 +63,7 @@ Prefix              : 21
 Subnet              : 8.8.0.0/21
 FirstIPv4Address    : 8.8.0.1
 LastIPv4Address     : 8.8.7.254
+TotalAddresses      : 2048
 TotalHosts          : 2046
 AWSFirstIPv4Address :
 AWSTotalHosts       :
@@ -80,6 +82,7 @@ Prefix              : 12
 Subnet              : 10.0.0.0/12
 FirstIPv4Address    : 10.0.0.1
 LastIPv4Address     : 10.15.255.254
+TotalAddresses      : 1048576
 TotalHosts          : 1048574
 AWSFirstIPv4Address :
 AWSTotalHosts       :
@@ -98,6 +101,7 @@ Prefix              : 28
 Subnet              : 10.0.0.0/28
 FirstIPv4Address    : 10.0.0.1
 LastIPv4Address     : 10.0.0.14
+TotalAddresses      : 16
 TotalHosts          : 14
 AWSFirstIPv4Address :
 AWSTotalHosts       :
@@ -116,6 +120,7 @@ Prefix              : 23
 Subnet              : 192.168.12.0/23
 FirstIPv4Address    : 192.168.12.1
 LastIPv4Address     : 192.168.13.254
+TotalAddresses      : 512
 TotalHosts          : 510
 AWSFirstIPv4Address : 192.168.12.4
 AWSTotalHosts       : 507
