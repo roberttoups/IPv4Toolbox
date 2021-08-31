@@ -22,6 +22,11 @@ Get-SubnetInformation -IPv4Address <String> [-Prefix <Int32>] [-NoPrivateAddress
 Get-SubnetInformation -IPv4Address <String> -SubnetMask <String> [<CommonParameters>]
 ```
 
+### CIDR
+```
+Get-SubnetInformation -CIDR <String> [<CommonParameters>]
+```
+
 ## DESCRIPTION
 Returns the information regarding a subnet that an IPv4 Address exists and returns information regarding Subnet ID, Broadcast Address, Subnet Mask, Network Prefix, First IP Address, Last IP Address, Total Hosts, and AWS related information.
 
@@ -101,12 +106,27 @@ PrivateAddressSpace :
 
 ## PARAMETERS
 
+### -CIDR
+The CIDR address
+
+```yaml
+Type: System.String
+Parameter Sets: CIDR
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -IPv4Address
 The IPv4 Address
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Prefix, SubnetMask
 Aliases:
 
 Required: True
