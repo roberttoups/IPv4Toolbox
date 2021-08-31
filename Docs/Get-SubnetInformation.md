@@ -14,12 +14,12 @@ Returns the information regarding a subnet that an IPv4 Address exists
 
 ### Prefix (Default)
 ```
-Get-SubnetInformation -IPv4Address <String> [-Prefix <Int32>] [-NoPrivateAddressSpace] [<CommonParameters>]
+Get-SubnetInformation [-IPv4Address] <String> [[-Prefix] <Int32>] [-NoPrivateAddressSpace] [<CommonParameters>]
 ```
 
 ### SubnetMask
 ```
-Get-SubnetInformation -IPv4Address <String> -SubnetMask <String> [<CommonParameters>]
+Get-SubnetInformation [-IPv4Address] <String> -SubnetMask <String> [<CommonParameters>]
 ```
 
 ### CIDR
@@ -104,6 +104,24 @@ AWSTotalHosts       :
 PrivateAddressSpace :
 ```
 
+### -------------------------- EXAMPLE 5 --------------------------
+
+```powershell
+Get-SubnetInformation -CIDR 192.168.12.0/23
+
+SubnetId            : 192.168.12.0
+BroadcastAddress    : 192.168.13.255
+SubnetMask          : 255.255.254.0
+Prefix              : 23
+Subnet              : 192.168.12.0/23
+FirstIPv4Address    : 192.168.12.1
+LastIPv4Address     : 192.168.13.254
+TotalHosts          : 510
+AWSFirstIPv4Address : 192.168.12.4
+AWSTotalHosts       : 507
+PrivateAddressSpace : True
+```
+
 ## PARAMETERS
 
 ### -CIDR
@@ -126,11 +144,23 @@ The IPv4 Address
 
 ```yaml
 Type: System.String
-Parameter Sets: Prefix, SubnetMask
+Parameter Sets: Prefix
 Aliases:
 
 Required: True
-Position: Named
+Position: 1
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+```yaml
+Type: System.String
+Parameter Sets: SubnetMask
+Aliases:
+
+Required: True
+Position: 1
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -160,7 +190,7 @@ Parameter Sets: Prefix
 Aliases:
 
 Required: False
-Position: Named
+Position: 2
 Default value: 24
 Accept pipeline input: False
 Accept wildcard characters: False

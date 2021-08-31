@@ -87,6 +87,22 @@
   AWSTotalHosts       :
   PrivateAddressSpace :
 
+.EXAMPLE
+
+  Get-SubnetInformation -CIDR 192.168.12.0/23
+
+  SubnetId            : 192.168.12.0
+  BroadcastAddress    : 192.168.13.255
+  SubnetMask          : 255.255.254.0
+  Prefix              : 23
+  Subnet              : 192.168.12.0/23
+  FirstIPv4Address    : 192.168.12.1
+  LastIPv4Address     : 192.168.13.254
+  TotalHosts          : 510
+  AWSFirstIPv4Address : 192.168.12.4
+  AWSTotalHosts       : 507
+  PrivateAddressSpace : True
+
 .NOTES
 
   This function will only return results for AWS if the subnet has a prefix greater or equal to 16 and less than or
@@ -104,9 +120,9 @@ function Get-SubnetInformation {
   [OutputType([PSCustomObject])]
   param (
     # The IPv4 Address
-
     [Parameter(
       ParameterSetName = 'Prefix',
+      Position = 0,
       Mandatory = $true,
       ValueFromPipeline = $true,
       HelpMessage = 'The IPv4 Address'
@@ -117,7 +133,6 @@ function Get-SubnetInformation {
     [Parameter(
       ParameterSetName = 'SubnetMask',
       Mandatory = $true,
-      ValueFromPipeline = $true,
       HelpMessage = 'The IPv4 Address'
     )]
     [ValidatePattern(
@@ -125,6 +140,17 @@ function Get-SubnetInformation {
     )]
     [String]
     $IPv4Address,
+
+    # The network prefix
+    [Parameter(
+      Mandatory = $false,
+      Position = 1,
+      ParameterSetName = 'Prefix',
+      HelpMessage = 'The network prefix'
+    )]
+    [ValidateRange(8 , 30)]
+    [Int32]
+    $Prefix = 24,
 
     # The subnet mask of the network
     [Parameter(
@@ -162,16 +188,6 @@ function Get-SubnetInformation {
     )]
     [String]
     $SubnetMask,
-
-    # The network prefix
-    [Parameter(
-      Mandatory = $false,
-      ParameterSetName = 'Prefix',
-      HelpMessage = 'The network prefix'
-    )]
-    [ValidateRange(8 , 30)]
-    [Int32]
-    $Prefix = 24,
 
     # The CIDR address
     [Parameter(
