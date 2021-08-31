@@ -59,6 +59,7 @@ function Test-PrivateIPv4Address {
       Write-Verbose -Message 'IPv4 Address is not in a private address space'
       $false
     } else {
+      # https://datatracker.ietf.org/doc/html/rfc6890
       $PrivateAddressCollection = DATA {
         # RFC 1918
         @{
@@ -87,6 +88,18 @@ function Test-PrivateIPv4Address {
           # 169.254.0.0/10
           FirstIPv4Address = '169.254.0.0'
           LastIPv4Address  = '169.254.255.255'
+        }
+        # RFC 6890
+        @{
+          # 192.0.0.0/24
+          FirstIPv4Address = '192.0.0.0'
+          LastIPv4Address  = '192.0.0.255'
+        }
+        # RFC 6333
+        @{
+          # 192.0.0.0/29
+          FirstIPv4Address = '192.0.0.0'
+          LastIPv4Address  = '192.0.0.7'
         }
       }
       $Found = $false
