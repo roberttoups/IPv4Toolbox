@@ -79,6 +79,7 @@ $env:PSModulePath.Split(';')[1]
 - Updated error handling for [Get-MyPublicIP](Docs/Get-MyPublicIP.md) so it will output `$null` on failure instead of throwing an error. Using the `-Verbose` switch will output the error message.
 - More IPv4 Address attribute information exported from the [Invoke-IPv4GeoLookup](Docs/Invoke-IPv4GeoLookup.md) function.
 - Added RFC 3927, RFC 6333 & RFC 6890 detection for private IPv4 Addresses in [Test-PrivateIPv4Address](Docs/Test-PrivateIPv4Address.md).
+- [Get-SubnetInformation](Docs/Get-SubnetInformation.md) now supports CIDR address input.
 
 ## Functions
 

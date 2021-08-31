@@ -104,7 +104,18 @@ function Get-SubnetInformation {
   [OutputType([PSCustomObject])]
   param (
     # The IPv4 Address
+
     [Parameter(
+      ParameterSetName = 'Prefix',
+      Mandatory = $true,
+      ValueFromPipeline = $true,
+      HelpMessage = 'The IPv4 Address'
+    )]
+    [ValidatePattern(
+      '^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])$'
+    )]
+    [Parameter(
+      ParameterSetName = 'SubnetMask',
       Mandatory = $true,
       ValueFromPipeline = $true,
       HelpMessage = 'The IPv4 Address'
@@ -162,6 +173,18 @@ function Get-SubnetInformation {
     [Int32]
     $Prefix = 24,
 
+    # The CIDR address
+    [Parameter(
+      Mandatory = $true,
+      ParameterSetName = 'CIDR',
+      HelpMessage = 'The CIDR address'
+    )]
+    [ValidatePattern(
+      '^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])/([8-9]|[1-2][0-9]|3[0])$'
+    )]
+    [String]
+    $CIDR,
+
     # This switch omits the reporting of Private Address Space for the subnet and any associated AWS information
     [Parameter(
       Mandatory = $false,
@@ -177,9 +200,15 @@ function Get-SubnetInformation {
   process {
     Write-Verbose -Message "IPv4Address: $IPv4Address"
     Write-Verbose -Message "Parameter Set: $($PSCmdlet.ParameterSetName)"
+    if($PSCmdlet.ParameterSetName -eq 'CIDR') {
+      $IPv4Address = $CIDR.Split('/')[0]
+      $Prefix = $CIDR.Split('/')[1]
+    }
     if($IPv4Address) {
       $IPv4AddressObject = [System.Net.IPAddress]::Parse($IPv4Address)
       if($PSCmdlet.ParameterSetName -eq 'Prefix') {
+        $SubnetMaskObject = [System.Net.IPAddress]::Parse((ConvertTo-IPv4 -Integer ([System.Convert]::ToInt64(("1" * $Prefix + "0" * (32 - $Prefix)), 2))))
+      } elseif($PSCmdlet.ParameterSetName -eq 'CIDR') {
         $SubnetMaskObject = [System.Net.IPAddress]::Parse((ConvertTo-IPv4 -Integer ([System.Convert]::ToInt64(("1" * $Prefix + "0" * (32 - $Prefix)), 2))))
       } elseif($PSCmdlet.ParameterSetName -eq 'SubnetMask') {
         $SubnetMaskObject = [System.Net.IPAddress]::Parse($SubnetMask)
