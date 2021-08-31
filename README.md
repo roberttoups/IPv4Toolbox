@@ -78,6 +78,7 @@ $env:PSModulePath.Split(';')[1]
 - Added [Test-IPv4AddressWithinSubnet](Docs/Test-IPv4AddressWithinSubnet.md) function
 - Updated error handling for [Get-MyPublicIP](Docs/Get-MyPublicIP.md) so it will output `$null` on failure instead of throwing an error. Using the `-Verbose` switch will output the error message.
 - More IPv4 Address attribute information exported from the [Invoke-IPv4GeoLookup](Docs/Invoke-IPv4GeoLookup.md) function.
+- Added RFC 3927 detection for private IPv4 Addresses in [Test-PrivateIPv4Address](Docs/Test-PrivateIPv4Address.md).
 
 ## Functions
 

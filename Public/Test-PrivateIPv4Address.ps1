@@ -82,6 +82,12 @@ function Test-PrivateIPv4Address {
           FirstIPv4Address = '100.64.0.0'
           LastIPv4Address  = '100.127.255.255'
         }
+        # RFC 3927
+        @{
+          # 169.254.0.0/10
+          FirstIPv4Address = '169.254.0.0'
+          LastIPv4Address  = '169.254.255.255'
+        }
       }
       $Found = $false
       foreach($PrivateAddress in $PrivateAddressCollection) {
