@@ -19,6 +19,10 @@
 
   The prefix length of the Subnet.
 
+.PARAMETER CIDR
+
+  The CIDR address representing the Subnet.
+
 .EXAMPLE
 
   Test-IPv4AddressWithinSubnet -TestIPv4Address '192.168.1.1' -IPv4Address '192.168.1.0' -Prefix 24
@@ -27,6 +31,11 @@
 .EXAMPLE
 
   Test-IPv4AddressWithinSubnet -TestIPv4Address '10.1.1.1' -IPv4Address '192.168.0.0' -Prefix 16
+  False
+
+.EXAMPLE
+
+  Test-IPv4AddressWithinSubnet -TestIPv4Address '10.1.1.1' -CIDR 192.168.0.0/16
   False
 
 .NOTES
@@ -53,6 +62,7 @@ function Test-IPv4AddressWithinSubnet {
     # The Subnet IPv4 address.
     [Parameter(
       Position = 1,
+      ParameterSetName = 'Prefix',
       Mandatory = $true,
       HelpMessage = 'The Subnet IPv4 address.'
     )]
@@ -65,18 +75,34 @@ function Test-IPv4AddressWithinSubnet {
     # The Subnet prefix.
     [Parameter(
       Position = 2,
+      ParameterSetName = 'Prefix',
       Mandatory = $true,
       HelpMessage = 'The Subnet prefix.'
     )]
     [ValidateRange(8 , 30)]
     [Int32]
-    $Prefix
+    $Prefix,
 
+    # The CIDR address
+    [Parameter(
+      Mandatory = $true,
+      ParameterSetName = 'CIDR',
+      HelpMessage = 'The CIDR address'
+    )]
+    [ValidatePattern(
+      '^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])/([8-9]|[1-2][0-9]|3[0])$'
+    )]
+    [String]
+    $CIDR
   )
 
   begin {}
 
   process {
+    if($PSCmdlet.ParameterSetName -eq 'CIDR') {
+      $IPv4Address = $CIDR.Split('/')[0]
+      $Prefix = $CIDR.Split('/')[1]
+    }
     $ArgumentCollection = @{
       IPv4Address           = $IPv4Address
       Prefix                = $Prefix
