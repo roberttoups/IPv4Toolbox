@@ -908,6 +908,21 @@ mapReference : https://www.google.com/maps?q=-27.4766,153.0166</dev:code>
     <command:syntax>
       <command:syntaxItem>
         <maml:name>Out-SubnetRange</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>CIDR</maml:name>
+          <maml:description>
+            <maml:para>The CIDR address</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Out-SubnetRange</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="1" aliases="IPv4Address">
           <maml:name>Subnet</maml:name>
           <maml:description>
@@ -962,6 +977,18 @@ mapReference : https://www.google.com/maps?q=-27.4766,153.0166</dev:code>
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>CIDR</maml:name>
+        <maml:description>
+          <maml:para>The CIDR address</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
         <maml:name>Prefix</maml:name>
         <maml:description>
@@ -1025,6 +1052,34 @@ mapReference : https://www.google.com/maps?q=-27.4766,153.0166</dev:code>
 192.168.1.12
 192.168.1.13
 192.168.1.14</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <dev:code>Out-SubnetRange -Subnet 192.168.1.0 -SubnetMask 255.255.255.248
+
+192.168.1.1
+192.168.1.2
+192.168.1.3
+192.168.1.4
+192.168.1.5
+192.168.1.6</dev:code>
+        <dev:remarks>
+          <maml:para></maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 3 --------------------------</maml:title>
+        <dev:code>Out-SubnetRange -CIDR 192.168.1.0/29
+
+192.168.1.1
+192.168.1.2
+192.168.1.3
+192.168.1.4
+192.168.1.5
+192.168.1.6</dev:code>
         <dev:remarks>
           <maml:para></maml:para>
         </dev:remarks>

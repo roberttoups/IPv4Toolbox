@@ -38,6 +38,28 @@
   192.168.1.13
   192.168.1.14
 
+.EXAMPLE
+
+  Out-SubnetRange -Subnet 192.168.1.0 -SubnetMask 255.255.255.248
+
+  192.168.1.1
+  192.168.1.2
+  192.168.1.3
+  192.168.1.4
+  192.168.1.5
+  192.168.1.6
+
+ .EXAMPLE
+
+  Out-SubnetRange -CIDR 192.168.1.0/29
+
+  192.168.1.1
+  192.168.1.2
+  192.168.1.3
+  192.168.1.4
+  192.168.1.5
+  192.168.1.6
+
 .NOTES
 
  This function will output usable IP space.
@@ -54,16 +76,36 @@ function Out-SubnetRange {
   param (
     # The Subnet to generate the individual IPv4 addresses.
     [Parameter(
+      ParameterSetName = 'Prefix',
       Position = 0,
       Mandatory = $true,
-      # ValueFromPipelineByPropertyName = $true, # FUTURE WORK
       ValueFromPipeline = $true,
       HelpMessage = 'The Subnet to generate the individual IPv4 addresses.'
     )]
     [Alias('IPv4Address')]
-    [ValidatePattern('^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])$')]
+    [ValidatePattern(
+      '^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])$'
+    )]
+    [Parameter(
+      ParameterSetName = 'SubnetMask',
+      Mandatory = $true,
+      HelpMessage = 'The Subnet to generate the individual IPv4 addresses.'
+    )]
+    [ValidatePattern(
+      '^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])$'
+    )]
     [String]
     $Subnet,
+
+    # The Prefix of the Subnet.
+    [Parameter(
+      Mandatory = $false,
+      HelpMessage = 'The Prefix of the Subnet.',
+      ParameterSetName = 'Prefix'
+    )]
+    [ValidateRange(8 , 30)]
+    [Int32]
+    $Prefix = 24,
 
     # The Subnet Mask of the Subnet.
     [Parameter(
@@ -103,15 +145,17 @@ function Out-SubnetRange {
     [String]
     $SubnetMask,
 
-    # The Prefix of the Subnet.
+    # The CIDR address
     [Parameter(
-      Mandatory = $false,
-      HelpMessage = 'The Prefix of the Subnet.',
-      ParameterSetName = 'Prefix'
+      Mandatory = $true,
+      ParameterSetName = 'CIDR',
+      HelpMessage = 'The CIDR address'
     )]
-    [ValidateRange(8 , 30)]
-    [Int32]
-    $Prefix = 24
+    [ValidatePattern(
+      '^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])/([8-9]|[1-2][0-9]|3[0])$'
+    )]
+    [String]
+    $CIDR
   )
 
   begin {}
@@ -119,7 +163,13 @@ function Out-SubnetRange {
   process {
     Write-Verbose -Message "IPv4Address: $Subnet"
     Write-Verbose -Message "Parameter Set: $($PSCmdlet.ParameterSetName)"
+    if($PSCmdlet.ParameterSetName -eq 'CIDR') {
+      $Subnet = $CIDR.Split('/')[0]
+      $Prefix = $CIDR.Split('/')[1]
+    }
     if($PSCmdlet.ParameterSetName -eq 'Prefix') {
+      $SubnetInformation = Get-SubnetInformation -IPv4Address $Subnet -Prefix $Prefix
+    } elseif($PSCmdlet.ParameterSetName -eq 'CIDR') {
       $SubnetInformation = Get-SubnetInformation -IPv4Address $Subnet -Prefix $Prefix
     } elseif($PSCmdlet.ParameterSetName -eq 'SubnetMask') {
       $SubnetInformation = Get-SubnetInformation -IPv4Address $Subnet -SubnetMask $SubnetMask

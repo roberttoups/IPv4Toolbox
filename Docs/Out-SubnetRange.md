@@ -22,6 +22,11 @@ Out-SubnetRange [-Subnet] <String> [-Prefix <Int32>] [<CommonParameters>]
 Out-SubnetRange [-Subnet] <String> -SubnetMask <String> [<CommonParameters>]
 ```
 
+### CIDR
+```
+Out-SubnetRange -CIDR <String> [<CommonParameters>]
+```
+
 ## DESCRIPTION
 Outputs a list of IPv4 Addresses from a CIDR address range.
 
@@ -48,7 +53,48 @@ Out-SubnetRange -Subnet 192.168.1.0 -Prefix 28
 192.168.1.14
 ```
 
+### -------------------------- EXAMPLE 2 --------------------------
+
+```powershell
+Out-SubnetRange -Subnet 192.168.1.0 -SubnetMask 255.255.255.248
+
+192.168.1.1
+192.168.1.2
+192.168.1.3
+192.168.1.4
+192.168.1.5
+192.168.1.6
+```
+
+### -------------------------- EXAMPLE 3 --------------------------
+
+```powershell
+Out-SubnetRange -CIDR 192.168.1.0/29
+
+192.168.1.1
+192.168.1.2
+192.168.1.3
+192.168.1.4
+192.168.1.5
+192.168.1.6
+```
+
 ## PARAMETERS
+
+### -CIDR
+The CIDR address
+
+```yaml
+Type: System.String
+Parameter Sets: CIDR
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Prefix
 The Prefix of the IPv4 Address range
@@ -70,7 +116,19 @@ The subnet id of the IPv4 Address range
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Prefix
+Aliases: IPv4Address
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+```yaml
+Type: System.String
+Parameter Sets: SubnetMask
 Aliases: IPv4Address
 
 Required: True
