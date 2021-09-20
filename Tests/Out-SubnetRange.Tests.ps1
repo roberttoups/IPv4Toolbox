@@ -27,7 +27,7 @@ InModuleScope $ModuleName {
       '192.168.1.14'
     )
 
-    Context "Testing return by $FunctionName using $SourceSubnet/$SourcePrefix" {
+    Context "Testing return by $FunctionName using -Subnet $SourceSubnet -Prefix $SourcePrefix" {
       $Result = Out-SubnetRange -Subnet $SourceSubnet -Prefix $SourcePrefix
       $TestCase = @{
         Count = [int32]$Result.Count
@@ -68,5 +68,45 @@ InModuleScope $ModuleName {
       }
     }
 
+    Context "Testing return by $FunctionName using $SourceSubnet/$SourcePrefix" {
+      $Result = Out-SubnetRange -CIDR "$SourceSubnet/$SourcePrefix"
+      $TestCase = @{
+        Count = [int32]$Result.Count
+      }
+      It "Return should be 14 for number of IPv4 Addresses returned" -TestCases $TestCase {
+        param (
+          [int32]$Count
+        )
+        $Count -eq 14 |
+          Should -Be $true
+      }
+
+      $TestCase = @{
+        ReferenceObject  = $TargetList
+        DifferenceObject = $Result
+      }
+      It "Return should be True for $SourceSubnet/$SourcePrefix" -TestCases $TestCase {
+        param(
+          $ReferenceObject,
+          $DifferenceObject
+        )
+        Compare-Object -ReferenceObject $ReferenceObject -DifferenceObject $DifferenceObject |
+          Should -Be $null
+      }
+
+      $Result = Out-SubnetRange -Subnet $SourceSubnet -Prefix ($SourcePrefix - 1)
+      $TestCase = @{
+        ReferenceObject  = $TargetList
+        DifferenceObject = $Result
+      }
+      It "Return should be False for $SourceSubnet/$($SourcePrefix-1)" -TestCases $TestCase {
+        param(
+          $ReferenceObject,
+          $DifferenceObject
+        )
+        Compare-Object -ReferenceObject $ReferenceObject -DifferenceObject $DifferenceObject |
+          Should -Not -Be $null
+      }
+    }
   }
 }
