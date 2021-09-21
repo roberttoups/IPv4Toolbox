@@ -151,7 +151,7 @@ Evaluates if an IPv4 Address is equal or within an IPv4 Address range.
 
 ![Test-IPv4AddressWithinRange](Examples/Graphics/Test-IPv4AddressWithinRange.gif)
 
-### [Test-IPv4AddressWithinSubnet](Test-IPv4AddressWithinSubnet.md)
+### [Test-IPv4AddressWithinSubnet](Docs/Test-IPv4AddressWithinSubnet.md)
 
 Evaluates if an IPv4 Address is within an IPv4 Subnet range.
 
