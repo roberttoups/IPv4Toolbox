@@ -110,11 +110,11 @@ function Invoke-IPv4ListSort {
       }
     }
     if($Descending) {
-      Write-Verbose -Message "Sorting IPv4 Addresses in Descending order"
+      Write-Verbose -Message 'Sorting IPv4 Addresses in Descending order'
       [System.Array]$SortedIPv4AddressList = $ValidatedIPv4AddressList |
         Sort-Object -Property @{Expression = { $_ -as [System.Version] } } -Descending -Unique
     } else {
-      Write-Verbose -Message "Sorting IPv4 Addresses in Ascending order"
+      Write-Verbose -Message 'Sorting IPv4 Addresses in Ascending order'
       [System.Array]$SortedIPv4AddressList = $ValidatedIPv4AddressList |
         Sort-Object -Property @{Expression = { $_ -as [System.Version] } } -Unique
     }
