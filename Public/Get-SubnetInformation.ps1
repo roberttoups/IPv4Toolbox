@@ -228,9 +228,9 @@ function Get-SubnetInformation {
     if($IPv4Address) {
       $IPv4AddressObject = [System.Net.IPAddress]::Parse($IPv4Address)
       if($PSCmdlet.ParameterSetName -eq 'Prefix') {
-        $SubnetMaskObject = [System.Net.IPAddress]::Parse((ConvertTo-IPv4 -Integer ([System.Convert]::ToInt64(("1" * $Prefix + "0" * (32 - $Prefix)), 2))))
+        $SubnetMaskObject = [System.Net.IPAddress]::Parse((ConvertTo-IPv4 -Integer ([System.Convert]::ToInt64(('1' * $Prefix + '0' * (32 - $Prefix)), 2))))
       } elseif($PSCmdlet.ParameterSetName -eq 'CIDR') {
-        $SubnetMaskObject = [System.Net.IPAddress]::Parse((ConvertTo-IPv4 -Integer ([System.Convert]::ToInt64(("1" * $Prefix + "0" * (32 - $Prefix)), 2))))
+        $SubnetMaskObject = [System.Net.IPAddress]::Parse((ConvertTo-IPv4 -Integer ([System.Convert]::ToInt64(('1' * $Prefix + '0' * (32 - $Prefix)), 2))))
       } elseif($PSCmdlet.ParameterSetName -eq 'SubnetMask') {
         $SubnetMaskObject = [System.Net.IPAddress]::Parse($SubnetMask)
         $TempTable = Get-PrefixTable
