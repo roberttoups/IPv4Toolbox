@@ -65,7 +65,7 @@ function Invoke-IPv4GeoLookup {
       Select-Object -ExpandProperty 'Content' |
       ConvertFrom-Json
     if($Output.lat -and $Output.lon) {
-      Write-Verbose -Message "Found GeoIP Information"
+      Write-Verbose -Message 'Found GeoIP Information'
       $Link = "https://www.google.com/maps?q=$($Output.lat),$($Output.lon)"
       Add-Member -InputObject $Output -MemberType 'NoteProperty' -Name 'mapReference' -Value $Link
     }
