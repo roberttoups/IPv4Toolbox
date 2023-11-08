@@ -65,25 +65,25 @@ function ConvertFrom-InverseAddress {
   process {
     Write-Verbose -Message "Converting Inverse Address: $InverseAddress"
     if($InverseAddress -match '^(.*?)\.(.*?)\.(.*?)\.(.*?)\.in-addr\.arpa') {
-      Write-Verbose -Message "Inverse Address is in IPv4 format"
+      Write-Verbose -Message 'Inverse Address is in IPv4 format'
       $IPv4Address = $InverseAddress.Replace('.in-addr.arpa', '')
       [System.Collections.ArrayList]$IPv4ElementList = $IPv4Address.Split('.')
       $IPv4ElementList.Reverse() | Out-Null
       $Output = $($IPv4ElementList -join '.')
     } elseif($InverseAddress -match '^(.*?)\.(.*?)\.(.*?)\.in-addr\.arpa') {
-      Write-Verbose -Message "Inverse Address is a /24 Subnet"
+      Write-Verbose -Message 'Inverse Address is a /24 Subnet'
       $IPv4Address = $InverseAddress.Replace('.in-addr.arpa', '')
       [System.Collections.ArrayList]$IPv4ElementList = $IPv4Address.Split('.')
       $IPv4ElementList.Reverse() | Out-Null
       $Output = "$($IPv4ElementList -join '.').0/24"
     } elseif($InverseAddress -match '^(.*?)\.(.*?)\.in-addr\.arpa') {
-      Write-Verbose -Message "Inverse Address is a /16 Subnet"
+      Write-Verbose -Message 'Inverse Address is a /16 Subnet'
       $IPv4Address = $InverseAddress.Replace('.in-addr.arpa', '')
       [System.Collections.ArrayList]$IPv4ElementList = $IPv4Address.Split('.')
       $IPv4ElementList.Reverse() | Out-Null
       $Output = "$($IPv4ElementList -join '.').0.0/16"
     } elseif($InverseAddress -match '^(.*?)\.in-addr\.arpa') {
-      Write-Verbose -Message "Inverse Address is a /8 Subnet"
+      Write-Verbose -Message 'Inverse Address is a /8 Subnet'
       $IPv4Address = $InverseAddress.Replace('.in-addr.arpa', '')
       [System.Collections.ArrayList]$IPv4ElementList = $IPv4Address.Split('.')
       $IPv4ElementList.Reverse() | Out-Null
